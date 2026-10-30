@@ -1,7 +1,8 @@
 {
-  "variant": "Новогодняя авиационная афиша",
-  "htmlBytes": 68462,
+  "variant": "Праздничная авиационная афиша",
+  "htmlBytes": 85412,
   "copyCheck": "passed",
   "mjmlValidation": "passed",
-  "removedServiceLabels": true
+  "logoSource": "logo.png",
+  "emailLogoFormat": "PNG"
 }

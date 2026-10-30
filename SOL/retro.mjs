@@ -5,7 +5,7 @@ import mjml2html from "mjml";
 import sharp from "sharp";
 
 /* =========================================================
-   ПАПКИ И НАСТРОЙКИ
+   НАСТРОЙКИ
    ========================================================= */
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -14,9 +14,8 @@ const ASSETS = path.join(OUT, "assets");
 
 await fs.mkdir(ASSETS, { recursive: true });
 
-// Для локального просмотра менять не требуется.
-// Перед рассылкой разместите картинки на HTTPS-хостинге
-// и укажите здесь адрес папки с ними.
+// Для локального просмотра менять не нужно.
+// Перед рассылкой укажите публичную HTTPS-папку с картинками.
 const BASE = (
   process.env.ASSET_BASE ||
   "https://example.com/savencia-assets"
@@ -29,19 +28,20 @@ const C = {
   orange: "#de6a09",
   green: "#b1ca40",
   paper: "#f7f5ef",
-  sky: "#e4f5fa",
+  sky: "#eaf6fa",
   ink: "#173f4c",
   muted: "#52666d",
-  line: "#c3d7de"
+  line: "#c4d8df",
+  white: "#ffffff"
 };
+
+const asset = name => `${BASE}/${name}`;
 
 const esc = value => String(value)
   .replaceAll("&", "&amp;")
   .replaceAll("<", "&lt;")
   .replaceAll(">", "&gt;")
   .replaceAll('"', "&quot;");
-
-const asset = name => `${BASE}/${name}`;
 
 const normalize = value =>
   value.replace(/\s+/g, " ").trim();
@@ -65,13 +65,11 @@ function decode(value) {
 }
 
 /* =========================================================
-   ТЕКСТ ПИСЬМА
-   Служебные строки «Информационная рассылка в почте»
-   и «Тема:» в тело письма не включаются.
+   ТЕКСТ
    ========================================================= */
 
 const T = {
-  emailSubject: "10 декабря — Вылет в Новый ГОД!",
+  subject: "10 декабря — Вылет в Новый ГОД!",
   date: "10 декабря",
   headline: "— Вылет в Новый ГОД!",
 
@@ -134,9 +132,8 @@ const T = {
 
 const GROUPS = [
   {
-    title: "✈️ МОСКВА и УФА(по местному времени)",
-
-    addressTitle: "Аэропорты отправления:",
+    heading: "✈️ МОСКВА и УФА(по местному времени)",
+    addressHeading: "Аэропорты отправления:",
 
     addresses: [
       [
@@ -150,28 +147,15 @@ const GROUPS = [
     ],
 
     rows: [
-      [
-        "17:00–18:00",
-        T.registration,
-        T.registrationDescription
-      ],
-      [
-        "18:00–20:00",
-        T.takeoff,
-        T.takeoffDescription
-      ],
-      [
-        "20:00–23:00",
-        T.flight,
-        T.flightDescription
-      ]
+      ["17:00–18:00", T.registration, T.registrationDescription],
+      ["18:00–20:00", T.takeoff, T.takeoffDescription],
+      ["20:00–23:00", T.flight, T.flightDescription]
     ]
   },
 
   {
-    title: "✈️  БЕЛЕБЕЙ",
-
-    addressTitle: "Аэропорт отправления:",
+    heading: "✈️  БЕЛЕБЕЙ",
+    addressHeading: "Аэропорт отправления:",
 
     addresses: [
       [
@@ -181,74 +165,74 @@ const GROUPS = [
     ],
 
     rows: [
-      [
-        "15:00–15:30",
-        T.registration,
-        T.registrationDescription
-      ],
-      [
-        "15:30–18:00",
-        T.takeoff,
-        T.takeoffDescription
-      ],
-      [
-        "18:00–20:00",
-        T.flight,
-        T.flightDescription
-      ]
+      ["15:00–15:30", T.registration, T.registrationDescription],
+      ["15:30–18:00", T.takeoff, T.takeoffDescription],
+      ["18:00–20:00", T.flight, T.flightDescription]
     ]
   }
 ];
 
 /* =========================================================
-   ЛОГОТИП: ЛОКАЛЬНЫЙ ФАЙЛ, БЕЗ СКАЧИВАНИЯ ИЗ ИНТЕРНЕТА
+   ЛОГОТИП
+   SVG — приоритетный оригинал.
+   Для e-mail автоматически создаётся PNG.
    ========================================================= */
 
-let logoPath = null;
+let logoSource = null;
 
-const logoCandidates = [
+for (const candidate of [
+  path.join(ROOT, "logo.svg"),
   path.join(ROOT, "logo.png"),
   path.join(ROOT, "logo.jpg"),
   path.join(ROOT, "logo.jpeg"),
   path.join(ROOT, "logo.webp"),
   path.join(ASSETS, "g-logo.png"),
   path.join(ASSETS, "f-logo.png")
-];
-
-for (const candidate of logoCandidates) {
+]) {
   try {
     await fs.access(candidate);
-    logoPath = candidate;
+    logoSource = candidate;
     break;
-  } catch {
-    // Проверяем следующий файл.
-  }
+  } catch {}
 }
 
-if (!logoPath) {
+if (!logoSource) {
   throw new Error(
-    "Не найден логотип. Положите logo.png рядом с retro.mjs."
+    "Положите logo.svg или logo.png рядом с retro.mjs."
   );
 }
 
-// Сначала читаем в память: это позволяет безопасно
-// использовать уже существующий dist/assets/g-logo.png.
-const logoBuffer = await fs.readFile(logoPath);
+const logoBuffer = await fs.readFile(logoSource);
+const vectorLogo = path.extname(logoSource).toLowerCase() === ".svg";
 
-await sharp(logoBuffer)
+await sharp(
+  logoBuffer,
+  vectorLogo ? { density: 300 } : {}
+)
   .flatten({ background: "#ffffff" })
   .resize({
-    width: 560,
-    withoutEnlargement: true
+    width: 648,
+    withoutEnlargement: !vectorLogo
   })
   .png({ compressionLevel: 9 })
   .toFile(path.join(ASSETS, "g-logo.png"));
 
-console.log("Логотип подготовлен.");
+if (vectorLogo) {
+  await fs.writeFile(
+    path.join(ASSETS, "g-logo.svg"),
+    logoBuffer
+  );
+}
+
+console.log(
+  vectorLogo
+    ? "Оригинальный SVG сохранён. PNG для письма подготовлен."
+    : "Логотип подготовлен."
+);
 
 /* =========================================================
-   АФИШНАЯ ИЛЛЮСТРАЦИЯ
-   Без надписей. В письмо включается PNG.
+   ГРАФИКА: ТРИ ШАРА, ОДИН САМОЛЁТ
+   Никакого текста внутри изображения.
    ========================================================= */
 
 function star(cx, cy, outer, inner, rotation = 0) {
@@ -265,34 +249,47 @@ function star(cx, cy, outer, inner, rotation = 0) {
   }).join(" ");
 }
 
-const illustration = `
+const posterSVG = `
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="1280" height="650" viewBox="0 0 1280 650">
+     width="1280" height="580" viewBox="0 0 1280 580">
 
-  <rect width="1280" height="650" fill="${C.sky}"/>
+  <rect width="1280" height="580" fill="${C.navy}"/>
 
-  <path d="M1010 0V92"
-        stroke="${C.navy}" stroke-width="3"/>
+  <g stroke="#ffffff" stroke-width="2" opacity=".45">
+    <path d="M244 0V121"/>
+    <path d="M651 0V59"/>
+    <path d="M1042 0V156"/>
+  </g>
 
-  <rect x="979" y="89" width="62" height="28"
-        rx="4" fill="${C.navy}"/>
+  <rect x="220" y="116" width="48" height="24"
+        rx="3" fill="${C.green}"/>
+  <rect x="621" y="53" width="60" height="27"
+        rx="3" fill="${C.orange}"/>
+  <rect x="1021" y="151" width="42" height="22"
+        rx="3" fill="${C.cyan}"/>
 
-  <circle cx="1010" cy="335" r="224"
-          fill="${C.orange}"/>
+  <circle cx="244" cy="299" r="166" fill="${C.green}"/>
+  <circle cx="651" cy="295" r="221" fill="${C.orange}"/>
+  <circle cx="1042" cy="311" r="146" fill="${C.cyan}"/>
 
-  <path d="M838 194Q962 117 1080 159"
-        fill="none"
-        stroke="#ffffff"
-        stroke-width="4"
-        opacity=".5"/>
+  <g fill="none" stroke="#ffffff" stroke-width="3" opacity=".55">
+    <path d="M154 187Q231 137 313 177"/>
+    <path d="M522 133Q643 70 759 133"/>
+    <path d="M965 211Q1037 173 1106 214"/>
+  </g>
 
-  <path d="M-50 548C250 548 445 470 698 324"
-        fill="none"
-        stroke="${C.blue}"
-        stroke-width="3"
-        stroke-dasharray="12 16"/>
+  <g fill="none" stroke="${C.navy}" stroke-width="2" opacity=".24">
+    <path d="M123 349Q244 276 365 349"/>
+    <path d="M480 383Q651 284 822 383"/>
+    <path d="M935 357Q1042 291 1149 357"/>
+  </g>
 
-  <g transform="translate(777 316) rotate(55) scale(1.65)">
+  <path d="M-40 497C192 523 427 442 698 266"
+        fill="none" stroke="#ffffff"
+        stroke-width="3" stroke-dasharray="11 15"
+        opacity=".85"/>
+
+  <g transform="translate(787 275) rotate(56) scale(1.78)">
     <path d="
       M0 -116
       C10 -116 13 -99 13 -82
@@ -307,48 +304,38 @@ const illustration = `
       fill="#ffffff"/>
   </g>
 
-  <polygon
-    points="${star(190, 188, 48, 20, 0.1)}"
-    fill="${C.green}"/>
+  <polygon points="${star(405, 102, 21, 8, .1)}"
+           fill="${C.cyan}"/>
+  <polygon points="${star(1161, 92, 24, 10)}"
+           fill="${C.orange}"/>
+  <polygon points="${star(935, 488, 18, 7, .25)}"
+           fill="${C.green}"/>
+  <polygon points="${star(95, 81, 15, 6)}"
+           fill="#ffffff"/>
 
-  <polygon
-    points="${star(429, 316, 25, 10, 0.3)}"
-    fill="${C.blue}"/>
-
-  <polygon
-    points="${star(1132, 584, 30, 12)}"
-    fill="${C.green}"/>
-
-  <g fill="${C.navy}">
-    <circle cx="347" cy="125" r="6"/>
-    <circle cx="115" cy="376" r="5"/>
-    <circle cx="593" cy="130" r="5"/>
-    <circle cx="541" cy="530" r="5"/>
+  <g fill="#ffffff">
+    <circle cx="373" cy="476" r="4"/>
+    <circle cx="1115" cy="492" r="4"/>
+    <circle cx="478" cy="53" r="3"/>
+    <circle cx="1206" cy="328" r="3"/>
+    <circle cx="62" cy="291" r="3"/>
   </g>
 
-  <g stroke="${C.orange}" stroke-width="5">
-    <path d="M292 387L311 409"/>
-    <path d="M470 193L492 184"/>
+  <g stroke-width="4">
+    <path d="M101 462L113 445" stroke="${C.cyan}"/>
+    <path d="M469 498L483 516" stroke="${C.green}"/>
+    <path d="M935 106L951 116" stroke="${C.orange}"/>
   </g>
 
-  <g stroke="${C.blue}" stroke-width="4">
-    <path d="M1153 104L1171 81"/>
-    <path d="M1218 418L1231 442"/>
-  </g>
-
-  <path d="M0 631H1280"
-        stroke="${C.navy}" stroke-width="3"/>
 </svg>
 `;
 
-await sharp(Buffer.from(illustration))
+await sharp(Buffer.from(posterSVG))
   .png({ palette: true, compressionLevel: 9 })
   .toFile(path.join(ASSETS, "g-poster.png"));
 
-console.log("Иллюстрация подготовлена.");
-
 /* =========================================================
-   КОМПОНЕНТЫ MJML
+   MJML-КОМПОНЕНТЫ
    ========================================================= */
 
 function txt(value, attributes = "") {
@@ -358,91 +345,127 @@ function txt(value, attributes = "") {
 function section(content, attributes = "") {
   return `
     <mj-section
-      padding="0 30px"
       background-color="${C.paper}"
+      padding="0 30px"
       ${attributes}>
-      <mj-column>
-        ${content}
-      </mj-column>
+      <mj-column>${content}</mj-column>
     </mj-section>
   `;
 }
 
-function groupBlock(group, groupIndex) {
-  const accent = groupIndex === 0 ? C.orange : C.blue;
+function stripe() {
+  return `
+    <mj-section padding="0" background-color="${C.navy}">
+      <mj-group width="100%">
+        <mj-column width="50%">
+          <mj-divider border-color="${C.orange}"
+                      border-width="5px" padding="0"/>
+        </mj-column>
+        <mj-column width="30%">
+          <mj-divider border-color="${C.cyan}"
+                      border-width="5px" padding="0"/>
+        </mj-column>
+        <mj-column width="20%">
+          <mj-divider border-color="${C.green}"
+                      border-width="5px" padding="0"/>
+        </mj-column>
+      </mj-group>
+    </mj-section>
+  `;
+}
+
+function scheduleBlock(group, index) {
+  const accent = index === 0 ? C.orange : C.blue;
 
   return `
-    <mj-section
-      padding="19px 30px"
-      background-color="${C.navy}"
-      border-top="5px solid ${accent}">
-      <mj-column>
-        ${txt(group.title,
-          `font-size="22px"
-           line-height="1.35"
-           font-weight="700"
-           color="#ffffff"
-           padding="0"`)}
-      </mj-column>
-    </mj-section>
+    <mj-wrapper padding="0 30px 27px"
+                background-color="${C.paper}">
 
-    ${group.rows.map(([time, title, description], index) => `
       <mj-section
-        padding="22px 30px 18px"
-        background-color="${C.paper}">
-
-        <mj-column width="42%" vertical-align="top">
-          ${txt(`${time} —`,
-            `font-size="27px"
-             line-height="1.2"
-             font-weight="700"
-             color="${index === 1 ? C.orange : C.navy}"
-             padding="0 15px 12px 0"`)}
-        </mj-column>
-
-        <mj-column width="58%" vertical-align="top">
-          ${txt(title,
-            `font-size="19px"
+        padding="21px 22px"
+        background-color="#ffffff"
+        border-top="5px solid ${accent}">
+        <mj-column>
+          ${txt(group.heading,
+            `font-size="21px"
              line-height="1.35"
              font-weight="700"
-             padding="0 0 10px"`)}
-          ${txt(description,
-            `font-size="16px"
-             line-height="1.65"
+             color="${C.navy}"
              padding="0"`)}
         </mj-column>
-
       </mj-section>
 
-      ${section(`
-        <mj-divider
-          border-color="${C.line}"
-          border-width="1px"
-          padding="0"/>
-      `)}
-    `).join("")}
+      ${group.rows.map(([time, title, description], rowIndex) => `
+        <mj-section padding="0 22px" background-color="#ffffff">
+          <mj-column>
+            <mj-divider
+              border-color="${C.line}"
+              border-width="1px"
+              border-style="${rowIndex === 0 ? "dashed" : "solid"}"
+              padding="0"/>
+          </mj-column>
+        </mj-section>
 
-    ${section(`
-      ${txt(group.addressTitle,
-        `font-size="14px"
-         font-weight="700"
-         color="${C.navy}"
-         padding="14px 0 5px"`)}
+        <mj-section padding="20px 22px"
+                    background-color="#ffffff">
 
-      ${group.addresses.map(([city, address]) => `
-        ${city ? txt(city,
-          `font-size="14px"
-           font-weight="700"
-           color="${C.navy}"
-           padding="14px 0 5px"`) : ""}
+          <mj-column width="43%" vertical-align="top">
+            ${txt(`${time} —`,
+              `font-size="25px"
+               line-height="1.2"
+               font-weight="700"
+               color="${C.navy}"
+               padding="0 12px 12px 0"`)}
+          </mj-column>
 
-        ${txt(address,
-          `font-size="16px"
-           padding="0 0 8px"`)}
+          <mj-column width="57%" vertical-align="top">
+            ${txt(title,
+              `font-size="18px"
+               line-height="1.35"
+               font-weight="700"
+               color="${rowIndex === 1 ? C.orange : C.navy}"
+               padding="0 0 10px"`)}
+            ${txt(description,
+              `font-size="16px"
+               line-height="1.6"
+               padding="0"`)}
+          </mj-column>
+
+        </mj-section>
       `).join("")}
 
-      <mj-spacer height="27px"/>
-    `)}
+      <mj-section padding="0 22px 21px"
+                  background-color="#ffffff">
+        <mj-column>
+
+          <mj-divider
+            border-color="${C.line}"
+            border-width="1px"
+            border-style="dashed"
+            padding="0 0 18px"/>
+
+          ${txt(group.addressHeading,
+            `font-size="15px"
+             font-weight="700"
+             padding="0 0 12px"`)}
+
+          ${group.addresses.map(([city, address]) => `
+            ${city ? txt(city,
+              `font-size="12px"
+               font-weight="700"
+               color="${C.blue}"
+               padding="5px 0 5px"`) : ""}
+
+            ${txt(address,
+              `font-size="16px"
+               line-height="1.6"
+               padding="0 0 10px"`)}
+          `).join("")}
+
+        </mj-column>
+      </mj-section>
+
+    </mj-wrapper>
   `;
 }
 
@@ -453,88 +476,82 @@ function groupBlock(group, groupIndex) {
 const source = `
 <mjml lang="ru">
   <mj-head>
-    <mj-title>${esc(T.emailSubject)}</mj-title>
-
+    <mj-title>${esc(T.subject)}</mj-title>
     <mj-breakpoint width="480px"/>
 
     <mj-attributes>
       <mj-all font-family="Arial, Helvetica, sans-serif"/>
-
-      <mj-text
-        font-size="17px"
-        line-height="1.65"
-        color="${C.ink}"
-        padding="0 0 17px"/>
-
+      <mj-text font-size="17px"
+               line-height="1.65"
+               color="${C.ink}"
+               padding="0 0 17px"/>
       <mj-image padding="0"/>
     </mj-attributes>
 
     <mj-style>
       @media only screen and (max-width:479px) {
-        .date div {
-          font-size:48px !important;
+        .hero-date div {
+          font-size:49px !important;
           line-height:1.05 !important;
         }
-
-        .headline div {
+        .hero-title div {
           font-size:31px !important;
           line-height:1.12 !important;
         }
-
         .statement div {
-          font-size:29px !important;
+          font-size:30px !important;
           line-height:1.18 !important;
+        }
+        .schedule-title div {
+          font-size:28px !important;
+          line-height:1.2 !important;
         }
       }
     </mj-style>
   </mj-head>
 
-  <mj-body width="640px" background-color="#e3e8e3">
+  <mj-body width="640px" background-color="#e1e8e8">
 
-    <mj-section
-      padding="25px 30px 24px"
-      background-color="#ffffff">
+    <mj-section padding="25px 30px"
+                background-color="#ffffff">
       <mj-column>
-        <mj-image
-          src="${asset("g-logo.png")}"
-          alt="Groupe Savencia"
-          width="216px"
-          align="left"
-          padding="0"/>
+        <mj-image src="${asset("g-logo.png")}"
+                  alt="Groupe Savencia"
+                  width="216px"
+                  align="left"
+                  padding="0"/>
       </mj-column>
     </mj-section>
 
-    <mj-section
-      padding="28px 30px 0"
-      background-color="${C.sky}">
-      <mj-column>
+    ${stripe()}
 
+    <mj-section padding="28px 30px 0"
+                background-color="${C.navy}">
+      <mj-column>
         ${txt(T.date,
-          `font-size="68px"
+          `font-size="70px"
            line-height="1"
            font-weight="700"
-           color="${C.navy}"
-           padding="0 0 12px"
-           css-class="date"`)}
-
+           color="#ffffff"
+           padding="0 0 14px"
+           css-class="hero-date"`)}
         ${txt(T.headline,
-          `font-size="41px"
+          `font-size="40px"
            line-height="1.1"
            font-weight="700"
-           color="${C.navy}"
+           color="#ffffff"
            padding="0"
-           css-class="headline"`)}
-
+           css-class="hero-title"`)}
       </mj-column>
     </mj-section>
 
-    <mj-section padding="0" background-color="${C.sky}">
+    <mj-section padding="0"
+                background-color="${C.navy}">
       <mj-column>
-        <mj-image
-          src="${asset("g-poster.png")}"
-          alt=""
-          width="640px"
-          padding="0"/>
+        <mj-image src="${asset("g-poster.png")}"
+                  alt=""
+                  width="640px"
+                  padding="0"/>
       </mj-column>
     </mj-section>
 
@@ -543,82 +560,80 @@ const source = `
         `font-size="23px"
          font-weight="700"
          padding="29px 0 17px"`)}
-
-      ${txt(T.attention, `padding="0 0 18px"`)}
-
-      ${txt(T.journey, `padding="0 0 18px"`)}
-
-      <mj-spacer height="8px"/>
+      ${txt(T.attention)}
+      ${txt(T.journey, `padding="0 0 27px"`)}
     `)}
 
-    <mj-section
-      padding="27px 30px"
-      background-color="${C.green}">
+    <mj-section padding="25px 30px 27px"
+                background-color="${C.green}">
       <mj-column>
-
         ${txt(T.slogan,
-          `font-size="36px"
-           line-height="1.15"
+          `font-size="37px"
+           line-height="1.14"
            font-weight="700"
            color="${C.navy}"
            padding="0"
            css-class="statement"`)}
-
       </mj-column>
     </mj-section>
 
     ${section(`
-      ${txt(T.airports, `padding="27px 0 18px"`)}
-
-      ${txt(T.program, `padding="0 0 18px"`)}
-
-      ${txt(T.ticket, `padding="0 0 18px"`)}
-
-      <mj-divider
-        border-color="${C.orange}"
-        border-width="4px"
-        padding="8px 0 24px"/>
-
-      ${txt(T.schedule,
-        `font-size="31px"
-         line-height="1.2"
-         font-weight="700"
-         padding="0 0 26px"`)}
+      ${txt(T.airports, `padding="28px 0 17px"`)}
+      ${txt(T.program)}
     `)}
 
-    ${GROUPS.map(groupBlock).join("")}
+    <mj-wrapper padding="0 30px 29px"
+                background-color="${C.paper}">
+      <mj-section padding="18px 20px"
+                  background-color="${C.sky}"
+                  border-left="4px solid ${C.blue}">
+        <mj-column>
+          ${txt(T.ticket,
+            `font-size="17px"
+             line-height="1.65"
+             padding="0"`)}
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    ${section(`
+      <mj-divider border-color="${C.orange}"
+                  border-width="4px"
+                  padding="0 0 24px"/>
+      ${txt(T.schedule,
+        `font-size="33px"
+         line-height="1.2"
+         font-weight="700"
+         padding="0 0 25px"
+         css-class="schedule-title"`)}
+    `)}
+
+    ${GROUPS.map(scheduleBlock).join("")}
 
     ${section(`
       ${txt(T.passengers,
         `font-size="22px"
          font-weight="700"
-         padding="2px 0 17px"`)}
-
-      ${txt(T.mood, `padding="0 0 18px"`)}
-
-      ${txt(T.waiting, `padding="0 0 18px"`)}
-
-      <mj-spacer height="9px"/>
+         padding="0 0 17px"`)}
+      ${txt(T.mood)}
+      ${txt(T.waiting, `padding="0 0 29px"`)}
     `)}
 
-    <mj-section
-      padding="28px 30px 32px"
-      background-color="${C.navy}"
-      border-top="5px solid ${C.orange}">
-      <mj-column>
+    ${stripe()}
 
+    <mj-section padding="27px 30px 32px"
+                background-color="${C.navy}">
+      <mj-column>
         ${txt(T.meeting,
           `font-size="30px"
            line-height="1.2"
            font-weight="700"
            color="#ffffff"
            padding="0 0 15px"`)}
-
         ${txt(T.crew,
           `font-size="17px"
            color="#ffffff"
            padding="0"`)}
-
       </mj-column>
     </mj-section>
 
@@ -627,7 +642,7 @@ const source = `
 `.trim();
 
 /* =========================================================
-   КОМПИЛЯЦИЯ
+   КОМПИЛЯЦИЯ И ПРОВЕРКИ
    ========================================================= */
 
 const result = await mjml2html(source, {
@@ -646,21 +661,14 @@ if (typeof result.html !== "string") {
 }
 
 const html = result.html.trim();
-
 const bytes = Buffer.byteLength(html, "utf8");
 
-// Запас относительно пользовательского ограничения 100 КБ.
 if (bytes >= 90_000) {
   throw new Error(
     `HTML занимает ${bytes} байт. ` +
-    "Превышен внутренний лимит 90 000 байт."
+    "Превышен внутренний предел 90 000 байт."
   );
 }
-
-/* =========================================================
-   ПРОВЕРКА ВИДИМОГО ТЕКСТА
-   CSS И HEAD НЕ УЧАСТВУЮТ В СРАВНЕНИИ
-   ========================================================= */
 
 function visibleText(value) {
   return normalize(
@@ -688,14 +696,14 @@ const required = [
   T.schedule,
 
   ...GROUPS.flatMap(group => [
-    group.title,
+    group.heading,
 
     ...group.rows.flatMap(([time, title, description]) => [
       `${time} — ${title}`,
       description
     ]),
 
-    group.addressTitle,
+    group.addressHeading,
 
     ...group.addresses.flatMap(([city, address]) =>
       city ? [city, address] : [address]
@@ -719,7 +727,7 @@ if (actual !== expected) {
     const target = normalize(fragment);
     const index = actual.indexOf(target, cursor);
 
-    if (index === -1) {
+    if (index < 0) {
       throw new Error(
         "Проверка текста не пройдена.\n" +
         "Не найден фрагмент в нужном порядке:\n" +
@@ -731,24 +739,21 @@ if (actual !== expected) {
   }
 
   throw new Error(
-    "В теле письма обнаружены дополнительные " +
-    "или изменённые текстовые фрагменты."
+    "В тело письма попал дополнительный текст."
   );
 }
 
-if (
-  actual.includes("Информационная рассылка в почте") ||
-  actual.includes("Тема:") ||
-  actual.includes("@media")
-) {
-  throw new Error(
-    "В письмо попали служебные надписи. Сборка остановлена."
-  );
+for (const forbidden of [
+  "Информационная рассылка в почте",
+  "Тема:",
+  "@media"
+]) {
+  if (actual.includes(forbidden)) {
+    throw new Error(
+      "В письмо попала служебная строка: " + forbidden
+    );
+  }
 }
-
-/* =========================================================
-   СОХРАНЕНИЕ ФАЙЛОВ ДЛЯ РАССЫЛКИ
-   ========================================================= */
 
 await fs.writeFile(
   path.join(OUT, "g.mjml"),
@@ -763,19 +768,18 @@ await fs.writeFile(
 );
 
 /* =========================================================
-   ЛОКАЛЬНЫЙ ПРОСМОТРЩИК
-   BASE64 ИСПОЛЬЗУЕТСЯ ТОЛЬКО В НЁМ.
-   В g.html ОСТАЮТСЯ ОБЫЧНЫЕ HTTPS-ССЫЛКИ.
+   ПРЕДПРОСМОТР
+   Base64 используется только в локальном просмотрщике.
    ========================================================= */
 
 let localHTML = html;
 
 for (const name of ["g-logo.png", "g-poster.png"]) {
-  const image = await fs.readFile(path.join(ASSETS, name));
+  const buffer = await fs.readFile(path.join(ASSETS, name));
 
   localHTML = localHTML.replaceAll(
     asset(name),
-    `data:image/png;base64,${image.toString("base64")}`
+    `data:image/png;base64,${buffer.toString("base64")}`
   );
 }
 
@@ -788,20 +792,15 @@ const preview = `<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta
-    name="viewport"
-    content="width=device-width,initial-scale=1">
-
-  <title>Savencia — новогодняя авиационная афиша</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Savencia — праздничная авиационная афиша</title>
 
   <style>
-    * {
-      box-sizing:border-box;
-    }
+    * { box-sizing:border-box; }
 
     body {
       margin:0;
-      background:#e3e8e3;
+      background:#e1e8e8;
       color:#173f4c;
       font-family:Arial,Helvetica,sans-serif;
     }
@@ -816,7 +815,7 @@ const preview = `<!doctype html>
       gap:10px;
       padding:15px 20px;
       background:#ffffff;
-      border-bottom:1px solid #c3d7de;
+      border-bottom:1px solid #c4d8df;
     }
 
     h1 {
@@ -870,41 +869,41 @@ const preview = `<!doctype html>
     body.mobile iframe {
       width:375px;
     }
+
+    body.narrow iframe {
+      width:320px;
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Новогодняя авиационная афиша</h1>
-
+    <h1>Праздничная авиационная афиша</h1>
     <button id="desktop" class="active" type="button">
       Компьютер · 640 px
     </button>
-
     <button id="mobile" type="button">
       Телефон · 375 px
+    </button>
+    <button id="narrow" type="button">
+      Узкий экран · 320 px
     </button>
   </header>
 
   <div class="info">
     HTML: ${(bytes / 1024).toFixed(1)} КиБ.
-    Текст проверен.
-
+    Полный текст проверен.
     <a href="g.mjml">MJML</a>
     <a href="g.html">HTML для рассылки</a>
   </div>
 
   <div class="stage">
-    <iframe
-      id="frame"
-      title="Предпросмотр письма Savencia">
-    </iframe>
+    <iframe id="frame" title="Письмо Savencia"></iframe>
   </div>
 
   <script>
     const frame = document.getElementById("frame");
-    const desktop = document.getElementById("desktop");
-    const mobile = document.getElementById("mobile");
+    const modes = ["desktop", "mobile", "narrow"];
 
     function resizeFrame() {
       try {
@@ -922,51 +921,51 @@ const preview = `<!doctype html>
 
         frame.style.height = (height + 24) + "px";
       } catch {
-        frame.style.height = "4500px";
+        frame.style.height = "5000px";
       }
     }
 
-    function setMobile(enabled) {
-      document.body.classList.toggle("mobile", enabled);
-      desktop.classList.toggle("active", !enabled);
-      mobile.classList.toggle("active", enabled);
+    function setMode(mode) {
+      document.body.classList.toggle(
+        "mobile", mode === "mobile"
+      );
+
+      document.body.classList.toggle(
+        "narrow", mode === "narrow"
+      );
+
+      modes.forEach(name => {
+        document.getElementById(name).classList.toggle(
+          "active", name === mode
+        );
+      });
 
       setTimeout(resizeFrame, 100);
       setTimeout(resizeFrame, 500);
     }
 
-    desktop.addEventListener("click", () => {
-      setMobile(false);
-    });
-
-    mobile.addEventListener("click", () => {
-      setMobile(true);
+    modes.forEach(mode => {
+      document.getElementById(mode).addEventListener(
+        "click", () => setMode(mode)
+      );
     });
 
     frame.addEventListener("load", () => {
       resizeFrame();
-
       setTimeout(resizeFrame, 300);
       setTimeout(resizeFrame, 900);
 
       try {
-        frame.contentDocument
-          .querySelectorAll("img")
-          .forEach(img => {
-            if (!img.complete) {
-              img.addEventListener(
-                "load",
-                resizeFrame,
-                { once:true }
-              );
-
-              img.addEventListener(
-                "error",
-                resizeFrame,
-                { once:true }
-              );
-            }
-          });
+        frame.contentDocument.querySelectorAll("img").forEach(img => {
+          if (!img.complete) {
+            img.addEventListener(
+              "load", resizeFrame, { once:true }
+            );
+            img.addEventListener(
+              "error", resizeFrame, { once:true }
+            );
+          }
+        });
       } catch {}
     });
 
@@ -975,7 +974,7 @@ const preview = `<!doctype html>
     });
 
     if (window.innerWidth < 500) {
-      setMobile(true);
+      setMode("mobile");
     }
 
     frame.srcdoc = ${embedded};
@@ -992,11 +991,12 @@ await fs.writeFile(
 await fs.writeFile(
   path.join(OUT, "g-report.json"),
   JSON.stringify({
-    variant: "Новогодняя авиационная афиша",
+    variant: "Праздничная авиационная афиша",
     htmlBytes: bytes,
     copyCheck: "passed",
     mjmlValidation: "passed",
-    removedServiceLabels: true
+    logoSource: path.basename(logoSource),
+    emailLogoFormat: "PNG"
   }, null, 2),
   "utf8"
 );
@@ -1004,8 +1004,7 @@ await fs.writeFile(
 console.log("");
 console.log("Письмо собрано.");
 console.log(`Размер HTML: ${bytes} байт.`);
-console.log("Основной текст, расписание и адреса проверены.");
-console.log("Служебные надписи удалены.");
+console.log("Полный текст проверен.");
 console.log("");
 console.log("Откройте:");
 console.log(path.join(OUT, "g-preview.html"));
@@ -1016,5 +1015,5 @@ console.log(
 );
 console.log(
   "Перед массовой отправкой проверьте тестовое письмо " +
-  "в Gmail, Outlook и на телефоне."
+  "в почтовых клиентах."
 );

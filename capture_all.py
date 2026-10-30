@@ -53,7 +53,8 @@ with tempfile.TemporaryDirectory() as tmp:
 # Copy all screenshots and assets to brain directory
 all_files = [f"v{i}_full.png" for i in range(1, 9)] + [f"variant{i}_emulator.png" for i in range(1, 9)] + [
     "f-window.svg", "f-window.png", "g-poster.svg", "g-poster.png", "g-logo.png",
-    "icon_moscow.png", "icon_ufa.png", "icon_belebey.png", "hero_festive_runway.jpg", "hero_v1_festive.jpg", "barcode.png"
+    "A_clean_cinematic_hero.png",
+    "icon_moscow.svg", "icon_moscow.png", "icon_ufa.svg", "icon_ufa.png", "icon_belebey.svg", "icon_belebey.png", "hero_v1_festive.jpg", "barcode.png"
 ]
 for fname in all_files:
     src = os.path.join(workspace, fname)

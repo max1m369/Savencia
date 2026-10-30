@@ -7,3 +7,5 @@ _temp_*
 .~lock.*
 .DS_Store
 Thumbs.db
+*_original.png
+

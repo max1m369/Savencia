@@ -1,0 +1,29 @@
+{
+  "htmlBytesBeforeCompaction": 81570,
+  "htmlBytes": 63037,
+  "htmlLimitBytes": 90000,
+  "copyCheck": "passed against embedded approved copy",
+  "mjmlValidation": "passed",
+  "board": {
+    "rows": 1,
+    "columns": 14,
+    "font": "Arial",
+    "shadows": false,
+    "gradients": false,
+    "liveText": true
+  },
+  "schedule": {
+    "desktop": "two-column grid",
+    "mobile": "stacked rows"
+  },
+  "approvedCopyChanges": [
+    "Removed plane emoji from city headings",
+    "Removed separator dash after time ranges",
+    "Added plane emoji to airport address headings",
+    "Added Christmas tree emoji to city address labels",
+    "Added city address label for Belebey"
+  ],
+  "assetBase": "https://example.com/savencia-assets",
+  "missingLocalPreviewImages": [],
+  "emailClientRenderingTest": "not performed"
+}

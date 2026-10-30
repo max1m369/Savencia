@@ -70,7 +70,7 @@
     <!-- PANORAMIC HERO BANNER: FESTIVE RUNWAY & AIRPLANE (REF IMAGE 5) -->
     <mj-section background-color="#00232f" padding="0">
       <mj-column width="100%">
-        <mj-image src="hero_festive_runway.jpg" alt="Праздничный вылет Savencia в Новый год 2027" width="600px" />
+        <mj-image src="A_clean_cinematic_hero.png" alt="Праздничный вылет Savencia в Новый год 2027" width="600px" />
       </mj-column>
     </mj-section>
 
@@ -108,7 +108,7 @@
     <mj-section background-color="#ffffff" padding="10px 16px 24px 16px">
       <!-- Москва -->
       <mj-column width="33.33%" padding="8px" vertical-align="top">
-        <mj-image src="icon_moscow.png" alt="Москва" width="70px" align="center" />
+        <mj-image src="icon_moscow.png" alt="Москва" width="80px" align="center" />
         <mj-text align="center" font-family="Arial, sans-serif" font-size="14px" font-weight="900" color="#004b62" padding="10px 0 2px 0">
           МОСКВА
         </mj-text>
@@ -122,7 +122,7 @@
 
       <!-- Уфа -->
       <mj-column width="33.33%" padding="8px" vertical-align="top">
-        <mj-image src="icon_ufa.png" alt="Уфа" width="70px" align="center" />
+        <mj-image src="icon_ufa.png" alt="Уфа" width="80px" align="center" />
         <mj-text align="center" font-family="Arial, sans-serif" font-size="14px" font-weight="900" color="#004b62" padding="10px 0 2px 0">
           УФА
         </mj-text>
@@ -136,7 +136,7 @@
 
       <!-- Белебей -->
       <mj-column width="33.33%" padding="8px" vertical-align="top">
-        <mj-image src="icon_belebey.png" alt="Белебей" width="70px" align="center" />
+        <mj-image src="icon_belebey.png" alt="Белебей" width="80px" align="center" />
         <mj-text align="center" font-family="Arial, sans-serif" font-size="14px" font-weight="900" color="#004b62" padding="10px 0 2px 0">
           БЕЛЕБЕЙ
         </mj-text>
@@ -153,9 +153,7 @@
     <mj-section background-color="#f8fafc" padding="24px 20px">
       <mj-column width="100%">
         <mj-text align="center" padding-bottom="16px">
-          <div style="font-size: 11px; font-weight: 900; letter-spacing: 2px; color: #008fd0; text-transform: uppercase;">
-            FLIGHT INFORMATION DISPLAY SYSTEM
-          </div>
+
           <div style="font-size: 20px; font-weight: 900; color: #004b62; margin-top: 4px;">
             Электронное табло вылетов
           </div>
