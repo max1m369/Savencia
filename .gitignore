@@ -8,4 +8,6 @@ _temp_*
 .DS_Store
 Thumbs.db
 *_original.png
+HERO_*.png
+SOL/dist/backups/
 

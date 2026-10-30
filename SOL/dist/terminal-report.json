@@ -1,28 +1,36 @@
 {
-  "source": "G:\\ПРОФИ\\Елена Котсерова - Сцена\\СИМА\\SOL\\dist\\terminal.mjml",
-  "htmlBytes": 64770,
+  "generatedAt": "2026-10-30T23:16:41.686Z",
+  "htmlBytes": 79099,
   "maxHTMLBytes": 90000,
   "copyCheck": "passed",
-  "allowedTextChange": "city moved before address",
   "mjmlValidation": "passed",
-  "cityColor": "#008fd0",
-  "boardTopColor": "#303234",
-  "boardBottomColor": "#27292b",
-  "ticketStyle": "text with orange perforated stub",
-  "assetBase": "https://example.com/savencia-assets",
-  "assets": [
-    "https://example.com/savencia-assets/terminal-year.png",
-    "https://example.com/savencia-assets/terminal-logo.png",
-    "https://example.com/savencia-assets/terminal-hero-stars.png",
-    "https://example.com/savencia-assets/terminal-poster.png",
-    "https://example.com/savencia-assets/terminal-slogan-flight.png",
-    "https://example.com/savencia-assets/terminal-ticket-art.png"
-  ],
+  "scheduleNote": {
+    "text": "по местному времени",
+    "parentheses": false
+  },
+  "background": {
+    "orientation": "original, before horizontal mirroring",
+    "restoredFrom": "terminal-winter-pearl-original.jpg",
+    "output": "terminal-winter-pearl.jpg",
+    "header": "terminal-winter-header.png",
+    "repeatedRunsDoNotToggle": true
+  },
+  "year": {
+    "source": "terminal-year-refined.png",
+    "refinedContourPreserved": true,
+    "mirrored": false
+  },
+  "backup": "G:\\ПРОФИ\\Елена Котсерова - Сцена\\СИМА\\SOL\\dist\\backups\\2026-10-30T23-16-41-664Z-restore-background",
   "notes": [
-    "Города расположены над адресами.",
-    "Полосы на корешке декоративные, не действующий штрихкод.",
-    "Остальные секции и изображения сохранены из исходника.",
-    "Рендеринг в реальных почтовых клиентах не проверен.",
-    "Размер HTML указан до обработки сервисом рассылки."
+    "Удалены только скобки у примечания расписания.",
+    "Остальной текст письма сохранён.",
+    "Фон возвращён в исходное направление.",
+    "То же направление применено в шапке.",
+    "Уточнённый контур 2027 сохранён.",
+    "Логотип, баннер, талон, табло и адреса не изменены.",
+    "Повторный запуск не меняет направление фона.",
+    "Base64 используется только в локальном предпросмотре.",
+    "Размер HTML указан до обработки сервисом рассылки.",
+    "Рендеринг в реальных почтовых клиентах не проверен."
   ]
 }

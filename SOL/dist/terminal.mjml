@@ -1,173 +1,98 @@
 <mjml lang="ru">
-    <mj-head>
-      <mj-title>10 декабря — Вылет в Новый ГОД!</mj-title>
-      <mj-breakpoint width="480px"/>
+  <mj-head>
+    <mj-title>10 декабря — Вылет в Новый ГОД!</mj-title>
+    <mj-breakpoint width="480px"/>
 
-      <mj-attributes>
-        <mj-all font-family="Arial, Helvetica, sans-serif"/>
-        <mj-text align="center" font-size="17px"
-          line-height="1.65" color="#173f4c" padding="0 0 17px"/>
-        <mj-image padding="0"/>
-        <mj-column padding="0"/>
-      </mj-attributes>
+    <mj-attributes>
+      <mj-all font-family="Arial, Helvetica, sans-serif"/>
+      <mj-text
+        align="center"
+        font-size="17px"
+        line-height="1.65"
+        color="#173f4c"
+        padding="0 0 17px"/>
+      <mj-image padding="0"/>
+      <mj-column padding="0"/>
+    </mj-attributes>
 
-      <mj-style>
-        @media only screen and (max-width:479px) {
-          .hero-date {
-            font-size:47px !important;
-            line-height:1.06 !important;
-            letter-spacing:-1.4px !important;
-          }
-          .hero-stars {
-            width:39px !important;
-            height:auto !important;
-          }
-          .hero-title div {
-            font-size:29px !important;
-            line-height:1.15 !important;
-          }
-          .slogan-line {
-            font-size:28px !important;
-            line-height:1.18 !important;
-            letter-spacing:-.6px !important;
-          }
-          .drops-right { width:48px !important; }
-          .drops-left { width:43px !important; }
-          .schedule-title div {
-            font-size:27px !important;
-            line-height:1.2 !important;
-          }
-          .airport-cell {
-            height:39px !important;
-            font-size:18px !important;
-            line-height:39px !important;
-          }
-          .schedule-time, .schedule-copy {
-            display:block !important;
-            width:100% !important;
-            box-sizing:border-box !important;
-            text-align:center !important;
-          }
-          .schedule-time {
-            padding:23px 10px 10px !important;
-            border-right:0 !important;
-            border-bottom:0 !important;
-            font-size:25px !important;
-          }
-          .schedule-copy {
-            padding:0 10px 23px !important;
-          }
-          .address-cell {
-            display:block !important;
-            width:100% !important;
-            box-sizing:border-box !important;
-            border-left:0 !important;
-            padding:23px 12px 25px !important;
-          }
-          .address-second {
-            border-top:1px solid #c4d8df !important;
-          }
-          .address-heading {
-            font-size:27px !important;
-            line-height:1.06 !important;
-          }
-          .address-city { font-size:29px !important; }
-        }
-        @media only screen and (max-width:359px) {
-          .hero-date {
-            font-size:39px !important;
-            letter-spacing:-1.3px !important;
-          }
-          .hero-stars { width:31px !important; }
-          .hero-title div { font-size:25px !important; }
-          .slogan-line {
-            font-size:24px !important;
-            letter-spacing:-.6px !important;
-          }
-          .drops-right { width:39px !important; }
-          .drops-left { width:35px !important; }
-          .airport-cell {
-            height:35px !important;
-            font-size:15px !important;
-            line-height:35px !important;
-          }
-          .address-heading { font-size:25px !important; }
-        }
-      </mj-style>
-    
-    <!-- SAVENCIA_REFINEMENT_START -->
     <mj-style>
       @media only screen and (max-width:479px) {
-        .address-heading {
-          font-size:21px !important;
-          line-height:1.15 !important;
-          letter-spacing:-0.65px !important;
-          white-space:nowrap !important;
+        .hero-date div {
+          font-size:38px !important;
+          line-height:1.05 !important;
+          letter-spacing:-1px !important;
+        }
+        .hero-title div {
+          font-size:22px !important;
+          line-height:1.12 !important;
+          letter-spacing:-.35px !important;
+        }
+        .hero-date {
+          padding:0 16px 5px !important;
+        }
+        .hero-title {
+          padding:0 16px 15px !important;
+        }
+        .slogan-line {
+          font-size:28px !important;
+          line-height:1.18 !important;
+          letter-spacing:-.6px !important;
+        }
+        .schedule-title div {
+          font-size:27px !important;
+          line-height:1.2 !important;
         }
 
-        .drops-right,
-        .slogan-drops-right {
-          width:56px !important;
-          height:auto !important;
+        .airport-cell {
+          height:46px !important;
+          font-size:22px !important;
+          line-height:46px !important;
+          padding:0 !important;
+        }
+        .board-extra {
+          display:none !important;
+          width:0 !important;
+          min-width:0 !important;
+          max-width:0 !important;
+          padding:0 !important;
+          border:0 !important;
+          font-size:0 !important;
+          line-height:0 !important;
         }
 
-        .drops-left,
-        .slogan-drops-left {
-          width:50px !important;
-          height:auto !important;
+        .schedule-time {
+          width:28% !important;
+          padding:6px 11px 6px 0 !important;
+          border:0 !important;
+          border-right:2px solid #004b62 !important;
+          background-color:transparent !important;
+          text-align:center !important;
+          vertical-align:middle !important;
         }
-      }
-
-      @media only screen and (max-width:359px) {
-        .address-heading {
-          font-size:18px !important;
-          letter-spacing:-0.55px !important;
+        .time-value {
+          font-size:29px !important;
+          line-height:1.18 !important;
+          text-align:center !important;
         }
-
-        .drops-right,
-        .slogan-drops-right {
-          width:44px !important;
+        .schedule-copy {
+          width:72% !important;
+          padding:6px 0 6px 16px !important;
+          border:0 !important;
+          background-color:transparent !important;
+          text-align:left !important;
+          vertical-align:middle !important;
         }
-
-        .drops-left,
-        .slogan-drops-left {
-          width:40px !important;
-        }
-      }
-    </mj-style>
-    <!-- SAVENCIA_REFINEMENT_END -->
-  
-    <!-- SAVENCIA_ADDRESS_FLIGHT_START -->
-    <mj-style>
-      .address-cell,
-      .address-single,
-      .address-main,
-      .address-city {
-        text-align:left !important;
-        vertical-align:top !important;
-      }
-
-      .address-city {
-        font-size:13px !important;
-        line-height:1.35 !important;
-        font-weight:700 !important;
-      }
-
-      @media only screen and (max-width:479px) {
-        .address-cell,
-        .address-single {
-          padding:22px 16px 25px !important;
+        .stage-title {
+          font-size:17px !important;
+          line-height:1.25 !important;
+          letter-spacing:0 !important;
+          margin-bottom:9px !important;
           text-align:left !important;
         }
-
-        .address-main {
-          font-size:20px !important;
-          line-height:1.4 !important;
-        }
-
-        .address-city {
-          font-size:13px !important;
-          line-height:1.35 !important;
+        .stage-description {
+          font-size:14px !important;
+          line-height:1.5 !important;
+          text-align:left !important;
         }
 
         .address-heading {
@@ -176,845 +101,2194 @@
           letter-spacing:-.65px !important;
           white-space:nowrap !important;
         }
+        .address-columns {
+          display:block !important;
+          width:100% !important;
+          max-width:100% !important;
+          table-layout:auto !important;
+        }
+        .address-columns-body,
+        .address-columns-row {
+          display:block !important;
+          width:100% !important;
+        }
+        .address-panel {
+          display:block !important;
+          float:none !important;
+          width:100% !important;
+          max-width:100% !important;
+          box-sizing:border-box !important;
+          padding:22px 18px 25px !important;
+          border-left:0 !important;
+          background-color:#004b62 !important;
+        }
+        .address-second {
+          border-top:2px solid #ffffff !important;
+        }
+        .address-main {
+          font-size:20px !important;
+          line-height:1.4 !important;
+        }
 
-        .slogan-line {
-          font-size:28px !important;
-          line-height:1.18 !important;
-          letter-spacing:-.6px !important;
+        .ticket-shell {
+          padding:6px !important;
+        }
+        .ticket-copy {
+          padding:15px 12px 15px 8px !important;
+          text-align:left !important;
+        }
+        .ticket-eyebrow {
+          font-size:10px !important;
+          line-height:1.5 !important;
+          letter-spacing:.8px !important;
+          margin-bottom:9px !important;
+        }
+        .ticket-title {
+          font-size:17px !important;
+          line-height:1.35 !important;
+          margin-bottom:8px !important;
+        }
+        .ticket-description {
+          font-size:15px !important;
+          line-height:1.5 !important;
+        }
+        .ticket-stub {
+          padding:18px 8px !important;
+        }
+        .ticket-art {
+          width:64px !important;
+          max-width:100% !important;
+          height:auto !important;
         }
       }
 
       @media only screen and (max-width:359px) {
+        .hero-date div {
+          font-size:33px !important;
+          letter-spacing:-.8px !important;
+        }
+        .hero-title div {
+          font-size:19px !important;
+          letter-spacing:-.3px !important;
+        }
+        .hero-date {
+          padding:0 13px 4px !important;
+        }
+        .hero-title {
+          padding:0 13px 12px !important;
+        }
+        .slogan-line {
+          font-size:24px !important;
+        }
+        .time-value {
+          font-size:25px !important;
+        }
+        .schedule-time {
+          padding-right:8px !important;
+        }
+        .schedule-copy {
+          padding-left:12px !important;
+        }
+        .stage-title {
+          font-size:16px !important;
+        }
+        .stage-description {
+          font-size:13px !important;
+        }
         .address-heading {
           font-size:18px !important;
           letter-spacing:-.55px !important;
         }
 
-        .slogan-line {
-          font-size:24px !important;
-          letter-spacing:-.6px !important;
-        }
-      }
-    </mj-style>
-    <!-- SAVENCIA_ADDRESS_FLIGHT_END -->
-  
-    <!-- SAVENCIA_TICKET_CITY_START -->
-    <mj-style>
-      .address-city {
-        color:#008fd0 !important;
-        font-size:14px !important;
-        line-height:1.35 !important;
-        font-weight:700 !important;
-        text-align:left !important;
-        margin:0 0 11px !important;
-      }
-
-      .address-main {
-        margin:0 !important;
-        text-align:left !important;
-      }
-
-      @media only screen and (max-width:479px) {
-        .address-city {
-          color:#008fd0 !important;
-          font-size:14px !important;
-          margin:0 0 11px !important;
-        }
-
         .ticket-copy {
-          padding:19px 14px !important;
+          padding:14px 9px 14px 6px !important;
+        }
+        .ticket-eyebrow {
+          letter-spacing:.5px !important;
+        }
+        .ticket-title {
           font-size:16px !important;
-          line-height:1.6 !important;
         }
-
+        .ticket-description {
+          font-size:14px !important;
+        }
         .ticket-stub {
-          padding:16px 7px !important;
-        }
-
-        .ticket-art {
-          width:64px !important;
-          max-width:100% !important;
-        }
-      }
-
-      @media only screen and (max-width:359px) {
-        .ticket-copy {
-          padding:17px 11px !important;
-        }
-
-        .ticket-stub {
-          padding:14px 5px !important;
+          padding:16px 6px !important;
         }
       }
     </mj-style>
-    <!-- SAVENCIA_TICKET_CITY_END -->
   </mj-head>
 
-    <mj-body width="640px" background-color="#e1e8e8">
-
+  <mj-body width="640px" background-color="#e1e8e8">
+<mj-section
+      padding="0"
+     
+     
+     
+     
+      css-class="savencia-pearl-header" background-color="#f7f5ef" background-url="https://example.com/savencia-assets/terminal-winter-header.png" background-repeat="no-repeat" background-size="640px 112px" background-position="right center">
+      <mj-column>
+        
+    <mj-table
       
-    
-        <mj-section
-          padding="0"
-          background-color="#ffffff"
-          background-url="https://example.com/savencia-assets/terminal-year.png"
-          background-repeat="no-repeat"
-          background-size="360px 112px"
-          background-position="right center">
-          <mj-column padding="0">
-            <mj-table padding="0" cellpadding="0" cellspacing="0"
-              width="100%" table-layout="fixed">
-              <tr>
-                <td height="112" align="left" valign="middle"
-                  style="height:112px;padding:0 0 0 30px;
-                    text-align:left;vertical-align:middle;
-                    font-size:0;line-height:0;">
-                  <img
-                    src="https://example.com/savencia-assets/terminal-logo.png"
-                    width="216"
-                    alt="Groupe Savencia"
-                    style="display:block;width:216px;max-width:75%;
-                      height:auto;border:0;"/>
-                </td>
-              </tr>
-            </mj-table>
-          </mj-column>
-        </mj-section>
+      padding="0"
+      border="none"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      table-layout="fixed">
       
+          <tr>
+            <td
+              height="112"
+              align="left"
+              valign="middle"
+              style="height:112px;
+                padding:0 0 0 30px;
+                text-align:left;
+                vertical-align:middle;
+                font-size:0;
+                line-height:0;">
+              <img
+                src="https://example.com/savencia-assets/terminal-logo.png"
+                width="216"
+                alt="Groupe Savencia"
+                style="display:block;
+                  width:216px;
+                  max-width:75%;
+                  height:auto;
+                  border:0;"/>
+            </td>
+          </tr>
+        
+    </mj-table>
   
-
-      <mj-section padding="0" background-color="#004b62">
-    <mj-column>
-      <mj-table
-    padding="0"
-    cellpadding="0"
-    cellspacing="0"
-    width="100%"
-    table-layout="fixed"><tr><td width="50%" bgcolor="#de6a09"
-          style="height:5px;padding:0;font-size:0;line-height:0;">&#160;</td><td width="30%" bgcolor="#1bbbe9"
-          style="height:5px;padding:0;font-size:0;line-height:0;">&#160;</td><td width="20%" bgcolor="#b1ca40"
-          style="height:5px;padding:0;font-size:0;line-height:0;">&#160;</td></tr></mj-table>
-    </mj-column>
-  </mj-section>
-
-      <mj-section padding="28px 30px 0" background-color="#004b62">
-        <mj-column>
-          <mj-table
-    padding="0 0 14px"
-    cellpadding="0"
-    cellspacing="0"
-    width="100%"
-    table-layout="fixed">
-            <tr>
-              <td width="13%" align="left" valign="middle"
-                style="width:13%;padding:0;">
-                <img
-    class="hero-stars"
-    src="https://example.com/savencia-assets/terminal-hero-stars.png"
-    width="63"
-    alt=""
-    role="presentation"
-    style="display:block;width:63px;max-width:100%;height:auto;border:0;"
-  />
+      </mj-column>
+    </mj-section>
+<mj-section padding="0" background-color="#004b62">
+      <mj-column>
+        
+    <mj-table
+      
+      padding="0"
+      border="none"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      table-layout="fixed">
+      
+          <tr>
+            
+              <td
+                width="30%"
+                height="5"
+                bgcolor="#b1ca40"
+                style="height:5px;padding:0;
+                  font-size:0;line-height:0;">
+                &#160;
               </td>
-              <td width="87%" align="right" valign="middle"
-                style="width:87%;padding:0;text-align:right;">
-                <div class="hero-date"
-                  style="color:#fff;
-                    font-family:Arial,Helvetica,sans-serif;
-                    font-size:70px;font-weight:700;
-                    line-height:1;letter-spacing:-2px;
-                    text-align:right;white-space:nowrap;">
-                  10 декабря
-                </div>
+            
+              <td
+                width="40%"
+                height="5"
+                bgcolor="#de6a09"
+                style="height:5px;padding:0;
+                  font-size:0;line-height:0;">
+                &#160;
+              </td>
+            
+              <td
+                width="30%"
+                height="5"
+                bgcolor="#1bbbe9"
+                style="height:5px;padding:0;
+                  font-size:0;line-height:0;">
+                &#160;
+              </td>
+            
+          </tr>
+        
+    </mj-table>
+  
+      </mj-column>
+    </mj-section>
+<mj-hero
+      mode="fluid-height"
+      background-width="640px"
+      background-height="425px"
+      background-url="https://example.com/savencia-assets/terminal-hero.jpg"
+      background-color="#004b62"
+      background-position="center center"
+      vertical-align="bottom"
+      padding="0"
+      inner-padding="0">
+
+      <mj-text
+        css-class="hero-date"
+        align="right"
+        color="#ffffff"
+        font-size="62px"
+        line-height="1.04"
+        font-weight="700"
+        letter-spacing="-1.8px"
+        padding="0 26px 7px">
+        10 декабря
+      </mj-text>
+
+      <mj-text
+        css-class="hero-title"
+        align="right"
+        color="#ffffff"
+        font-size="32px"
+        line-height="1.12"
+        font-weight="700"
+        letter-spacing="-.5px"
+        padding="0 26px 23px">
+        — Вылет в Новый ГОД!
+      </mj-text>
+    </mj-hero>
+<mj-section padding="0" background-color="#004b62">
+      <mj-column>
+        
+    <mj-table
+      
+      padding="0"
+      border="none"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      table-layout="fixed">
+      
+          <tr>
+            
+              <td
+                width="30%"
+                height="5"
+                bgcolor="#1bbbe9"
+                style="height:5px;padding:0;
+                  font-size:0;line-height:0;">
+                &#160;
+              </td>
+            
+              <td
+                width="40%"
+                height="5"
+                bgcolor="#de6a09"
+                style="height:5px;padding:0;
+                  font-size:0;line-height:0;">
+                &#160;
+              </td>
+            
+              <td
+                width="30%"
+                height="5"
+                bgcolor="#b1ca40"
+                style="height:5px;padding:0;
+                  font-size:0;line-height:0;">
+                &#160;
+              </td>
+            
+          </tr>
+        
+    </mj-table>
+  
+      </mj-column>
+    </mj-section>
+
+    <mj-wrapper
+      css-class="savencia-winter-pearl"
+      padding="0"
+      background-color="#f7f5ef"
+      background-url="https://example.com/savencia-assets/terminal-winter-pearl.jpg"
+      background-repeat="no-repeat"
+      background-size="cover"
+      background-position="center top">
+      <mj-section padding="0 30px">
+      <mj-column>
+        <mj-text
+          font-size="23px"
+          font-weight="700"
+          padding="29px 0 17px">
+          Дорогие коллеги!
+        </mj-text>
+        <mj-text>Внимание, объявляется посадка на особый новогодний рейс!</mj-text>
+        <mj-text padding="0 0 27px">
+          10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников Savencia из трёх городов — Москвы, Уфы и Белебея.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    </mj-wrapper>
+  
+<mj-section
+      padding="25px 24px 27px"
+      background-color="#b1ca40"
+      background-url="https://example.com/savencia-assets/terminal-slogan-flight.png"
+      background-repeat="no-repeat"
+      background-size="cover"
+      background-position="center center">
+      <mj-column>
+        <mj-text
+          padding="0"
+          font-size="37px"
+          line-height="1.16"
+          font-weight="700">
+
+          <div
+            class="slogan-line"
+            style="color:#004b62;
+              text-align:left;
+              letter-spacing:-.8px;">
+            ТРИ ГОРОДА.
+          </div>
+
+          <div
+            class="slogan-line"
+            style="margin-top:6px;
+              color:#008fd0;
+              text-align:center;
+              letter-spacing:-.8px;">
+            ОДИН РЕЙС.
+          </div>
+
+          <div
+            class="slogan-line"
+            style="margin-top:6px;
+              color:#004b62;
+              text-align:right;
+              letter-spacing:-.8px;">
+            ОДНА КОМАНДА.
+          </div>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-wrapper
+      css-class="savencia-winter-pearl"
+      padding="0"
+      background-color="#f7f5ef"
+      background-url="https://example.com/savencia-assets/terminal-winter-pearl.jpg"
+      background-repeat="no-repeat"
+      background-size="cover"
+      background-position="center top">
+      <mj-section padding="0 30px">
+      <mj-column>
+        <mj-text padding="28px 0 17px">
+          В этот день наши праздничные площадки превратятся в аэропорты, а каждый из вас станет пассажиром рейса с конечным пунктом назначения — Новый год!
+        </mj-text>
+        <mj-text>В программе полёта: тёплые встречи с коллегами, яркие эмоции, заслуженные награды, приятные сюрпризы, музыка и праздничное настроение.</mj-text>
+      </mj-column>
+    </mj-section>
+<mj-section
+       
+        padding="0px 30px 29px 30px">
+        <mj-column>
+
+          
+    <mj-table
+      css-class="boarding-pass"
+      padding="0"
+      border="2px dashed #de6a09"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      table-layout="fixed">
+      
+            <tr>
+              <td
+                class="ticket-shell"
+                bgcolor="#ffffff"
+                style="padding:8px;
+                  background-color:#ffffff;">
+
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="width:100%;
+                    table-layout:fixed;
+                    border-collapse:collapse;">
+                  <tbody>
+                    <tr>
+                      <td
+                        class="ticket-copy"
+                        width="73%"
+                        align="left"
+                        valign="middle"
+                        bgcolor="#ffffff"
+                        style="width:73%;
+                          padding:15px 22px 15px 16px;
+                          background-color:#ffffff;
+                          font-family:Arial,Helvetica,sans-serif;
+                          text-align:left;
+                          vertical-align:middle;">
+
+                        <div
+                          class="ticket-eyebrow"
+                          style="margin:0 0 10px;
+                            color:#de6a09;
+                            font-family:Arial,Helvetica,sans-serif;
+                            font-size:11px;
+                            line-height:1.55;
+                            font-weight:700;
+                            letter-spacing:1.5px;
+                            text-align:left;">
+                          ★ НОВОГОДНИЙ РОЗЫГРЫШ ПРИЗОВ
+                        </div>
+
+                        <div
+                          class="ticket-title"
+                          style="margin:0 0 7px;
+                            color:#172b35;
+                            font-family:Arial,Helvetica,sans-serif;
+                            font-size:19px;
+                            line-height:1.4;
+                            font-weight:700;
+                            text-align:left;">
+                          Ваш посадочный талон — ключ к подаркам!
+                        </div>
+
+                        <div
+                          class="ticket-description"
+                          style="margin:0;
+                            color:#65727a;
+                            font-family:Arial,Helvetica,sans-serif;
+                            font-size:16px;
+                            line-height:1.5;
+                            font-weight:400;
+                            text-align:left;">
+                          На регистрации каждый сотрудник получит свой персональный билет. Обязательно сохраните его до конца полёта!
+                        </div>
+                      </td>
+
+                      <td
+                        class="ticket-stub"
+                        width="27%"
+                        align="center"
+                        valign="middle"
+                        bgcolor="#de6a09"
+                        style="width:27%;
+                          padding:20px 12px;
+                          border-left:2px dashed #ffffff;
+                          background-color:#de6a09;
+                          text-align:center;
+                          vertical-align:middle;">
+
+                        <img
+                          class="ticket-art"
+                          src="https://example.com/savencia-assets/terminal-ticket-art.png"
+                          width="84"
+                          height="116"
+                          alt=""
+                          role="presentation"
+                          style="display:block;
+                            width:84px;
+                            max-width:100%;
+                            height:auto;
+                            margin:0 auto;
+                            border:0;"/>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
               </td>
             </tr>
-          </mj-table>
-          <mj-text font-size="40px" line-height="1.1"
-             font-weight="700" color="#ffffff"
-             padding="0" css-class="hero-title">— Вылет в Новый ГОД!</mj-text>
+          
+    </mj-table>
+  
+
         </mj-column>
       </mj-section>
+<mj-section padding="0 30px">
+      <mj-column>
+        <mj-text
+          css-class="schedule-title"
+          font-size="33px"
+          line-height="1.2"
+          font-weight="700"
+          padding="0 0 8px">
+          Расписание нашего рейса
+        </mj-text>
 
-      <mj-section padding="0" background-color="#004b62">
-        <mj-column>
-          <mj-image
-            src="https://example.com/savencia-assets/terminal-poster.png"
-            alt="" width="640px"/>
-        </mj-column>
-      </mj-section>
-
-      <mj-section padding="0" background-color="#004b62">
-    <mj-column>
-      <mj-table
-    padding="0"
-    cellpadding="0"
-    cellspacing="0"
-    width="100%"
-    table-layout="fixed"><tr><td width="20%" bgcolor="#b1ca40"
-          style="height:5px;padding:0;font-size:0;line-height:0;">&#160;</td><td width="30%" bgcolor="#1bbbe9"
-          style="height:5px;padding:0;font-size:0;line-height:0;">&#160;</td><td width="50%" bgcolor="#de6a09"
-          style="height:5px;padding:0;font-size:0;line-height:0;">&#160;</td></tr></mj-table>
-    </mj-column>
-  </mj-section>
-
-      <mj-section padding="0 30px" background-color="#f7f5ef">
-        <mj-column>
-          <mj-text font-size="23px" font-weight="700" padding="29px 0 17px">Дорогие коллеги!</mj-text>
-          <mj-text >Внимание, объявляется посадка на особый новогодний рейс!</mj-text>
-          <mj-text padding="0 0 27px">10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников Savencia из трёх городов — Москвы, Уфы и Белебея.</mj-text>
-        </mj-column>
-      </mj-section>
-
-      
-        <mj-section
-          padding="25px 24px 27px"
-          background-color="#b1ca40"
-          background-url="https://example.com/savencia-assets/terminal-slogan-flight.png"
-          background-repeat="no-repeat"
-          background-size="cover"
-          background-position="center center">
-          <mj-column>
-            <mj-text padding="0" font-size="37px"
-              line-height="1.16" font-weight="700">
-              <div class="slogan-line"
-                style="color:#004b62;text-align:left;
-                  letter-spacing:-.8px;">
-                ТРИ ГОРОДА.
-              </div>
-              <div class="slogan-line"
-                style="margin-top:6px;color:#008fd0;
-                  text-align:center;letter-spacing:-.8px;">
-                ОДИН РЕЙС.
-              </div>
-              <div class="slogan-line"
-                style="margin-top:6px;color:#004b62;
-                  text-align:right;letter-spacing:-.8px;">
-                ОДНА КОМАНДА.
-              </div>
-            </mj-text>
-          </mj-column>
-        </mj-section>
-      
-
-      <mj-section padding="0 30px" background-color="#f7f5ef">
-        <mj-column>
-          <mj-text padding="28px 0 17px">В этот день наши праздничные площадки превратятся в аэропорты, а каждый из вас станет пассажиром рейса с конечным пунктом назначения — Новый год!</mj-text>
-          <mj-text >В программе полёта: тёплые встречи с коллегами, яркие эмоции, заслуженные награды, приятные сюрпризы, музыка и праздничное настроение.</mj-text>
-        </mj-column>
-      </mj-section>
-
-      <mj-wrapper padding="0 30px 29px" background-color="#f7f5ef">
-        
-        <mj-section padding="0" background-color="#eaf6fa">
-          <mj-column padding="0">
-            <mj-table
-              padding="0"
-              cellpadding="0"
-              cellspacing="0"
-              width="100%"
-              table-layout="fixed">
-              <tr>
-                <td
-                  class="ticket-copy"
-                  width="78%"
-                  align="center"
-                  valign="middle"
-                  bgcolor="#eaf6fa"
-                  style="
-                    width:78%;
-                    padding:22px 23px;
-                    border-left:4px solid #008fd0;
-                    text-align:center;
-                    vertical-align:middle;
-                    color:#173f4c;
-                    font-family:Arial,Helvetica,sans-serif;
-                    font-size:17px;
-                    line-height:1.65;
-                  ">На регистрации каждый получит свой посадочный билет, который пригодится во время новогоднего розыгрыша подарков.</td>
-
-                <td
-                  class="ticket-stub"
-                  width="22%"
-                  align="center"
-                  valign="middle"
-                  bgcolor="#de6a09"
-                  style="
-                    width:22%;
-                    padding:18px 10px;
-                    border-left:2px dashed #f7f5ef;
-                    text-align:center;
-                    vertical-align:middle;
-                  ">
-                  <img
-                    class="ticket-art"
-                    src="https://example.com/savencia-assets/terminal-ticket-art.png"
-                    width="84"
-                    alt=""
-                    role="presentation"
-                    style="
-                      display:block;
-                      width:84px;
-                      max-width:100%;
-                      height:auto;
-                      margin:0 auto;
-                      border:0;
-                    "/>
-                </td>
-              </tr>
-            </mj-table>
-          </mj-column>
-        </mj-section>
-      
-      </mj-wrapper>
-
-      <mj-section padding="0 30px" background-color="#f7f5ef">
-        <mj-column>
-          <mj-divider border-color="#de6a09"
-            border-width="4px" padding="0 0 24px"/>
-          <mj-text font-size="33px" line-height="1.2"
-             font-weight="700" padding="0 0 25px"
-             css-class="schedule-title">Расписание нашего рейса</mj-text>
-        </mj-column>
-      </mj-section>
-
-      <mj-wrapper
-    padding="0 30px 27px"
-    background-color="#f7f5ef">
-    <mj-section
-      padding="14px 0 0"
-      background-color="#ffffff"
+        <mj-text
+          css-class="schedule-note"
+          font-size="13px"
+          line-height="19px"
+          color="#52666d"
+          padding="0 0 25px">
+          по местному времени
+        </mj-text>
+      </mj-column>
+    </mj-section>
+<mj-section
+      css-class="flight-board-full"
+      padding="0"
+     
       border-top="4px solid #de6a09">
       <mj-column>
-        <mj-table
-    padding="0"
-    cellpadding="0"
-    cellspacing="0"
-    width="100%"
-    table-layout="fixed"><tr><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">М</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">О</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">С</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">К</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">В</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">А</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">и</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">У</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Ф</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">А</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td></tr></mj-table>
-        <mj-text font-size="13px"
-              line-height="19px" color="#52666d"
-              padding="10px 12px 12px">(по местному времени)</mj-text>
+        
+    <mj-table
+      css-class="flight-board"
+      padding="0"
+      border="none"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      table-layout="fixed">
+      
+    <tr>
+      
+        <td
+          class="airport-cell board-extra"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          &#160;
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          &#160;
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          М
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          О
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          С
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          К
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          В
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          А
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          &#160;
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          И
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          &#160;
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          У
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          Ф
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          А
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          &#160;
+        </td>
+      
+        <td
+          class="airport-cell board-extra"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          &#160;
+        </td>
+      
+    </tr>
+  
+    </mj-table>
+  
       </mj-column>
     </mj-section>
-    <mj-section padding="8px 14px 0" background-color="#ffffff">
-      <mj-column>
-        <mj-table
-    padding="0"
-    cellpadding="0"
-    cellspacing="0"
-    width="100%"
-    table-layout="fixed"><tr>
-      <td class="schedule-time" width="38%" valign="top"
-        style="width:38%;padding:26px 10px;
-          border-right:1px solid #c4d8df;border-bottom:1px solid #c4d8df;
-          text-align:center;color:#004b62;
-          font:700 25px/1.2 Arial,Helvetica,sans-serif;
-          white-space:nowrap;">
-        17:00–18:00
-      </td>
-      <td class="schedule-copy" width="62%" valign="top"
-        style="width:62%;padding:25px 16px;border-bottom:1px solid #c4d8df;
-          text-align:center;font-family:Arial,Helvetica,sans-serif;">
-        <div class="stage-title"
-          style="margin:0 0 11px;color:#004b62;
-            font-size:21px;font-weight:700;line-height:1.2;
-            letter-spacing:-.35px;">
-          Регистрация на рейс (Welcome)
-        </div>
-        <div style="margin:0;color:#52666d;
-          font-size:16px;line-height:1.6;">
-          Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.
-        </div>
-      </td>
-    </tr><tr>
-      <td class="schedule-time" width="38%" valign="top"
-        style="width:38%;padding:26px 10px;
-          border-right:1px solid #c4d8df;border-bottom:1px solid #c4d8df;
-          text-align:center;color:#004b62;
-          font:700 25px/1.2 Arial,Helvetica,sans-serif;
-          white-space:nowrap;">
-        18:00–20:00
-      </td>
-      <td class="schedule-copy" width="62%" valign="top"
-        style="width:62%;padding:25px 16px;border-bottom:1px solid #c4d8df;
-          text-align:center;font-family:Arial,Helvetica,sans-serif;">
-        <div class="stage-title"
-          style="margin:0 0 11px;color:#de6a09;
-            font-size:21px;font-weight:700;line-height:1.2;
-            letter-spacing:-.35px;">
-          Взлёт. Торжественная часть
-        </div>
-        <div style="margin:0;color:#52666d;
-          font-size:16px;line-height:1.6;">
-          Церемония награждения сотрудников и праздничная программа.
-        </div>
-      </td>
-    </tr><tr>
-      <td class="schedule-time" width="38%" valign="top"
-        style="width:38%;padding:26px 10px;
-          border-right:1px solid #c4d8df;
-          text-align:center;color:#004b62;
-          font:700 25px/1.2 Arial,Helvetica,sans-serif;
-          white-space:nowrap;">
-        20:00–23:00
-      </td>
-      <td class="schedule-copy" width="62%" valign="top"
-        style="width:62%;padding:25px 16px;
-          text-align:center;font-family:Arial,Helvetica,sans-serif;">
-        <div class="stage-title"
-          style="margin:0 0 11px;color:#004b62;
-            font-size:21px;font-weight:700;line-height:1.2;
-            letter-spacing:-.35px;">
-          Полёт в Новый год
-        </div>
-        <div style="margin:0;color:#52666d;
-          font-size:16px;line-height:1.6;">
-          Музыка, фуршет, развлечения, общение и новогодние сюрпризы.
-        </div>
-      </td>
-    </tr></mj-table>
-        <mj-table
-    padding="0"
-    cellpadding="0"
-    cellspacing="0"
-    width="100%"
-    table-layout="fixed">
-    <tr>
-      <td colspan="2"
-        style="padding:25px 10px 23px;
-          border-top:2px solid #004b62;
-          border-bottom:1px solid #c4d8df;
-          text-align:center;color:#004b62;
-          font-family:Arial,Helvetica,sans-serif;">
+<mj-section padding="0px 30px 0px 30px">
+        <mj-column>
+          <mj-spacer height="28px" padding="0"/>
+        </mj-column>
+      </mj-section>
+<mj-section padding="0px 30px 0px 30px">
+        <mj-column>
+          
+    <mj-table
+      css-class="schedule-layout"
+      padding="0"
+      border="none"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      table-layout="fixed">
+      
+        <tr>
+          <td
+            class="schedule-time"
+            width="28%"
+            align="center"
+            valign="middle"
+           
+            style="width:28%;
+              padding:6px 20px 6px 0;
+              border:0;
+              border-right:2px solid #004b62;
+              background-color:transparent;
+              color:#004b62;
+              font-family:Arial,Helvetica,sans-serif;
+              text-align:center;
+              vertical-align:middle;">
+
+            <div
+              class="time-value"
+              style="margin:0;
+                font-size:36px;
+                line-height:1.16;
+                font-weight:700;
+                white-space:nowrap;
+                text-align:center;">
+              17:00<br/>18:00
+            </div>
+          </td>
+
+          <td
+            class="schedule-copy"
+            width="72%"
+            align="left"
+            valign="middle"
+           
+            style="width:72%;
+              padding:6px 0 6px 28px;
+              border:0;
+              background-color:transparent;
+              font-family:Arial,Helvetica,sans-serif;
+              text-align:left;
+              vertical-align:middle;">
+
+            <div
+              class="stage-title"
+              style="margin:0 0 11px;
+                color:#004b62;
+                font-size:21px;
+                line-height:1.2;
+                font-weight:700;
+                letter-spacing:-.35px;
+                text-align:left;">
+              Регистрация на рейс (Welcome)
+            </div>
+
+            <div
+              class="stage-description"
+              style="margin:0;
+                color:#52666d;
+                font-size:16px;
+                line-height:1.6;
+                text-align:left;">
+              Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.
+            </div>
+          </td>
+        </tr>
+
         
-        <div class="address-heading"
-        style="margin:0;color:#004b62;
+          <tr>
+            <td
+              colspan="2"
+              height="26"
+             
+              style="height:26px;
+                padding:0;
+                border:0;
+                background-color:transparent;
+                font-size:0;
+                line-height:0;">
+              &#160;
+            </td>
+          </tr>
+        
+      
+        <tr>
+          <td
+            class="schedule-time"
+            width="28%"
+            align="center"
+            valign="middle"
+           
+            style="width:28%;
+              padding:6px 20px 6px 0;
+              border:0;
+              border-right:2px solid #004b62;
+              background-color:transparent;
+              color:#004b62;
+              font-family:Arial,Helvetica,sans-serif;
+              text-align:center;
+              vertical-align:middle;">
+
+            <div
+              class="time-value"
+              style="margin:0;
+                font-size:36px;
+                line-height:1.16;
+                font-weight:700;
+                white-space:nowrap;
+                text-align:center;">
+              18:00<br/>20:00
+            </div>
+          </td>
+
+          <td
+            class="schedule-copy"
+            width="72%"
+            align="left"
+            valign="middle"
+           
+            style="width:72%;
+              padding:6px 0 6px 28px;
+              border:0;
+              background-color:transparent;
+              font-family:Arial,Helvetica,sans-serif;
+              text-align:left;
+              vertical-align:middle;">
+
+            <div
+              class="stage-title"
+              style="margin:0 0 11px;
+                color:#de6a09;
+                font-size:21px;
+                line-height:1.2;
+                font-weight:700;
+                letter-spacing:-.35px;
+                text-align:left;">
+              Взлёт. Торжественная часть
+            </div>
+
+            <div
+              class="stage-description"
+              style="margin:0;
+                color:#52666d;
+                font-size:16px;
+                line-height:1.6;
+                text-align:left;">
+              Церемония награждения сотрудников и праздничная программа.
+            </div>
+          </td>
+        </tr>
+
+        
+          <tr>
+            <td
+              colspan="2"
+              height="26"
+             
+              style="height:26px;
+                padding:0;
+                border:0;
+                background-color:transparent;
+                font-size:0;
+                line-height:0;">
+              &#160;
+            </td>
+          </tr>
+        
+      
+        <tr>
+          <td
+            class="schedule-time"
+            width="28%"
+            align="center"
+            valign="middle"
+           
+            style="width:28%;
+              padding:6px 20px 6px 0;
+              border:0;
+              border-right:2px solid #004b62;
+              background-color:transparent;
+              color:#004b62;
+              font-family:Arial,Helvetica,sans-serif;
+              text-align:center;
+              vertical-align:middle;">
+
+            <div
+              class="time-value"
+              style="margin:0;
+                font-size:36px;
+                line-height:1.16;
+                font-weight:700;
+                white-space:nowrap;
+                text-align:center;">
+              20:00<br/>23:00
+            </div>
+          </td>
+
+          <td
+            class="schedule-copy"
+            width="72%"
+            align="left"
+            valign="middle"
+           
+            style="width:72%;
+              padding:6px 0 6px 28px;
+              border:0;
+              background-color:transparent;
+              font-family:Arial,Helvetica,sans-serif;
+              text-align:left;
+              vertical-align:middle;">
+
+            <div
+              class="stage-title"
+              style="margin:0 0 11px;
+                color:#004b62;
+                font-size:21px;
+                line-height:1.2;
+                font-weight:700;
+                letter-spacing:-.35px;
+                text-align:left;">
+              Полёт в Новый год
+            </div>
+
+            <div
+              class="stage-description"
+              style="margin:0;
+                color:#52666d;
+                font-size:16px;
+                line-height:1.6;
+                text-align:left;">
+              Музыка, фуршет, развлечения, общение и новогодние сюрпризы.
+            </div>
+          </td>
+        </tr>
+
+        
+      
+    </mj-table>
+  
+        </mj-column>
+      </mj-section>
+<mj-section padding="0px 30px 0px 30px">
+        <mj-column>
+          <mj-spacer height="32px" padding="0"/>
+        </mj-column>
+      </mj-section>
+<mj-section padding="0px 30px 27px 30px">
+        <mj-column>
+          
+    <mj-table
+      css-class="airport-addresses"
+      padding="0"
+      border="2px solid #004b62"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      table-layout="fixed">
+      
+    <tr>
+      <td
+        align="center"
+        bgcolor="#ffffff"
+        style="padding:24px 8px 23px;
+          border-bottom:2px solid #004b62;
+          background-color:#ffffff;
           font-family:Arial,Helvetica,sans-serif;
-          font-size:26px;font-weight:700;line-height:1.15;
-          letter-spacing:-.65px;white-space:nowrap;
-          text-align:center;">Аэропорты отправления:</div>
-      
+          text-align:center;">
+
+        <div
+          class="address-heading"
+          style="margin:0;
+            color:#004b62;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:26px;
+            line-height:1.15;
+            font-weight:700;
+            letter-spacing:-.65px;
+            white-space:nowrap;
+            text-align:center;">
+          Аэропорты отправления:
+        </div>
       </td>
     </tr>
+
     <tr>
-      
-        
-        
-        <td
-          class="address-cell address-first"
-          width="50%"
-          align="left"
-          valign="top"
-          style="
-            width:50%;
-            padding:22px 18px 25px;
-            
-            text-align:left;
-            vertical-align:top;
-            font-family:Arial,Helvetica,sans-serif;
-          ">
-          <div class="address-city"
-            style="
-              margin:0 0 11px;
-              color:#008fd0;
-              font-size:14px;
-              font-weight:700;
-              line-height:1.35;
-              letter-spacing:.35px;
-              text-align:left;
-            ">МОСКВА:</div>
+      <td
+        class="address-holder"
+        bgcolor="#004b62"
+        style="padding:0;background-color:#004b62;">
 
-          <div class="address-main"
-            style="
-              margin:0;
-              color:#173f4c;
-              font-size:20px;
-              font-weight:400;
-              line-height:1.4;
-              text-align:left;
-            ">проспект Андропова, 11, корпус 2, Южный Event-Port.</div>
-        </td>
-      
-      
-      
+        <table
+          class="address-columns"
+          role="presentation"
+          width="100%"
+          cellpadding="0"
+          cellspacing="0"
+          border="0"
+          bgcolor="#004b62"
+          style="width:100%;
+            table-layout:fixed;
+            border-collapse:collapse;
+            background-color:#004b62;">
+          <tbody class="address-columns-body">
+            <tr class="address-columns-row">
+              
+    <td
+      class="address-panel"
+      width="50%"
+      align="left"
+      valign="top"
+      bgcolor="#004b62"
+      style="width:50%;
+        padding:22px 20px 27px;
         
-        
-        <td
-          class="address-cell address-second"
-          width="50%"
-          align="left"
-          valign="top"
-          style="
-            width:50%;
-            padding:22px 18px 25px;
-            border-left:1px solid #c4d8df;
-            text-align:left;
-            vertical-align:top;
-            font-family:Arial,Helvetica,sans-serif;
-          ">
-          <div class="address-city"
-            style="
-              margin:0 0 11px;
-              color:#008fd0;
-              font-size:14px;
-              font-weight:700;
-              line-height:1.35;
-              letter-spacing:.35px;
-              text-align:left;
-            ">УФА:</div>
+        background-color:#004b62;
+        font-family:Arial,Helvetica,sans-serif;
+        text-align:left;
+        vertical-align:top;">
 
-          <div class="address-main"
-            style="
-              margin:0;
-              color:#173f4c;
-              font-size:20px;
-              font-weight:400;
-              line-height:1.4;
-              text-align:left;
-            ">улица Менделеева, 205А, ресторан «Пастернак».</div>
-        </td>
-      
-      
-      
+      <table
+        role="presentation"
+        width="100%"
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="width:100%;border-collapse:collapse;">
+        <tbody>
+          <tr>
+            <td
+              align="left"
+              valign="top"
+              style="padding:0 8px 12px 0;
+                text-align:left;
+                vertical-align:top;">
+              <div
+                style="margin:0;
+                  color:#1bbbe9;
+                  font-family:Arial,Helvetica,sans-serif;
+                  font-size:14px;
+                  line-height:1.35;
+                  font-weight:700;
+                  letter-spacing:.4px;
+                  text-align:left;">
+                МОСКВА:
+              </div>
+            </td>
+
+            <td
+              width="25"
+              align="right"
+              valign="top"
+              style="width:25px;
+                padding:0 0 12px;
+                text-align:right;
+                vertical-align:top;">
+              <img
+                src="https://example.com/savencia-assets/terminal-address-arrow.png"
+                width="24"
+                height="24"
+                alt=""
+                role="presentation"
+                style="display:block;
+                  width:24px;
+                  height:24px;
+                  border:0;"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div
+        class="address-main"
+        style="margin:0;
+          color:#ffffff;
+          font-family:Arial,Helvetica,sans-serif;
+          font-size:21px;
+          line-height:1.4;
+          font-weight:400;
+          text-align:left;">
+        проспект Андропова, 11, корпус 2, Южный Event-Port.
+      </div>
+    </td>
+  
+    <td
+      class="address-panel address-second"
+      width="50%"
+      align="left"
+      valign="top"
+      bgcolor="#004b62"
+      style="width:50%;
+        padding:22px 20px 27px;
+        border-left:2px solid #ffffff;
+        background-color:#004b62;
+        font-family:Arial,Helvetica,sans-serif;
+        text-align:left;
+        vertical-align:top;">
+
+      <table
+        role="presentation"
+        width="100%"
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="width:100%;border-collapse:collapse;">
+        <tbody>
+          <tr>
+            <td
+              align="left"
+              valign="top"
+              style="padding:0 8px 12px 0;
+                text-align:left;
+                vertical-align:top;">
+              <div
+                style="margin:0;
+                  color:#1bbbe9;
+                  font-family:Arial,Helvetica,sans-serif;
+                  font-size:14px;
+                  line-height:1.35;
+                  font-weight:700;
+                  letter-spacing:.4px;
+                  text-align:left;">
+                УФА:
+              </div>
+            </td>
+
+            <td
+              width="25"
+              align="right"
+              valign="top"
+              style="width:25px;
+                padding:0 0 12px;
+                text-align:right;
+                vertical-align:top;">
+              <img
+                src="https://example.com/savencia-assets/terminal-address-arrow.png"
+                width="24"
+                height="24"
+                alt=""
+                role="presentation"
+                style="display:block;
+                  width:24px;
+                  height:24px;
+                  border:0;"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div
+        class="address-main"
+        style="margin:0;
+          color:#ffffff;
+          font-family:Arial,Helvetica,sans-serif;
+          font-size:21px;
+          line-height:1.4;
+          font-weight:400;
+          text-align:left;">
+        улица Менделеева, 205А, ресторан «Пастернак».
+      </div>
+    </td>
+  
+            </tr>
+          </tbody>
+        </table>
+
+      </td>
     </tr>
-  </mj-table>
-      </mj-column>
-    </mj-section>
-  </mj-wrapper><mj-wrapper
-    padding="0 30px 27px"
-    background-color="#f7f5ef">
-    <mj-section
-      padding="14px 0 0"
-      background-color="#ffffff"
+
+    <tr>
+      <td
+        bgcolor="#ffffff"
+        style="padding:0;
+          border-top:2px solid #004b62;
+          background-color:#ffffff;
+          font-size:0;
+          line-height:0;">
+        <img
+          src="https://example.com/savencia-assets/terminal-airport-navigation.png"
+          width="576"
+          alt=""
+          role="presentation"
+          style="display:block;
+            width:100%;
+            max-width:576px;
+            height:auto;
+            border:0;"/>
+      </td>
+    </tr>
+  
+    </mj-table>
+  
+        </mj-column>
+      </mj-section>
+<mj-section
+      css-class="flight-board-full"
+      padding="0"
+     
       border-top="4px solid #008fd0">
       <mj-column>
-        <mj-table
-    padding="0"
-    cellpadding="0"
-    cellspacing="0"
-    width="100%"
-    table-layout="fixed"><tr><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Б</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Е</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Л</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Е</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Б</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Е</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Й</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
-      width="7.142857%"
-      align="center"
-      valign="middle"
-      bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td></tr></mj-table>
-        <mj-spacer height="12px" padding="0"/>
-      </mj-column>
-    </mj-section>
-    <mj-section padding="8px 14px 0" background-color="#ffffff">
-      <mj-column>
-        <mj-table
-    padding="0"
-    cellpadding="0"
-    cellspacing="0"
-    width="100%"
-    table-layout="fixed"><tr>
-      <td class="schedule-time" width="38%" valign="top"
-        style="width:38%;padding:26px 10px;
-          border-right:1px solid #c4d8df;border-bottom:1px solid #c4d8df;
-          text-align:center;color:#004b62;
-          font:700 25px/1.2 Arial,Helvetica,sans-serif;
-          white-space:nowrap;">
-        15:00–15:30
-      </td>
-      <td class="schedule-copy" width="62%" valign="top"
-        style="width:62%;padding:25px 16px;border-bottom:1px solid #c4d8df;
-          text-align:center;font-family:Arial,Helvetica,sans-serif;">
-        <div class="stage-title"
-          style="margin:0 0 11px;color:#004b62;
-            font-size:21px;font-weight:700;line-height:1.2;
-            letter-spacing:-.35px;">
-          Регистрация на рейс (Welcome)
-        </div>
-        <div style="margin:0;color:#52666d;
-          font-size:16px;line-height:1.6;">
-          Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.
-        </div>
-      </td>
-    </tr><tr>
-      <td class="schedule-time" width="38%" valign="top"
-        style="width:38%;padding:26px 10px;
-          border-right:1px solid #c4d8df;border-bottom:1px solid #c4d8df;
-          text-align:center;color:#004b62;
-          font:700 25px/1.2 Arial,Helvetica,sans-serif;
-          white-space:nowrap;">
-        15:30–18:00
-      </td>
-      <td class="schedule-copy" width="62%" valign="top"
-        style="width:62%;padding:25px 16px;border-bottom:1px solid #c4d8df;
-          text-align:center;font-family:Arial,Helvetica,sans-serif;">
-        <div class="stage-title"
-          style="margin:0 0 11px;color:#de6a09;
-            font-size:21px;font-weight:700;line-height:1.2;
-            letter-spacing:-.35px;">
-          Взлёт. Торжественная часть
-        </div>
-        <div style="margin:0;color:#52666d;
-          font-size:16px;line-height:1.6;">
-          Церемония награждения сотрудников и праздничная программа.
-        </div>
-      </td>
-    </tr><tr>
-      <td class="schedule-time" width="38%" valign="top"
-        style="width:38%;padding:26px 10px;
-          border-right:1px solid #c4d8df;
-          text-align:center;color:#004b62;
-          font:700 25px/1.2 Arial,Helvetica,sans-serif;
-          white-space:nowrap;">
-        18:00–20:00
-      </td>
-      <td class="schedule-copy" width="62%" valign="top"
-        style="width:62%;padding:25px 16px;
-          text-align:center;font-family:Arial,Helvetica,sans-serif;">
-        <div class="stage-title"
-          style="margin:0 0 11px;color:#004b62;
-            font-size:21px;font-weight:700;line-height:1.2;
-            letter-spacing:-.35px;">
-          Полёт в Новый год
-        </div>
-        <div style="margin:0;color:#52666d;
-          font-size:16px;line-height:1.6;">
-          Музыка, фуршет, развлечения, общение и новогодние сюрпризы.
-        </div>
-      </td>
-    </tr></mj-table>
-        <mj-table
-    padding="0"
-    cellpadding="0"
-    cellspacing="0"
-    width="100%"
-    table-layout="fixed">
-    <tr>
-      <td colspan="1"
-        style="padding:25px 10px 23px;
-          border-top:2px solid #004b62;
-          border-bottom:1px solid #c4d8df;
-          text-align:center;color:#004b62;
-          font-family:Arial,Helvetica,sans-serif;">
         
-        <div class="address-heading"
-        style="margin:0;color:#004b62;
-          font-family:Arial,Helvetica,sans-serif;
-          font-size:26px;font-weight:700;line-height:1.15;
-          letter-spacing:-.65px;white-space:nowrap;
-          text-align:center;">Аэропорт отправления:</div>
+    <mj-table
+      css-class="flight-board"
+      padding="0"
+      border="none"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      table-layout="fixed">
       
-      </td>
-    </tr>
     <tr>
       
-        
-        
         <td
-          class="address-single"
-          width="100%"
-          align="left"
-          valign="top"
-          style="
-            width:100%;
-            padding:22px 18px 25px;
-            
-            text-align:left;
-            vertical-align:top;
+          class="airport-cell board-extra"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
             font-family:Arial,Helvetica,sans-serif;
-          ">
-          <div class="address-city"
-            style="
-              margin:0 0 11px;
-              color:#008fd0;
-              font-size:14px;
-              font-weight:700;
-              line-height:1.35;
-              letter-spacing:.35px;
-              text-align:left;
-            ">БЕЛЕБЕЙ:</div>
-
-          <div class="address-main"
-            style="
-              margin:0;
-              color:#173f4c;
-              font-size:20px;
-              font-weight:400;
-              line-height:1.4;
-              text-align:left;
-            ">улица Амирова, 10А, Центральный дворец культуры Белебеевского района.</div>
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          &#160;
         </td>
       
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          &#160;
+        </td>
       
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          Б
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          Е
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          Л
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          Е
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          Б
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          Е
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          Й
+        </td>
+      
+        <td
+          class="airport-cell"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          &#160;
+        </td>
+      
+        <td
+          class="airport-cell board-extra"
+          height="46"
+          align="center"
+          valign="middle"
+          bgcolor="#27292b"
+          style="height:46px;
+            padding:0;
+            border:1px solid #101214;
+            background-image:linear-gradient(to bottom,#27292b 0%,#27292b 49%,#080a0b 49%,#080a0b 51%,#303234 51%,#303234 100%);
+            color:#ffffff;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:22px;
+            line-height:46px;
+            font-weight:700;
+            white-space:nowrap;
+            text-align:center;
+            vertical-align:middle;
+            mso-line-height-rule:exactly;">
+          &#160;
+        </td>
       
     </tr>
-  </mj-table>
+  
+    </mj-table>
+  
       </mj-column>
     </mj-section>
-  </mj-wrapper>
-
-      <mj-section padding="0 30px" background-color="#f7f5ef">
+<mj-section padding="0px 30px 0px 30px">
         <mj-column>
-          <mj-text font-size="22px" font-weight="700" padding="0 0 17px">Уважаемые пассажиры!</mj-text>
-          <mj-text >Просим заранее подготовить хорошее настроение и быть готовыми к незабываемому путешествию.</mj-text>
-          <mj-text padding="0 0 29px">Наш новогодний рейс уже готовится к вылету. На борту ждём каждого!</mj-text>
+          <mj-spacer height="28px" padding="0"/>
         </mj-column>
       </mj-section>
-
-      <mj-section padding="0" background-color="#004b62">
-    <mj-column>
-      <mj-table
-    padding="0"
-    cellpadding="0"
-    cellspacing="0"
-    width="100%"
-    table-layout="fixed"><tr><td width="50%" bgcolor="#de6a09"
-          style="height:5px;padding:0;font-size:0;line-height:0;">&#160;</td><td width="30%" bgcolor="#1bbbe9"
-          style="height:5px;padding:0;font-size:0;line-height:0;">&#160;</td><td width="20%" bgcolor="#b1ca40"
-          style="height:5px;padding:0;font-size:0;line-height:0;">&#160;</td></tr></mj-table>
-    </mj-column>
-  </mj-section>
-
-      <mj-section padding="27px 30px 32px" background-color="#004b62">
+<mj-section padding="0px 30px 0px 30px">
         <mj-column>
-          <mj-text font-size="30px" line-height="1.2"
-             font-weight="700" color="#ffffff"
-             padding="0 0 15px">До встречи 10 декабря!</mj-text>
-          <mj-text font-size="17px" color="#ffffff" padding="0">Ваш экипаж Savencia ✈️</mj-text>
+          
+    <mj-table
+      css-class="schedule-layout"
+      padding="0"
+      border="none"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      table-layout="fixed">
+      
+        <tr>
+          <td
+            class="schedule-time"
+            width="28%"
+            align="center"
+            valign="middle"
+           
+            style="width:28%;
+              padding:6px 20px 6px 0;
+              border:0;
+              border-right:2px solid #004b62;
+              background-color:transparent;
+              color:#004b62;
+              font-family:Arial,Helvetica,sans-serif;
+              text-align:center;
+              vertical-align:middle;">
+
+            <div
+              class="time-value"
+              style="margin:0;
+                font-size:36px;
+                line-height:1.16;
+                font-weight:700;
+                white-space:nowrap;
+                text-align:center;">
+              15:00<br/>15:30
+            </div>
+          </td>
+
+          <td
+            class="schedule-copy"
+            width="72%"
+            align="left"
+            valign="middle"
+           
+            style="width:72%;
+              padding:6px 0 6px 28px;
+              border:0;
+              background-color:transparent;
+              font-family:Arial,Helvetica,sans-serif;
+              text-align:left;
+              vertical-align:middle;">
+
+            <div
+              class="stage-title"
+              style="margin:0 0 11px;
+                color:#004b62;
+                font-size:21px;
+                line-height:1.2;
+                font-weight:700;
+                letter-spacing:-.35px;
+                text-align:left;">
+              Регистрация на рейс (Welcome)
+            </div>
+
+            <div
+              class="stage-description"
+              style="margin:0;
+                color:#52666d;
+                font-size:16px;
+                line-height:1.6;
+                text-align:left;">
+              Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.
+            </div>
+          </td>
+        </tr>
+
+        
+          <tr>
+            <td
+              colspan="2"
+              height="26"
+             
+              style="height:26px;
+                padding:0;
+                border:0;
+                background-color:transparent;
+                font-size:0;
+                line-height:0;">
+              &#160;
+            </td>
+          </tr>
+        
+      
+        <tr>
+          <td
+            class="schedule-time"
+            width="28%"
+            align="center"
+            valign="middle"
+           
+            style="width:28%;
+              padding:6px 20px 6px 0;
+              border:0;
+              border-right:2px solid #004b62;
+              background-color:transparent;
+              color:#004b62;
+              font-family:Arial,Helvetica,sans-serif;
+              text-align:center;
+              vertical-align:middle;">
+
+            <div
+              class="time-value"
+              style="margin:0;
+                font-size:36px;
+                line-height:1.16;
+                font-weight:700;
+                white-space:nowrap;
+                text-align:center;">
+              15:30<br/>18:00
+            </div>
+          </td>
+
+          <td
+            class="schedule-copy"
+            width="72%"
+            align="left"
+            valign="middle"
+           
+            style="width:72%;
+              padding:6px 0 6px 28px;
+              border:0;
+              background-color:transparent;
+              font-family:Arial,Helvetica,sans-serif;
+              text-align:left;
+              vertical-align:middle;">
+
+            <div
+              class="stage-title"
+              style="margin:0 0 11px;
+                color:#de6a09;
+                font-size:21px;
+                line-height:1.2;
+                font-weight:700;
+                letter-spacing:-.35px;
+                text-align:left;">
+              Взлёт. Торжественная часть
+            </div>
+
+            <div
+              class="stage-description"
+              style="margin:0;
+                color:#52666d;
+                font-size:16px;
+                line-height:1.6;
+                text-align:left;">
+              Церемония награждения сотрудников и праздничная программа.
+            </div>
+          </td>
+        </tr>
+
+        
+          <tr>
+            <td
+              colspan="2"
+              height="26"
+             
+              style="height:26px;
+                padding:0;
+                border:0;
+                background-color:transparent;
+                font-size:0;
+                line-height:0;">
+              &#160;
+            </td>
+          </tr>
+        
+      
+        <tr>
+          <td
+            class="schedule-time"
+            width="28%"
+            align="center"
+            valign="middle"
+           
+            style="width:28%;
+              padding:6px 20px 6px 0;
+              border:0;
+              border-right:2px solid #004b62;
+              background-color:transparent;
+              color:#004b62;
+              font-family:Arial,Helvetica,sans-serif;
+              text-align:center;
+              vertical-align:middle;">
+
+            <div
+              class="time-value"
+              style="margin:0;
+                font-size:36px;
+                line-height:1.16;
+                font-weight:700;
+                white-space:nowrap;
+                text-align:center;">
+              18:00<br/>20:00
+            </div>
+          </td>
+
+          <td
+            class="schedule-copy"
+            width="72%"
+            align="left"
+            valign="middle"
+           
+            style="width:72%;
+              padding:6px 0 6px 28px;
+              border:0;
+              background-color:transparent;
+              font-family:Arial,Helvetica,sans-serif;
+              text-align:left;
+              vertical-align:middle;">
+
+            <div
+              class="stage-title"
+              style="margin:0 0 11px;
+                color:#004b62;
+                font-size:21px;
+                line-height:1.2;
+                font-weight:700;
+                letter-spacing:-.35px;
+                text-align:left;">
+              Полёт в Новый год
+            </div>
+
+            <div
+              class="stage-description"
+              style="margin:0;
+                color:#52666d;
+                font-size:16px;
+                line-height:1.6;
+                text-align:left;">
+              Музыка, фуршет, развлечения, общение и новогодние сюрпризы.
+            </div>
+          </td>
+        </tr>
+
+        
+      
+    </mj-table>
+  
         </mj-column>
       </mj-section>
+<mj-section padding="0px 30px 0px 30px">
+        <mj-column>
+          <mj-spacer height="32px" padding="0"/>
+        </mj-column>
+      </mj-section>
+<mj-section padding="0px 30px 27px 30px">
+        <mj-column>
+          
+    <mj-table
+      css-class="airport-addresses"
+      padding="0"
+      border="2px solid #004b62"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      table-layout="fixed">
+      
+    <tr>
+      <td
+        align="center"
+        bgcolor="#ffffff"
+        style="padding:24px 8px 23px;
+          border-bottom:2px solid #004b62;
+          background-color:#ffffff;
+          font-family:Arial,Helvetica,sans-serif;
+          text-align:center;">
 
-    </mj-body>
-  </mjml>
+        <div
+          class="address-heading"
+          style="margin:0;
+            color:#004b62;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:26px;
+            line-height:1.15;
+            font-weight:700;
+            letter-spacing:-.65px;
+            white-space:nowrap;
+            text-align:center;">
+          Аэропорт отправления:
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td
+        class="address-holder"
+        bgcolor="#004b62"
+        style="padding:0;background-color:#004b62;">
+
+        <table
+          class="address-columns"
+          role="presentation"
+          width="100%"
+          cellpadding="0"
+          cellspacing="0"
+          border="0"
+          bgcolor="#004b62"
+          style="width:100%;
+            table-layout:fixed;
+            border-collapse:collapse;
+            background-color:#004b62;">
+          <tbody class="address-columns-body">
+            <tr class="address-columns-row">
+              
+    <td
+      class="address-panel"
+      width="100%"
+      align="left"
+      valign="top"
+      bgcolor="#004b62"
+      style="width:100%;
+        padding:22px 20px 27px;
+        
+        background-color:#004b62;
+        font-family:Arial,Helvetica,sans-serif;
+        text-align:left;
+        vertical-align:top;">
+
+      <table
+        role="presentation"
+        width="100%"
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="width:100%;border-collapse:collapse;">
+        <tbody>
+          <tr>
+            <td
+              align="left"
+              valign="top"
+              style="padding:0 8px 12px 0;
+                text-align:left;
+                vertical-align:top;">
+              <div
+                style="margin:0;
+                  color:#1bbbe9;
+                  font-family:Arial,Helvetica,sans-serif;
+                  font-size:14px;
+                  line-height:1.35;
+                  font-weight:700;
+                  letter-spacing:.4px;
+                  text-align:left;">
+                БЕЛЕБЕЙ:
+              </div>
+            </td>
+
+            <td
+              width="25"
+              align="right"
+              valign="top"
+              style="width:25px;
+                padding:0 0 12px;
+                text-align:right;
+                vertical-align:top;">
+              <img
+                src="https://example.com/savencia-assets/terminal-address-arrow.png"
+                width="24"
+                height="24"
+                alt=""
+                role="presentation"
+                style="display:block;
+                  width:24px;
+                  height:24px;
+                  border:0;"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div
+        class="address-main"
+        style="margin:0;
+          color:#ffffff;
+          font-family:Arial,Helvetica,sans-serif;
+          font-size:21px;
+          line-height:1.4;
+          font-weight:400;
+          text-align:left;">
+        улица Амирова, 10А, Центральный дворец культуры Белебеевского района.
+      </div>
+    </td>
+  
+            </tr>
+          </tbody>
+        </table>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td
+        bgcolor="#ffffff"
+        style="padding:0;
+          border-top:2px solid #004b62;
+          background-color:#ffffff;
+          font-size:0;
+          line-height:0;">
+        <img
+          src="https://example.com/savencia-assets/terminal-airport-navigation.png"
+          width="576"
+          alt=""
+          role="presentation"
+          style="display:block;
+            width:100%;
+            max-width:576px;
+            height:auto;
+            border:0;"/>
+      </td>
+    </tr>
+  
+    </mj-table>
+  
+        </mj-column>
+      </mj-section>
+<mj-section padding="0 30px">
+      <mj-column>
+        <mj-text
+          font-size="22px"
+          font-weight="700"
+          padding="0 0 17px">
+          Уважаемые пассажиры!
+        </mj-text>
+        <mj-text>Просим заранее подготовить хорошее настроение и быть готовыми к незабываемому путешествию.</mj-text>
+        <mj-text padding="0 0 29px">
+          Наш новогодний рейс уже готовится к вылету. На борту ждём каждого!
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    </mj-wrapper>
+  
+<mj-section padding="0" background-color="#004b62">
+      <mj-column>
+        
+    <mj-table
+      
+      padding="0"
+      border="none"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      table-layout="fixed">
+      
+          <tr>
+            
+              <td
+                width="30%"
+                height="5"
+                bgcolor="#b1ca40"
+                style="height:5px;padding:0;
+                  font-size:0;line-height:0;">
+                &#160;
+              </td>
+            
+              <td
+                width="40%"
+                height="5"
+                bgcolor="#de6a09"
+                style="height:5px;padding:0;
+                  font-size:0;line-height:0;">
+                &#160;
+              </td>
+            
+              <td
+                width="30%"
+                height="5"
+                bgcolor="#1bbbe9"
+                style="height:5px;padding:0;
+                  font-size:0;line-height:0;">
+                &#160;
+              </td>
+            
+          </tr>
+        
+    </mj-table>
+  
+      </mj-column>
+    </mj-section>
+<mj-section
+      padding="27px 30px 32px"
+      background-color="#004b62">
+      <mj-column>
+        <mj-text
+          font-size="30px"
+          line-height="1.2"
+          font-weight="700"
+          color="#ffffff"
+          padding="0 0 15px">
+          До встречи 10 декабря!
+        </mj-text>
+
+        <mj-text
+          font-size="17px"
+          color="#ffffff"
+          padding="0">
+          Ваш экипаж Savencia ✈️
+        </mj-text>
+      </mj-column>
+    </mj-section>
+</mj-body>
+</mjml>
