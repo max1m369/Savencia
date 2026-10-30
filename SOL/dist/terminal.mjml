@@ -197,6 +197,57 @@
       }
     </mj-style>
     <!-- SAVENCIA_ADDRESS_FLIGHT_END -->
+  
+    <!-- SAVENCIA_TICKET_CITY_START -->
+    <mj-style>
+      .address-city {
+        color:#008fd0 !important;
+        font-size:14px !important;
+        line-height:1.35 !important;
+        font-weight:700 !important;
+        text-align:left !important;
+        margin:0 0 11px !important;
+      }
+
+      .address-main {
+        margin:0 !important;
+        text-align:left !important;
+      }
+
+      @media only screen and (max-width:479px) {
+        .address-city {
+          color:#008fd0 !important;
+          font-size:14px !important;
+          margin:0 0 11px !important;
+        }
+
+        .ticket-copy {
+          padding:19px 14px !important;
+          font-size:16px !important;
+          line-height:1.6 !important;
+        }
+
+        .ticket-stub {
+          padding:16px 7px !important;
+        }
+
+        .ticket-art {
+          width:64px !important;
+          max-width:100% !important;
+        }
+      }
+
+      @media only screen and (max-width:359px) {
+        .ticket-copy {
+          padding:17px 11px !important;
+        }
+
+        .ticket-stub {
+          padding:14px 5px !important;
+        }
+      }
+    </mj-style>
+    <!-- SAVENCIA_TICKET_CITY_END -->
   </mj-head>
 
     <mj-body width="640px" background-color="#e1e8e8">
@@ -354,11 +405,67 @@
       </mj-section>
 
       <mj-wrapper padding="0 30px 29px" background-color="#f7f5ef">
-        <mj-section padding="18px 20px"
-          background-color="#eaf6fa"
-          border-left="4px solid #008fd0">
-          <mj-column><mj-text padding="0">На регистрации каждый получит свой посадочный билет, который пригодится во время новогоднего розыгрыша подарков.</mj-text></mj-column>
+        
+        <mj-section padding="0" background-color="#eaf6fa">
+          <mj-column padding="0">
+            <mj-table
+              padding="0"
+              cellpadding="0"
+              cellspacing="0"
+              width="100%"
+              table-layout="fixed">
+              <tr>
+                <td
+                  class="ticket-copy"
+                  width="78%"
+                  align="center"
+                  valign="middle"
+                  bgcolor="#eaf6fa"
+                  style="
+                    width:78%;
+                    padding:22px 23px;
+                    border-left:4px solid #008fd0;
+                    text-align:center;
+                    vertical-align:middle;
+                    color:#173f4c;
+                    font-family:Arial,Helvetica,sans-serif;
+                    font-size:17px;
+                    line-height:1.65;
+                  ">На регистрации каждый получит свой посадочный билет, который пригодится во время новогоднего розыгрыша подарков.</td>
+
+                <td
+                  class="ticket-stub"
+                  width="22%"
+                  align="center"
+                  valign="middle"
+                  bgcolor="#de6a09"
+                  style="
+                    width:22%;
+                    padding:18px 10px;
+                    border-left:2px dashed #f7f5ef;
+                    text-align:center;
+                    vertical-align:middle;
+                  ">
+                  <img
+                    class="ticket-art"
+                    src="https://example.com/savencia-assets/terminal-ticket-art.png"
+                    width="84"
+                    alt=""
+                    role="presentation"
+                    style="
+                      display:block;
+                      width:84px;
+                      max-width:100%;
+                      height:auto;
+                      margin:0 auto;
+                      border:0;
+                    "/>
+                </td>
+              </tr>
+            </mj-table>
+          </mj-column>
         </mj-section>
+      
       </mj-wrapper>
 
       <mj-section padding="0 30px" background-color="#f7f5ef">
@@ -389,72 +496,72 @@
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">М</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">М</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">О</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">О</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">С</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">С</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">К</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">К</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">В</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">В</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">А</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">А</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">и</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">и</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">У</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">У</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Ф</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Ф</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">А</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">А</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td></tr></mj-table>
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td></tr></mj-table>
         <mj-text font-size="13px"
               line-height="19px" color="#52666d"
               padding="10px 12px 12px">(по местному времени)</mj-text>
@@ -563,6 +670,7 @@
     <tr>
       
         
+        
         <td
           class="address-cell address-first"
           width="50%"
@@ -576,29 +684,31 @@
             vertical-align:top;
             font-family:Arial,Helvetica,sans-serif;
           ">
+          <div class="address-city"
+            style="
+              margin:0 0 11px;
+              color:#008fd0;
+              font-size:14px;
+              font-weight:700;
+              line-height:1.35;
+              letter-spacing:.35px;
+              text-align:left;
+            ">МОСКВА:</div>
+
           <div class="address-main"
             style="
-              margin:0 0 13px;
+              margin:0;
               color:#173f4c;
               font-size:20px;
               font-weight:400;
               line-height:1.4;
               text-align:left;
             ">проспект Андропова, 11, корпус 2, Южный Event-Port.</div>
-
-          <div class="address-city"
-            style="
-              margin:0;
-              color:#52666d;
-              font-size:13px;
-              font-weight:700;
-              line-height:1.35;
-              letter-spacing:.3px;
-              text-align:left;
-            ">МОСКВА:</div>
         </td>
       
       
+      
+        
         
         <td
           class="address-cell address-second"
@@ -613,27 +723,28 @@
             vertical-align:top;
             font-family:Arial,Helvetica,sans-serif;
           ">
+          <div class="address-city"
+            style="
+              margin:0 0 11px;
+              color:#008fd0;
+              font-size:14px;
+              font-weight:700;
+              line-height:1.35;
+              letter-spacing:.35px;
+              text-align:left;
+            ">УФА:</div>
+
           <div class="address-main"
             style="
-              margin:0 0 13px;
+              margin:0;
               color:#173f4c;
               font-size:20px;
               font-weight:400;
               line-height:1.4;
               text-align:left;
             ">улица Менделеева, 205А, ресторан «Пастернак».</div>
-
-          <div class="address-city"
-            style="
-              margin:0;
-              color:#52666d;
-              font-size:13px;
-              font-weight:700;
-              line-height:1.35;
-              letter-spacing:.3px;
-              text-align:left;
-            ">УФА:</div>
         </td>
+      
       
       
     </tr>
@@ -658,72 +769,72 @@
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Б</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Б</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Е</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Е</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Л</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Л</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Е</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Е</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Б</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Б</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Е</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Е</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Й</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">Й</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td><td class="airport-cell"
       width="7.142857%"
       align="center"
       valign="middle"
       bgcolor="#27292b"
-      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(#27292b 49%,#080a0b 49%,#080a0b 51%,#27292b 51%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td></tr></mj-table>
+      style="height:52px;padding:0;border:1px solid #101214;background-image:linear-gradient(to bottom,#303234 0%,#303234 49%,#080a0b 49%,#080a0b 51%,#27292b 51%,#27292b 100%);color:#fff;font:700 24px/52px Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly">&#160;</td></tr></mj-table>
         <mj-spacer height="12px" padding="0"/>
       </mj-column>
     </mj-section>
@@ -830,6 +941,7 @@
     <tr>
       
         
+        
         <td
           class="address-single"
           width="100%"
@@ -843,27 +955,28 @@
             vertical-align:top;
             font-family:Arial,Helvetica,sans-serif;
           ">
+          <div class="address-city"
+            style="
+              margin:0 0 11px;
+              color:#008fd0;
+              font-size:14px;
+              font-weight:700;
+              line-height:1.35;
+              letter-spacing:.35px;
+              text-align:left;
+            ">БЕЛЕБЕЙ:</div>
+
           <div class="address-main"
             style="
-              margin:0 0 13px;
+              margin:0;
               color:#173f4c;
               font-size:20px;
               font-weight:400;
               line-height:1.4;
               text-align:left;
             ">улица Амирова, 10А, Центральный дворец культуры Белебеевского района.</div>
-
-          <div class="address-city"
-            style="
-              margin:0;
-              color:#52666d;
-              font-size:13px;
-              font-weight:700;
-              line-height:1.35;
-              letter-spacing:.3px;
-              text-align:left;
-            ">БЕЛЕБЕЙ:</div>
         </td>
+      
       
       
     </tr>

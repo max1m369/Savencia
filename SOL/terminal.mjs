@@ -15,12 +15,16 @@ const SOURCE = process.env.SOURCE_MJML
 const LIMIT = 90_000;
 
 const C = {
-  navy: "#004b62",
-  green: "#b1ca40",
+  blue: "#008fd0",
+  orange: "#de6a09",
   ink: "#173f4c",
-  muted: "#52666d",
-  line: "#c4d8df"
+  line: "#c4d8df",
+  sky: "#eaf6fa",
+  paper: "#f7f5ef"
 };
+
+const TICKET_TEXT =
+  "На регистрации каждый получит свой посадочный билет, который пригодится во время новогоднего розыгрыша подарков.";
 
 function esc(value) {
   return String(value)
@@ -79,7 +83,7 @@ function bodyText(markup, isMJML = false) {
   const match = markup.match(expression);
 
   if (!match) {
-    throw new Error("В документе не найдено тело письма.");
+    throw new Error("Не найдено тело письма.");
   }
 
   return norm(plain(match[1]));
@@ -107,17 +111,17 @@ function verify(expected, actual, stage) {
 }
 
 function compactHTML(html) {
-  const protectedBlocks = [];
+  const blocks = [];
 
   let result = html.replace(
     /<(style|script|pre|textarea)\b[^>]*>[\s\S]*?<\/\1>/gi,
     block => {
-      const index = protectedBlocks.push(block) - 1;
-      return `___SAVENCIA_PROTECTED_${index}___`;
+      const index = blocks.push(block) - 1;
+      return `___SAVENCIA_SAFE_${index}___`;
     }
   );
 
-  // Условные комментарии Outlook сохраняем.
+  // Условные комментарии Outlook не удаляем.
   result = result
     .replace(/[\r\n\t]+/g, " ")
     .replace(/ {2,}/g, " ")
@@ -125,238 +129,30 @@ function compactHTML(html) {
     .trim();
 
   return result.replace(
-    /___SAVENCIA_PROTECTED_(\d+)___/g,
-    (_, index) => protectedBlocks[Number(index)]
+    /___SAVENCIA_SAFE_(\d+)___/g,
+    (_, index) => blocks[Number(index)]
   );
 }
 
-function findLogoURL(mjml) {
-  const tags = mjml.match(/<(?:mj-image|img)\b[^>]*>/gi) || [];
+function findBase(mjml) {
+  if (process.env.ASSET_BASE) {
+    return process.env.ASSET_BASE.replace(/\/+$/, "");
+  }
 
-  for (const tag of tags) {
-    const match = tag.match(/\bsrc\s*=\s*(["'])(.*?)\1/i);
+  for (const match of mjml.matchAll(
+    /\bsrc\s*=\s*(["'])(.*?)\1/gi
+  )) {
+    const value = decode(match[2]);
 
     if (
-      match &&
-      /(?:terminal|g|f)-logo\.png|logo\.svg|logo\.png/i.test(match[2])
+      /^https:\/\//i.test(value) &&
+      /logo\.png/i.test(value)
     ) {
-      return decode(match[2]);
+      return new URL(".", value).href.replace(/\/+$/, "");
     }
   }
 
-  throw new Error("Не найдена ссылка на логотип в исходном MJML.");
-}
-
-async function prepareTransparentLogo() {
-  const candidates = [
-    process.env.LOGO_SOURCE
-      ? path.resolve(ROOT, process.env.LOGO_SOURCE)
-      : null,
-    path.join(ROOT, "logo.svg"),
-    path.join(ROOT, "logo.png"),
-    path.join(ROOT, "logo.webp"),
-    path.join(ASSETS, "g-logo.svg"),
-    path.join(ASSETS, "g-logo.png"),
-    path.join(ASSETS, "terminal-logo.png")
-  ].filter(Boolean);
-
-  for (const file of candidates) {
-    if (!(await exists(file))) continue;
-
-    const buffer = await fs.readFile(file);
-
-    // Никакого flatten: сохраняем исходный альфа-канал.
-    const rendered = await sharp(buffer, { density: 240 })
-      .resize({
-        width: 648,
-        withoutEnlargement: true
-      })
-      .ensureAlpha()
-      .png({ compressionLevel: 9 })
-      .toBuffer();
-
-    const stats = await sharp(rendered).stats();
-
-    // Проверяем не только наличие альфа-канала,
-    // но и фактическую прозрачность.
-    if (!stats.isOpaque) {
-      return {
-        buffer: rendered,
-        source: file
-      };
-    }
-  }
-
-  throw new Error(
-    "Не найден прозрачный оригинал логотипа.\n" +
-    "Положите исходный logo.svg или прозрачный logo.png рядом с terminal.mjs.\n" +
-    "Старая копия с белой подложкой не подходит: прозрачность в ней уже утрачена."
-  );
-}
-
-function star(x, y, radius, opacity = 0.65) {
-  const inner = radius * 0.23;
-
-  return `
-    <path d="
-      M${x} ${y-radius}
-      L${x+inner} ${y-inner}
-      L${x+radius} ${y}
-      L${x+inner} ${y+inner}
-      L${x} ${y+radius}
-      L${x-inner} ${y+inner}
-      L${x-radius} ${y}
-      L${x-inner} ${y-inner}Z"
-      fill="${C.navy}"
-      opacity="${opacity}"/>
-  `;
-}
-
-function drop(x, y, scale, angle) {
-  return `
-    <g transform="translate(${x} ${y}) rotate(${angle}) scale(${scale})">
-      <path d="
-        M0-25
-        C8-15 17-4 17 6
-        C17 16 10 23 0 23
-        C-10 23-17 16-17 6
-        C-17-4-8-15 0-25Z"
-        fill="#ffffff"/>
-    </g>
-  `;
-}
-
-async function makeSloganBackground() {
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg"
-      width="1280" height="360" viewBox="0 0 1280 360">
-
-      <rect width="1280" height="360" fill="${C.green}"/>
-
-      <!-- Капли разного размера и с разным наклоном -->
-      ${drop(1105, 103, 2.25, 42)}
-      ${drop(153, 250, 1.75, -39)}
-
-      <!-- Несимметричные небольшие звёзды -->
-      ${star(1007, 68, 13, 0.62)}
-      ${star(1196, 193, 8, 0.55)}
-      ${star(244, 222, 10, 0.58)}
-      ${star(91, 301, 6, 0.5)}
-
-      <!-- Верхний маршрут: не пересекает основную строку слогана -->
-      <path
-        d="M590 39 C715 -3 831 4 938 38 C987 54 1024 35 1053 14"
-        fill="none"
-        stroke="${C.navy}"
-        stroke-width="2.6"
-        stroke-opacity=".43"
-        stroke-dasharray="5 18"
-        stroke-linecap="round"/>
-
-      <!-- Нижний маршрут ведёт к маленькому самолёту -->
-      <path
-        d="M42 271 C72 331 151 349 222 319 C260 303 291 278 324 251"
-        fill="none"
-        stroke="${C.navy}"
-        stroke-width="2.6"
-        stroke-opacity=".48"
-        stroke-dasharray="5 17"
-        stroke-linecap="round"/>
-
-      <!-- Тихий пунктирный хвост справа -->
-      <path
-        d="M1195 226 C1209 271 1183 318 1227 345"
-        fill="none"
-        stroke="${C.navy}"
-        stroke-width="2.4"
-        stroke-opacity=".34"
-        stroke-dasharray="4 18"
-        stroke-linecap="round"/>
-
-      <!-- Небольшой бирюзовый самолёт, без чёрного -->
-      <g transform="translate(344 238) rotate(48) scale(.67)">
-        <path d="
-          M0-47
-          C5-47 7-39 7-32
-          L7-9
-          L43 14
-          L43 24
-          L7 12
-          L7 35
-          L19 44
-          L19 51
-          L0 45
-          L-19 51
-          L-19 44
-          L-7 35
-          L-7 12
-          L-43 24
-          L-43 14
-          L-7-9
-          L-7-32
-          C-7-39-5-47 0-47Z"
-          fill="${C.navy}"
-          opacity=".84"/>
-      </g>
-    </svg>
-  `;
-
-  return sharp(Buffer.from(svg))
-    .png({ compressionLevel: 9 })
-    .toBuffer();
-}
-
-function replaceHeader(mjml, base) {
-  let count = 0;
-
-  const result = mjml.replace(
-    /<mj-section\b[^>]*>[\s\S]*?<\/mj-section>/gi,
-    section => {
-      if (
-        count ||
-        !/(?:terminal|g|f)-logo\.png|logo\.svg|logo\.png/i.test(section)
-      ) {
-        return section;
-      }
-
-      count++;
-
-      return `
-        <mj-section
-          padding="0"
-          background-color="#ffffff"
-          background-url="${esc(`${base}/terminal-year.png`)}"
-          background-repeat="no-repeat"
-          background-size="360px 112px"
-          background-position="right center">
-          <mj-column padding="0">
-            <mj-table padding="0" cellpadding="0" cellspacing="0"
-              width="100%" table-layout="fixed">
-              <tr>
-                <td height="112" align="left" valign="middle"
-                  style="height:112px;padding:0 0 0 30px;
-                    text-align:left;vertical-align:middle;
-                    font-size:0;line-height:0;">
-                  <img
-                    src="${esc(`${base}/terminal-logo.png`)}"
-                    width="216"
-                    alt="Groupe Savencia"
-                    style="display:block;width:216px;max-width:75%;
-                      height:auto;border:0;"/>
-                </td>
-              </tr>
-            </mj-table>
-          </mj-column>
-        </mj-section>
-      `;
-    }
-  );
-
-  if (count !== 1) {
-    throw new Error("Не удалось найти единственную шапку с логотипом.");
-  }
-
-  return result;
+  throw new Error("Не удалось определить адрес папки изображений.");
 }
 
 function replaceAddresses(mjml, originalExpected) {
@@ -374,28 +170,34 @@ function replaceAddresses(mjml, originalExpected) {
         /<div\b[^>]*\bclass\s*=\s*["'][^"']*\baddress-city\b[^"']*["'][^>]*>([\s\S]*?)<\/div>/i
       );
 
-      if (!classMatch || !cityMatch) {
-        throw new Error("Не удалось прочитать город в адресном блоке.");
+      const addressMatch = content.match(
+        /<div\b[^>]*\bclass\s*=\s*["'][^"']*\baddress-main\b[^"']*["'][^>]*>([\s\S]*?)<\/div>/i
+      );
+
+      if (!classMatch || !cityMatch || !addressMatch) {
+        throw new Error(
+          "Адресный блок отличается от последней версии: " +
+          "не найден address-city или address-main."
+        );
       }
 
-      const city = plain(cityMatch[1]).replace(/\s+/g, " ").trim();
+      const city = plain(cityMatch[1])
+        .replace(/\s+/g, " ")
+        .trim();
 
-      const rest = content.replace(cityMatch[0], "");
+      const address = plain(addressMatch[1])
+        .replace(/\s+/g, " ")
+        .trim();
 
-      const address = plain(rest).replace(/\s+/g, " ").trim();
-
-      if (!city || !address) {
-        throw new Error("В адресном блоке отсутствует город или адрес.");
-      }
-
-      // Учитываем только согласованную перестановку.
       const oldOrder = norm(plain(content));
-      const newOrder = norm(address + city);
+      const newOrder = norm(city + address);
 
       if (!expected.includes(oldOrder)) {
-        throw new Error("Адресный блок не найден в эталонном тексте.");
+        throw new Error("Адрес не найден в эталонном тексте.");
       }
 
+      // Единственное согласованное изменение порядка текста:
+      // город переносится над адресом.
       expected = expected.replace(oldOrder, newOrder);
 
       const classes = classMatch[2];
@@ -418,26 +220,26 @@ function replaceAddresses(mjml, originalExpected) {
             vertical-align:top;
             font-family:Arial,Helvetica,sans-serif;
           ">
+          <div class="address-city"
+            style="
+              margin:0 0 11px;
+              color:${C.blue};
+              font-size:14px;
+              font-weight:700;
+              line-height:1.35;
+              letter-spacing:.35px;
+              text-align:left;
+            ">${esc(city)}</div>
+
           <div class="address-main"
             style="
-              margin:0 0 13px;
+              margin:0;
               color:${C.ink};
               font-size:20px;
               font-weight:400;
               line-height:1.4;
               text-align:left;
             ">${esc(address)}</div>
-
-          <div class="address-city"
-            style="
-              margin:0;
-              color:${C.muted};
-              font-size:13px;
-              font-weight:700;
-              line-height:1.35;
-              letter-spacing:.3px;
-              text-align:left;
-            ">${esc(city)}</div>
         </td>
       `;
     }
@@ -445,50 +247,176 @@ function replaceAddresses(mjml, originalExpected) {
 
   if (count !== 3) {
     throw new Error(
-      `Найдено адресов: ${count}, ожидалось 3. Исходник отличается от последней версии.`
+      `Найдено адресов: ${count}, ожидалось 3.`
     );
   }
 
   return { mjml: result, expected };
 }
 
-function replaceSlogan(mjml, base) {
+function lightenBoards(mjml) {
+  let count = 0;
+
+  const result = mjml.replace(
+    /<td\b[^>]*\bclass\s*=\s*["'][^"']*\bairport-cell\b[^"']*["'][^>]*>/gi,
+    tag => {
+      if (!/background-image\s*:\s*linear-gradient\(/i.test(tag)) {
+        throw new Error(
+          "В ячейке табло не найден фон с центральным швом."
+        );
+      }
+
+      count++;
+
+      return tag.replace(
+        /background-image\s*:\s*linear-gradient\([\s\S]*?\)\s*;?/i,
+        "background-image:linear-gradient(" +
+          "to bottom," +
+          "#303234 0%," +
+          "#303234 49%," +
+          "#080a0b 49%," +
+          "#080a0b 51%," +
+          "#27292b 51%," +
+          "#27292b 100%);"
+      );
+    }
+  );
+
+  if (count !== 28) {
+    throw new Error(
+      `Найдено ячеек табло: ${count}, ожидалось 28.`
+    );
+  }
+
+  return result;
+}
+
+async function makeTicketArt() {
+  // Полосы — декоративный мотив, а не действующий штрихкод.
+  const bars = [
+    [23, 3], [29, 2], [34, 4], [41, 2],
+    [47, 3], [53, 2], [58, 4], [65, 2],
+    [71, 3], [78, 2], [83, 4], [90, 3]
+  ];
+
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg"
+      width="336" height="270" viewBox="0 0 112 90">
+
+      ${bars.map(([x, width]) =>
+        `<rect x="${x}" y="10" width="${width}"
+          height="39" fill="#ffffff" opacity=".95"/>`
+      ).join("")}
+
+      <g transform="translate(57 70) rotate(90) scale(.22)">
+        <path d="
+          M0-47
+          C5-47 7-39 7-32
+          L7-9
+          L43 14
+          L43 24
+          L7 12
+          L7 35
+          L19 44
+          L19 51
+          L0 45
+          L-19 51
+          L-19 44
+          L-7 35
+          L-7 12
+          L-43 24
+          L-43 14
+          L-7-9
+          L-7-32
+          C-7-39-5-47 0-47Z"
+          fill="#ffffff"/>
+      </g>
+    </svg>
+  `;
+
+  return sharp(Buffer.from(svg))
+    .png({ compressionLevel: 9 })
+    .toBuffer();
+}
+
+function replaceTicket(mjml, base) {
   let count = 0;
 
   const result = mjml.replace(
     /<mj-section\b[^>]*>[\s\S]*?<\/mj-section>/gi,
     section => {
-      if (!/\bslogan-line\b/.test(section)) return section;
+      if (!norm(plain(section)).includes(norm(TICKET_TEXT))) {
+        return section;
+      }
+
+      // Защита от случайной замены более крупной секции.
+      if (norm(plain(section)) !== norm(TICKET_TEXT)) {
+        throw new Error(
+          "Блок посадочного билета содержит дополнительный текст. " +
+          "Автоматическая замена остановлена."
+        );
+      }
 
       count++;
 
       return `
-        <mj-section
-          padding="25px 24px 27px"
-          background-color="${C.green}"
-          background-url="${esc(`${base}/terminal-slogan-flight.png`)}"
-          background-repeat="no-repeat"
-          background-size="cover"
-          background-position="center center">
-          <mj-column>
-            <mj-text padding="0" font-size="37px"
-              line-height="1.16" font-weight="700">
-              <div class="slogan-line"
-                style="color:#004b62;text-align:left;
-                  letter-spacing:-.8px;">
-                ТРИ ГОРОДА.
-              </div>
-              <div class="slogan-line"
-                style="margin-top:6px;color:#008fd0;
-                  text-align:center;letter-spacing:-.8px;">
-                ОДИН РЕЙС.
-              </div>
-              <div class="slogan-line"
-                style="margin-top:6px;color:#004b62;
-                  text-align:right;letter-spacing:-.8px;">
-                ОДНА КОМАНДА.
-              </div>
-            </mj-text>
+        <mj-section padding="0" background-color="${C.sky}">
+          <mj-column padding="0">
+            <mj-table
+              padding="0"
+              cellpadding="0"
+              cellspacing="0"
+              width="100%"
+              table-layout="fixed">
+              <tr>
+                <td
+                  class="ticket-copy"
+                  width="78%"
+                  align="center"
+                  valign="middle"
+                  bgcolor="${C.sky}"
+                  style="
+                    width:78%;
+                    padding:22px 23px;
+                    border-left:4px solid ${C.blue};
+                    text-align:center;
+                    vertical-align:middle;
+                    color:${C.ink};
+                    font-family:Arial,Helvetica,sans-serif;
+                    font-size:17px;
+                    line-height:1.65;
+                  ">${esc(TICKET_TEXT)}</td>
+
+                <td
+                  class="ticket-stub"
+                  width="22%"
+                  align="center"
+                  valign="middle"
+                  bgcolor="${C.orange}"
+                  style="
+                    width:22%;
+                    padding:18px 10px;
+                    border-left:2px dashed ${C.paper};
+                    text-align:center;
+                    vertical-align:middle;
+                  ">
+                  <img
+                    class="ticket-art"
+                    src="${esc(`${base}/terminal-ticket-art.png`)}"
+                    width="84"
+                    alt=""
+                    role="presentation"
+                    style="
+                      display:block;
+                      width:84px;
+                      max-width:100%;
+                      height:auto;
+                      margin:0 auto;
+                      border:0;
+                    "/>
+                </td>
+              </tr>
+            </mj-table>
           </mj-column>
         </mj-section>
       `;
@@ -497,102 +425,74 @@ function replaceSlogan(mjml, base) {
 
   if (count !== 1) {
     throw new Error(
-      `Найдено секций слогана: ${count}, ожидалась 1.`
+      `Найдено блоков посадочного билета: ${count}, ожидался 1.`
     );
   }
 
   return result;
 }
 
-function replaceHeadings(mjml) {
-  return mjml.replace(
-    /<div\b[^>]*\bclass\s*=\s*["'][^"']*\baddress-heading\b[^"']*["'][^>]*>([\s\S]*?)<\/div>/gi,
-    (_, content) => {
-      const value = plain(
-        content.replace(/<br\s*\/?>/gi, " ")
-      ).replace(/\s+/g, " ").trim();
-
-      return `<div class="address-heading"
-        style="margin:0;color:${C.navy};
-          font-family:Arial,Helvetica,sans-serif;
-          font-size:26px;font-weight:700;line-height:1.15;
-          letter-spacing:-.65px;white-space:nowrap;
-          text-align:center;">${esc(value)}</div>`;
-    }
-  );
-}
-
 function addStyles(mjml) {
   const cleaned = mjml.replace(
-    /<!-- SAVENCIA_ADDRESS_FLIGHT_START -->[\s\S]*?<!-- SAVENCIA_ADDRESS_FLIGHT_END -->/g,
+    /<!-- SAVENCIA_TICKET_CITY_START -->[\s\S]*?<!-- SAVENCIA_TICKET_CITY_END -->/g,
     ""
   );
 
   const styles = `
-    <!-- SAVENCIA_ADDRESS_FLIGHT_START -->
+    <!-- SAVENCIA_TICKET_CITY_START -->
     <mj-style>
-      .address-cell,
-      .address-single,
-      .address-main,
       .address-city {
-        text-align:left !important;
-        vertical-align:top !important;
-      }
-
-      .address-city {
-        font-size:13px !important;
+        color:${C.blue} !important;
+        font-size:14px !important;
         line-height:1.35 !important;
         font-weight:700 !important;
+        text-align:left !important;
+        margin:0 0 11px !important;
+      }
+
+      .address-main {
+        margin:0 !important;
+        text-align:left !important;
       }
 
       @media only screen and (max-width:479px) {
-        .address-cell,
-        .address-single {
-          padding:22px 16px 25px !important;
-          text-align:left !important;
-        }
-
-        .address-main {
-          font-size:20px !important;
-          line-height:1.4 !important;
-        }
-
         .address-city {
-          font-size:13px !important;
-          line-height:1.35 !important;
+          color:${C.blue} !important;
+          font-size:14px !important;
+          margin:0 0 11px !important;
         }
 
-        .address-heading {
-          font-size:21px !important;
-          line-height:1.15 !important;
-          letter-spacing:-.65px !important;
-          white-space:nowrap !important;
+        .ticket-copy {
+          padding:19px 14px !important;
+          font-size:16px !important;
+          line-height:1.6 !important;
         }
 
-        .slogan-line {
-          font-size:28px !important;
-          line-height:1.18 !important;
-          letter-spacing:-.6px !important;
+        .ticket-stub {
+          padding:16px 7px !important;
+        }
+
+        .ticket-art {
+          width:64px !important;
+          max-width:100% !important;
         }
       }
 
       @media only screen and (max-width:359px) {
-        .address-heading {
-          font-size:18px !important;
-          letter-spacing:-.55px !important;
+        .ticket-copy {
+          padding:17px 11px !important;
         }
 
-        .slogan-line {
-          font-size:24px !important;
-          letter-spacing:-.6px !important;
+        .ticket-stub {
+          padding:14px 5px !important;
         }
       }
     </mj-style>
-    <!-- SAVENCIA_ADDRESS_FLIGHT_END -->
+    <!-- SAVENCIA_TICKET_CITY_END -->
   `;
 
   if (!/<\/mj-head>/i.test(cleaned)) {
-    throw new Error("В исходнике отсутствует mj-head.");
+    throw new Error("Не найден mj-head.");
   }
 
   return cleaned.replace(/<\/mj-head>/i, `${styles}</mj-head>`);
@@ -627,7 +527,7 @@ async function localize(html, refs, pending) {
     }[extension];
 
     if (!mime) {
-      throw new Error(`Неожиданный формат изображения: ${name}`);
+      throw new Error(`Неожиданный формат картинки: ${name}`);
     }
 
     let buffer = pending.get(name);
@@ -637,7 +537,7 @@ async function localize(html, refs, pending) {
 
       if (!(await exists(file))) {
         throw new Error(
-          `Для превью отсутствует dist/assets/${name}`
+          `Не найдено изображение для превью: dist/assets/${name}`
         );
       }
 
@@ -655,7 +555,8 @@ async function localize(html, refs, pending) {
 }
 
 function previewPage(html) {
-  const serialized = JSON.stringify(html).replace(/</g, "\\u003c");
+  const serialized = JSON.stringify(html)
+    .replace(/</g, "\\u003c");
 
   return `<!doctype html>
 <html lang="ru">
@@ -666,8 +567,9 @@ function previewPage(html) {
 <style>
 *{box-sizing:border-box}
 body{
-  margin:0;padding:20px 12px 40px;background:#e1e8e8;
-  font-family:Arial,Helvetica,sans-serif;color:#173f4c
+  margin:0;padding:20px 12px 40px;
+  background:#e1e8e8;color:#173f4c;
+  font-family:Arial,Helvetica,sans-serif
 }
 nav{
   display:flex;flex-wrap:wrap;justify-content:center;
@@ -678,7 +580,9 @@ button{
   border-radius:5px;background:#fff;color:#173f4c;
   font:700 13px Arial,sans-serif;cursor:pointer
 }
-button.active{background:#004b62;border-color:#004b62;color:#fff}
+button.active{
+  background:#004b62;border-color:#004b62;color:#fff
+}
 .viewport{width:100%;overflow-x:auto}
 iframe{
   display:block;width:640px;height:1200px;
@@ -714,9 +618,11 @@ function fit(){
 
 frame.addEventListener("load",()=>{
   fit();
+
   for(const img of frame.contentDocument.images){
     img.addEventListener("load",fit);
   }
+
   setTimeout(fit,200);
   setTimeout(fit,800);
 });
@@ -724,9 +630,11 @@ frame.addEventListener("load",()=>{
 for(const button of document.querySelectorAll("[data-width]")){
   button.addEventListener("click",()=>{
     frame.style.width=button.dataset.width+"px";
+
     for(const item of document.querySelectorAll("[data-width]")){
       item.classList.toggle("active",item===button);
     }
+
     setTimeout(fit,150);
   });
 }
@@ -749,12 +657,7 @@ async function main() {
   const original = await fs.readFile(SOURCE, "utf8");
   const originalExpected = bodyText(original, true);
 
-  const previousLogoURL = findLogoURL(original);
-
-  const base = (
-    process.env.ASSET_BASE ||
-    new URL(".", previousLogoURL).href
-  ).replace(/\/+$/, "");
+  const base = findBase(original);
 
   if (new URL(base).protocol !== "https:") {
     throw new Error("ASSET_BASE должен начинаться с https://");
@@ -762,18 +665,14 @@ async function main() {
 
   await fs.mkdir(ASSETS, { recursive: true });
 
-  // Сначала готовим новые изображения в памяти.
-  // До прохождения проверок существующие активы не перезаписываем.
-  const logo = await prepareTransparentLogo();
-  const sloganBackground = await makeSloganBackground();
+  const addressResult = replaceAddresses(
+    original,
+    originalExpected
+  );
 
-  let mjml = replaceHeader(original, base);
-
-  const addressResult = replaceAddresses(mjml, originalExpected);
-  mjml = addressResult.mjml;
-
-  mjml = replaceHeadings(mjml);
-  mjml = replaceSlogan(mjml, base);
+  let mjml = addressResult.mjml;
+  mjml = lightenBoards(mjml);
+  mjml = replaceTicket(mjml, base);
   mjml = addStyles(mjml);
 
   verify(
@@ -796,7 +695,10 @@ async function main() {
     );
   }
 
-  if (typeof compiled.html !== "string" || !compiled.html.trim()) {
+  if (
+    typeof compiled.html !== "string" ||
+    !compiled.html.trim()
+  ) {
     throw new Error("MJML не вернул HTML.");
   }
 
@@ -829,9 +731,10 @@ async function main() {
     );
   }
 
+  const ticketArt = await makeTicketArt();
+
   const pending = new Map([
-    ["terminal-logo.png", logo.buffer],
-    ["terminal-slogan-flight.png", sloganBackground]
+    ["terminal-ticket-art.png", ticketArt]
   ]);
 
   const refs = references(mjml);
@@ -839,16 +742,17 @@ async function main() {
 
   const backup = path.join(
     DIST,
-    "terminal-before-address-flight.mjml"
+    "terminal-before-ticket-city.mjml"
   );
 
   if (!(await exists(backup))) {
     await fs.writeFile(backup, original, "utf8");
   }
 
-  for (const [name, buffer] of pending) {
-    await fs.writeFile(path.join(ASSETS, name), buffer);
-  }
+  await fs.writeFile(
+    path.join(ASSETS, "terminal-ticket-art.png"),
+    ticketArt
+  );
 
   await fs.writeFile(
     path.join(DIST, "terminal.mjml"),
@@ -872,22 +776,23 @@ async function main() {
     path.join(DIST, "terminal-report.json"),
     JSON.stringify({
       source: SOURCE,
-      logoSource: logo.source,
-      logoTransparency: "verified",
       htmlBytes: bytes,
       maxHTMLBytes: LIMIT,
       copyCheck: "passed",
-      allowedTextChange: "address moved before city",
+      allowedTextChange: "city moved before address",
       mjmlValidation: "passed",
+      cityColor: C.blue,
+      boardTopColor: "#303234",
+      boardBottomColor: "#27292b",
+      ticketStyle: "text with orange perforated stub",
       assetBase: base,
       assets: refs,
       notes: [
-        "Адреса крупнее городов и стоят первыми.",
-        "Адресные блоки выровнены влево и вверх.",
-        "Прозрачность логотипа проверена по пикселям.",
-        "Капли, самолёт и маршруты — декоративный PNG.",
-        "Капли стилизованы, не извлечены из официального вектора.",
-        "Рендеринг в реальных почтовых клиентах не проверен."
+        "Города расположены над адресами.",
+        "Полосы на корешке декоративные, не действующий штрихкод.",
+        "Остальные секции и изображения сохранены из исходника.",
+        "Рендеринг в реальных почтовых клиентах не проверен.",
+        "Размер HTML указан до обработки сервисом рассылки."
       ]
     }, null, 2),
     "utf8"
@@ -896,9 +801,9 @@ async function main() {
   console.log("");
   console.log("Готово.");
   console.log(`HTML: ${bytes.toLocaleString("ru-RU")} байт.`);
-  console.log("Прозрачность логотипа: подтверждена.");
-  console.log("Адреса: крупные, слева сверху; города — ниже и меньше.");
-  console.log("Зелёная секция: крупные капли, самолёт и пунктир.");
+  console.log("Города — над адресами, голубым цветом.");
+  console.log("Верхние половинки табло — немного светлее.");
+  console.log("Посадочный билет — с оранжевым корешком.");
   console.log("Текст и MJML: проверки пройдены.");
   console.log("");
   console.log("Открыть: dist/terminal-preview.html");
@@ -907,8 +812,8 @@ async function main() {
   if (new URL(base).hostname === "example.com") {
     console.warn("");
     console.warn(
-      "Перед рассылкой нужно опубликовать картинки " +
-      "и заменить ссылки example.com действующим HTTPS-хостингом."
+      "Перед рассылкой замените ссылки example.com " +
+      "действующим HTTPS-хостингом изображений."
     );
   }
 }

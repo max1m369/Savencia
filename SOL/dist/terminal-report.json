@@ -1,26 +1,28 @@
 {
   "source": "G:\\ПРОФИ\\Елена Котсерова - Сцена\\СИМА\\SOL\\dist\\terminal.mjml",
-  "logoSource": "G:\\ПРОФИ\\Елена Котсерова - Сцена\\СИМА\\SOL\\logo.png",
-  "logoTransparency": "verified",
-  "htmlBytes": 61912,
+  "htmlBytes": 64770,
   "maxHTMLBytes": 90000,
   "copyCheck": "passed",
-  "allowedTextChange": "address moved before city",
+  "allowedTextChange": "city moved before address",
   "mjmlValidation": "passed",
+  "cityColor": "#008fd0",
+  "boardTopColor": "#303234",
+  "boardBottomColor": "#27292b",
+  "ticketStyle": "text with orange perforated stub",
   "assetBase": "https://example.com/savencia-assets",
   "assets": [
     "https://example.com/savencia-assets/terminal-year.png",
     "https://example.com/savencia-assets/terminal-logo.png",
     "https://example.com/savencia-assets/terminal-hero-stars.png",
     "https://example.com/savencia-assets/terminal-poster.png",
-    "https://example.com/savencia-assets/terminal-slogan-flight.png"
+    "https://example.com/savencia-assets/terminal-slogan-flight.png",
+    "https://example.com/savencia-assets/terminal-ticket-art.png"
   ],
   "notes": [
-    "Адреса крупнее городов и стоят первыми.",
-    "Адресные блоки выровнены влево и вверх.",
-    "Прозрачность логотипа проверена по пикселям.",
-    "Капли, самолёт и маршруты — декоративный PNG.",
-    "Капли стилизованы, не извлечены из официального вектора.",
-    "Рендеринг в реальных почтовых клиентах не проверен."
+    "Города расположены над адресами.",
+    "Полосы на корешке декоративные, не действующий штрихкод.",
+    "Остальные секции и изображения сохранены из исходника.",
+    "Рендеринг в реальных почтовых клиентах не проверен.",
+    "Размер HTML указан до обработки сервисом рассылки."
   ]
 }
