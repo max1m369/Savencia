@@ -1,29 +1,26 @@
 {
-  "htmlBytesBeforeCompaction": 81570,
-  "htmlBytes": 63037,
-  "htmlLimitBytes": 90000,
-  "copyCheck": "passed against embedded approved copy",
+  "source": "G:\\ПРОФИ\\Елена Котсерова - Сцена\\СИМА\\SOL\\dist\\terminal.mjml",
+  "logoSource": "G:\\ПРОФИ\\Елена Котсерова - Сцена\\СИМА\\SOL\\logo.png",
+  "logoTransparency": "verified",
+  "htmlBytes": 61912,
+  "maxHTMLBytes": 90000,
+  "copyCheck": "passed",
+  "allowedTextChange": "address moved before city",
   "mjmlValidation": "passed",
-  "board": {
-    "rows": 1,
-    "columns": 14,
-    "font": "Arial",
-    "shadows": false,
-    "gradients": false,
-    "liveText": true
-  },
-  "schedule": {
-    "desktop": "two-column grid",
-    "mobile": "stacked rows"
-  },
-  "approvedCopyChanges": [
-    "Removed plane emoji from city headings",
-    "Removed separator dash after time ranges",
-    "Added plane emoji to airport address headings",
-    "Added Christmas tree emoji to city address labels",
-    "Added city address label for Belebey"
-  ],
   "assetBase": "https://example.com/savencia-assets",
-  "missingLocalPreviewImages": [],
-  "emailClientRenderingTest": "not performed"
+  "assets": [
+    "https://example.com/savencia-assets/terminal-year.png",
+    "https://example.com/savencia-assets/terminal-logo.png",
+    "https://example.com/savencia-assets/terminal-hero-stars.png",
+    "https://example.com/savencia-assets/terminal-poster.png",
+    "https://example.com/savencia-assets/terminal-slogan-flight.png"
+  ],
+  "notes": [
+    "Адреса крупнее городов и стоят первыми.",
+    "Адресные блоки выровнены влево и вверх.",
+    "Прозрачность логотипа проверена по пикселям.",
+    "Капли, самолёт и маршруты — декоративный PNG.",
+    "Капли стилизованы, не извлечены из официального вектора.",
+    "Рендеринг в реальных почтовых клиентах не проверен."
+  ]
 }

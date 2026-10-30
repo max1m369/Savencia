@@ -90,17 +90,8 @@
       </mj-column>
     </mj-section>
 
-    <!-- 3. ТЕХНИЧЕСКИЙ МЕТА-БАР СЕТКИ (Ref 5 Crato Mono Grid) -->
-    <mj-section background-color="#e8eff2" padding="14px 24px 8px 24px" css-class="px">
-      <mj-column width="100%">
-        <mj-text font-family="'Courier New', Courier, monospace" font-size="10px" font-weight="bold" color="#64748b" letter-spacing="2px">
-          [ 01 // SWISS AERONAVIGATION BOARDING PASS & MATRIX ]
-        </mj-text>
-      </mj-column>
-    </mj-section>
-
-    <!-- 4. КАРТОЧКА БИЛЕТА: ПОСАДОЧНЫЙ ТАЛОН (Ref 1 808 Airways & Ref 3 50 UI) -->
-    <mj-section background-color="#e8eff2" padding="0 20px 24px 20px" css-class="px">
+    <!-- 3. КАРТОЧКА БИЛЕТА: ПОСАДОЧНЫЙ ТАЛОН (Ref 1 808 Airways & Ref 3 50 UI) -->
+    <mj-section background-color="#e8eff2" padding="24px 20px 24px 20px" css-class="px">
       <mj-column width="100%">
         <mj-text padding="0">
           <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-radius: 12px; border: 1px solid #cbd5e1; border-collapse: separate; box-shadow: 0 12px 32px rgba(0, 48, 63, 0.09);">
@@ -225,16 +216,7 @@
       </mj-column>
     </mj-section>
 
-    <!-- 5. ТЕХНИЧЕСКИЙ МЕТА-БАР СЕТКИ 02 -->
-    <mj-section background-color="#e8eff2" padding="8px 24px 8px 24px" css-class="px">
-      <mj-column width="100%">
-        <mj-text font-family="'Courier New', Courier, monospace" font-size="10px" font-weight="bold" color="#64748b" letter-spacing="2px">
-          [ 02 // OFFICIAL EVENT BRIEFING & DISPATCH ]
-        </mj-text>
-      </mj-column>
-    </mj-section>
-
-    <!-- 6. ШВЕЙЦАРСКИЙ ТИПОГРАФИЧЕСКИЙ БЛОК: МАНИФЕСТ И ОБРАЩЕНИЕ (Ref 5 Crato Mono) -->
+    <!-- 4. ШВЕЙЦАРСКИЙ ТИПОГРАФИЧЕСКИЙ БЛОК: МАНИФЕСТ И ОБРАЩЕНИЕ (Ref 5 Crato Mono) -->
     <mj-section background-color="#e8eff2" padding="0 20px 24px 20px" css-class="px">
       <mj-column width="100%">
         <mj-text padding="0">
@@ -294,16 +276,7 @@
       </mj-column>
     </mj-section>
 
-    <!-- 7. ТЕХНИЧЕСКИЙ МЕТА-БАР СЕТКИ 03 -->
-    <mj-section background-color="#e8eff2" padding="8px 24px 8px 24px" css-class="px">
-      <mj-column width="100%">
-        <mj-text font-family="'Courier New', Courier, monospace" font-size="10px" font-weight="bold" color="#64748b" letter-spacing="2px">
-          [ 03 // FIDS DEPARTURE BOARD & TERMINAL GATES ]
-        </mj-text>
-      </mj-column>
-    </mj-section>
-
-    <!-- 8. ТАБЛО ВЫЛЕТОВ: ШВЕЙЦАРСКАЯ СИСТЕМА НАВИГАЦИИ (Ref 2 Aeonik & Ref 4 Solari) -->
+    <!-- 5. ТАБЛО ВЫЛЕТОВ: ШВЕЙЦАРСКАЯ СИСТЕМА НАВИГАЦИИ (Ref 2 Aeonik & Ref 4 Solari) -->
     <mj-section background-color="#e8eff2" padding="0 20px 24px 20px" css-class="px">
       <mj-column width="100%">
         <mj-text padding="0">
@@ -314,10 +287,7 @@
                 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid #143542;">
                   <tr>
                     <td align="left" valign="middle">
-                      <div style="font-family:'Courier New', monospace; font-size:10px; font-weight:bold; letter-spacing:2px; color:#de6a09;">
-                        // FIDS DEPARTURE BOARD
-                      </div>
-                      <div style="font-family:Arial, Helvetica, sans-serif; font-size:18px; font-weight:900; letter-spacing:1px; color:#ffffff; margin-top:2px;">
+                      <div style="font-family:Arial, Helvetica, sans-serif; font-size:18px; font-weight:900; letter-spacing:1px; color:#ffffff;">
                         РАСПИСАНИЕ НАШЕГО РЕЙСА
                       </div>
                     </td>
@@ -498,16 +468,7 @@
       </mj-column>
     </mj-section>
 
-    <!-- 9. ТЕХНИЧЕСКИЙ МЕТА-БАР СЕТКИ 04 -->
-    <mj-section background-color="#e8eff2" padding="8px 24px 8px 24px" css-class="px">
-      <mj-column width="100%">
-        <mj-text font-family="'Courier New', Courier, monospace" font-size="10px" font-weight="bold" color="#64748b" letter-spacing="2px">
-          [ 04 // FINAL CALL & PRE-FLIGHT READINESS ]
-        </mj-text>
-      </mj-column>
-    </mj-section>
-
-    <!-- 10. ФИНАЛЬНОЕ НАПУТСТВИЕ И ЗАКЛЮЧИТЕЛЬНЫЙ АККОРД -->
+    <!-- 6. ФИНАЛЬНОЕ НАПУТСТВИЕ И ЗАКЛЮЧИТЕЛЬНЫЙ АККОРД -->
     <mj-section background-color="#e8eff2" padding="0 20px 28px 20px" css-class="px">
       <mj-column width="100%">
         <mj-text padding="0">
@@ -536,14 +497,14 @@
       </mj-column>
     </mj-section>
 
-    <!-- 11. ФУТЕР: КОЛОФОН В ШВЕЙЦАРСКОМ СТИЛЕ (Ref 5) -->
+    <!-- 7. ФУТЕР: КОЛОФОН В ШВЕЙЦАРСКОМ СТИЛЕ (Ref 5) -->
     <mj-section background-color="#e8eff2" padding="10px 20px 36px 20px" css-class="px">
       <mj-column width="100%">
         <mj-divider border-width="1px" border-color="#cbd5e1" padding="0 0 16px 0" />
         <mj-text align="center" font-family="'Courier New', monospace" font-size="10px" color="#64748b" line-height="1.6">
           GROUPE SAVENCIA • LEADING THE WAY TO BETTER FOOD<br />
           MOW [55.7558° N] • UFA [54.7388° N] • BEL [54.1031° N]<br />
-          FLIGHT SV-2026 // ALL SYSTEMS OPERATIONAL // PRE-FLIGHT DISPATCH
+          FLIGHT SV-2027 // ALL SYSTEMS OPERATIONAL // PRE-FLIGHT DISPATCH
         </mj-text>
       </mj-column>
     </mj-section>
