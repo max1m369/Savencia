@@ -1,0 +1,339 @@
+<mjml lang="ru">
+  <mj-head>
+    <mj-title>10 декабря — Вылет в Новый ГОД!</mj-title>
+    <mj-breakpoint width="480px"/>
+    <mj-attributes>
+      <mj-all font-family="Arial, Helvetica, sans-serif"/>
+      <mj-text font-size="17px"
+               line-height="1.65"
+               color="#173f4c"
+               padding="0 0 16px"/>
+      <mj-image padding="0"/>
+    </mj-attributes>
+    <mj-style>
+      @media only screen and (max-width:479px) {
+        .hero-title div {
+          font-size:29px !important;
+          line-height:1.15 !important;
+        }
+        .giant-date div {
+          font-size:210px !important;
+          letter-spacing:-13px !important;
+          line-height:1 !important;
+        }
+        .date-month div {
+          font-size:40px !important;
+          line-height:1.1 !important;
+        }
+        .editorial-title div {
+          font-size:25px !important;
+          line-height:1.2 !important;
+        }
+        .editorial-row-title div {
+          padding-top:0 !important;
+        }
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body width="640px" background-color="#e8e2d9">
+    
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+    <mj-image
+      src="https://example.com/savencia-assets/logo.png"
+      alt="Groupe Savencia"
+      width="210px"
+      align="left"
+      padding="26px 0 24px"/>
+    <mj-text font-size="12px" color="#52666d" padding="0 0 17px">Информационная рассылка в почте</mj-text>
+  </mj-column>
+    </mj-section>
+  
+    
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+      <mj-text font-size="13px" color="#52666d" padding="5px 0 0">Тема:</mj-text>
+      <mj-text font-size="330px" line-height="1"
+         letter-spacing="-20px" font-weight="700"
+         color="#004b62" padding="0"
+         css-class="giant-date">10</mj-text>
+      <mj-text font-size="60px" line-height="1.05"
+         font-weight="700" padding="0"
+         css-class="date-month">декабря</mj-text>
+      <mj-text font-size="29px" line-height="1.2"
+         font-weight="700" padding="8px 0 26px"
+         css-class="editorial-title">— Вылет в Новый ГОД!</mj-text>
+    </mj-column>
+    </mj-section>
+  
+    
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+    <mj-text font-size="21px" font-weight="700"
+       padding="0 0 16px">Дорогие коллеги!</mj-text>
+    <mj-text >Внимание, объявляется посадка на особый новогодний рейс!</mj-text>
+    <mj-text padding="0 0 24px">10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников Savencia из трёх городов — Москвы, Уфы и Белебея.</mj-text>
+  </mj-column>
+    </mj-section>
+  
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+      <mj-text font-size="24px" line-height="1.3"
+         font-weight="700" padding="3px 0 24px">ТРИ ГОРОДА. ОДИН РЕЙС. ОДНА КОМАНДА.</mj-text>
+      
+    <mj-divider
+      border-color="#de6a09"
+      border-width="3px"
+      border-style="solid"
+      padding="0 0 24px"/>
+  
+    </mj-column>
+    </mj-section>
+  
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+    <mj-text padding="0 0 15px">В этот день наши праздничные площадки превратятся в аэропорты, а каждый из вас станет пассажиром рейса с конечным пунктом назначения — Новый год!</mj-text>
+    <mj-text >В программе полёта: тёплые встречи с коллегами, яркие эмоции, заслуженные награды, приятные сюрпризы, музыка и праздничное настроение.</mj-text>
+    <mj-text padding="0 0 27px">На регистрации каждый получит свой посадочный билет, который пригодится во время новогоднего розыгрыша подарков.</mj-text>
+    
+    <mj-divider
+      border-color="#de6a09"
+      border-width="3px"
+      border-style="solid"
+      padding="0 0 24px"/>
+  
+    <mj-text font-size="27px" line-height="1.2"
+       font-weight="700" padding="0 0 25px">Расписание нашего рейса</mj-text>
+  </mj-column>
+    </mj-section>
+  
+    
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+    <mj-text font-size="20px" line-height="1.4"
+       font-weight="700" padding="0 0 18px">✈️ МОСКВА и УФА(по местному времени)</mj-text>
+  </mj-column>
+    </mj-section>
+  
+      <mj-section padding="0 28px" background-color="#ffffff">
+        <mj-column width="40%" vertical-align="top">
+          <mj-text font-size="27px" line-height="1.15"
+             font-weight="700" color="#004b62"
+             padding="20px 12px 12px 0">17:00–18:00 —</mj-text>
+        </mj-column>
+        <mj-column width="60%" vertical-align="top">
+          <mj-text font-size="18px" line-height="1.4"
+             font-weight="700" padding="20px 0 9px"
+             css-class="editorial-row-title">Регистрация на рейс (Welcome)</mj-text>
+          <mj-text font-size="16px" line-height="1.6"
+             padding="0 0 20px">Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.</mj-text>
+        </mj-column>
+      </mj-section>
+      
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+        <mj-divider border-color="#cbdfe6"
+                    border-width="1px" padding="0"/>
+      </mj-column>
+    </mj-section>
+  
+    
+      <mj-section padding="0 28px" background-color="#ffffff">
+        <mj-column width="40%" vertical-align="top">
+          <mj-text font-size="27px" line-height="1.15"
+             font-weight="700" color="#004b62"
+             padding="20px 12px 12px 0">18:00–20:00 —</mj-text>
+        </mj-column>
+        <mj-column width="60%" vertical-align="top">
+          <mj-text font-size="18px" line-height="1.4"
+             font-weight="700" padding="20px 0 9px"
+             css-class="editorial-row-title">Взлёт. Торжественная часть</mj-text>
+          <mj-text font-size="16px" line-height="1.6"
+             padding="0 0 20px">Церемония награждения сотрудников и праздничная программа.</mj-text>
+        </mj-column>
+      </mj-section>
+      
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+        <mj-divider border-color="#cbdfe6"
+                    border-width="1px" padding="0"/>
+      </mj-column>
+    </mj-section>
+  
+    
+      <mj-section padding="0 28px" background-color="#ffffff">
+        <mj-column width="40%" vertical-align="top">
+          <mj-text font-size="27px" line-height="1.15"
+             font-weight="700" color="#004b62"
+             padding="20px 12px 12px 0">20:00–23:00 —</mj-text>
+        </mj-column>
+        <mj-column width="60%" vertical-align="top">
+          <mj-text font-size="18px" line-height="1.4"
+             font-weight="700" padding="20px 0 9px"
+             css-class="editorial-row-title">Полёт в Новый год</mj-text>
+          <mj-text font-size="16px" line-height="1.6"
+             padding="0 0 20px">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</mj-text>
+        </mj-column>
+      </mj-section>
+      
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+        <mj-divider border-color="#cbdfe6"
+                    border-width="1px" padding="0"/>
+      </mj-column>
+    </mj-section>
+  
+    
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+    <mj-text font-size="17px" font-weight="700"
+       padding="24px 0 12px">Аэропорты отправления:</mj-text>
+    
+      <mj-text font-size="14px" font-weight="700"
+         color="#004b62" padding="7px 0 4px">МОСКВА:</mj-text>
+      <mj-text padding="0 0 13px">проспект Андропова, 11, корпус 2, Южный Event-Port.</mj-text>
+    
+      <mj-text font-size="14px" font-weight="700"
+         color="#004b62" padding="7px 0 4px">УФА:</mj-text>
+      <mj-text padding="0 0 13px">улица Менделеева, 205А, ресторан «Пастернак».</mj-text>
+    
+    <mj-divider
+      border-color="#cbdfe6"
+      border-style="solid"
+      border-width="1px"
+      padding="13px 0 28px"/>
+  </mj-column>
+    </mj-section>
+  
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+    <mj-text font-size="20px" line-height="1.4"
+       font-weight="700" padding="0 0 18px">✈️  БЕЛЕБЕЙ</mj-text>
+  </mj-column>
+    </mj-section>
+  
+      <mj-section padding="0 28px" background-color="#ffffff">
+        <mj-column width="40%" vertical-align="top">
+          <mj-text font-size="27px" line-height="1.15"
+             font-weight="700" color="#004b62"
+             padding="20px 12px 12px 0">15:00–15:30 —</mj-text>
+        </mj-column>
+        <mj-column width="60%" vertical-align="top">
+          <mj-text font-size="18px" line-height="1.4"
+             font-weight="700" padding="20px 0 9px"
+             css-class="editorial-row-title">Регистрация на рейс (Welcome)</mj-text>
+          <mj-text font-size="16px" line-height="1.6"
+             padding="0 0 20px">Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.</mj-text>
+        </mj-column>
+      </mj-section>
+      
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+        <mj-divider border-color="#cbdfe6"
+                    border-width="1px" padding="0"/>
+      </mj-column>
+    </mj-section>
+  
+    
+      <mj-section padding="0 28px" background-color="#ffffff">
+        <mj-column width="40%" vertical-align="top">
+          <mj-text font-size="27px" line-height="1.15"
+             font-weight="700" color="#004b62"
+             padding="20px 12px 12px 0">15:30–18:00 —</mj-text>
+        </mj-column>
+        <mj-column width="60%" vertical-align="top">
+          <mj-text font-size="18px" line-height="1.4"
+             font-weight="700" padding="20px 0 9px"
+             css-class="editorial-row-title">Взлёт. Торжественная часть</mj-text>
+          <mj-text font-size="16px" line-height="1.6"
+             padding="0 0 20px">Церемония награждения сотрудников и праздничная программа.</mj-text>
+        </mj-column>
+      </mj-section>
+      
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+        <mj-divider border-color="#cbdfe6"
+                    border-width="1px" padding="0"/>
+      </mj-column>
+    </mj-section>
+  
+    
+      <mj-section padding="0 28px" background-color="#ffffff">
+        <mj-column width="40%" vertical-align="top">
+          <mj-text font-size="27px" line-height="1.15"
+             font-weight="700" color="#004b62"
+             padding="20px 12px 12px 0">18:00–20:00 —</mj-text>
+        </mj-column>
+        <mj-column width="60%" vertical-align="top">
+          <mj-text font-size="18px" line-height="1.4"
+             font-weight="700" padding="20px 0 9px"
+             css-class="editorial-row-title">Полёт в Новый год</mj-text>
+          <mj-text font-size="16px" line-height="1.6"
+             padding="0 0 20px">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</mj-text>
+        </mj-column>
+      </mj-section>
+      
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+        <mj-divider border-color="#cbdfe6"
+                    border-width="1px" padding="0"/>
+      </mj-column>
+    </mj-section>
+  
+    
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+    <mj-text font-size="17px" font-weight="700"
+       padding="24px 0 12px">Аэропорт отправления:</mj-text>
+    
+      
+      <mj-text padding="0 0 13px">улица Амирова, 10А, Центральный дворец культуры Белебеевского района.</mj-text>
+    
+    <mj-divider
+      border-color="#cbdfe6"
+      border-style="solid"
+      border-width="1px"
+      padding="13px 0 28px"/>
+  </mj-column>
+    </mj-section>
+  
+    
+    <mj-section padding="0 28px" background-color="#ffffff"
+                >
+      <mj-column>
+    <mj-text font-size="21px" font-weight="700" padding="0 0 16px">Уважаемые пассажиры!</mj-text>
+    <mj-text >Просим заранее подготовить хорошее настроение и быть готовыми к незабываемому путешествию.</mj-text>
+    <mj-text padding="0 0 27px">Наш новогодний рейс уже готовится к вылету. На борту ждём каждого!</mj-text>
+  </mj-column>
+    </mj-section>
+  
+    <mj-section
+      padding="27px 28px 32px"
+      background-color="#004b62">
+      <mj-column>
+        <mj-text font-size="25px" line-height="1.3" font-weight="700"
+           color="#ffffff"
+           padding="0 0 14px">До встречи 10 декабря!</mj-text>
+        <mj-text font-size="17px"
+           color="#ffffff"
+           padding="0">Ваш экипаж Savencia ✈️</mj-text>
+      </mj-column>
+    </mj-section>
+  
+  </mj-body>
+</mjml>

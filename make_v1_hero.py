@@ -1,0 +1,185 @@
+import os
+import subprocess
+
+svg_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" width="560" height="260">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#02141f" />
+      <stop offset="60%" stop-color="#062837" />
+      <stop offset="100%" stop-color="#0b3d52" />
+    </linearGradient>
+
+    <!-- Warm golden bokeh glow -->
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.8" />
+      <stop offset="40%" stop-color="#f59e0b" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#de6a09" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Runway glow -->
+    <linearGradient id="runwayLights" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#de6a09" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#f4b860" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Gold metallic gradient for plane -->
+    <linearGradient id="planeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#fef08a" />
+      <stop offset="70%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Deep night sky background -->
+  <rect x="0" y="0" width="560" height="260" fill="url(#skyGrad)" />
+
+  <!-- Warm festive golden bokeh circles in background -->
+  <circle cx="80" cy="180" r="45" fill="url(#goldGlow)" />
+  <circle cx="160" cy="140" r="30" fill="url(#goldGlow)" opacity="0.6" />
+  <circle cx="280" cy="190" r="60" fill="url(#goldGlow)" opacity="0.8" />
+  <circle cx="420" cy="150" r="40" fill="url(#goldGlow)" opacity="0.7" />
+  <circle cx="490" cy="190" r="50" fill="url(#goldGlow)" />
+  <circle cx="340" cy="120" r="25" fill="url(#goldGlow)" opacity="0.5" />
+  <circle cx="50" cy="80" r="20" fill="url(#goldGlow)" opacity="0.4" />
+
+  <!-- Sparkling stars / snowflakes -->
+  <g fill="#ffffff" opacity="0.75">
+    <circle cx="45" cy="40" r="1.5" />
+    <circle cx="110" cy="30" r="2" />
+    <circle cx="170" cy="65" r="1.2" />
+    <circle cx="230" cy="25" r="1.8" />
+    <circle cx="330" cy="45" r="1.5" />
+    <circle cx="390" cy="20" r="2.2" />
+    <circle cx="460" cy="55" r="1.4" />
+    <circle cx="520" cy="35" r="1.8" />
+    <!-- 4-point sparkle stars -->
+    <path d="M 120,45 L 122,48 L 125,50 L 122,52 L 120,55 L 118,52 L 115,50 L 118,48 Z" fill="#fef08a" />
+    <path d="M 440,35 L 441.5,38 L 444,39.5 L 441.5,41 L 440,44 L 438.5,41 L 436,39.5 L 438.5,38 Z" fill="#fef08a" />
+    <path d="M 270,30 L 271,32 L 273,33 L 271,34 L 270,36 L 269,34 L 267,33 L 269,32 Z" fill="#fef08a" />
+  </g>
+
+  <!-- Stylized festive runway with glowing holiday tree on right -->
+  <!-- Illuminated runway perspective lines -->
+  <polygon points="280,130 180,260 380,260" fill="url(#runwayLights)" opacity="0.25" />
+  <line x1="280" y1="130" x2="220" y2="260" stroke="#f4b860" stroke-width="1.5" stroke-dasharray="8,6" opacity="0.8" />
+  <line x1="280" y1="130" x2="340" y2="260" stroke="#f4b860" stroke-width="1.5" stroke-dasharray="8,6" opacity="0.8" />
+  <line x1="280" y1="130" x2="280" y2="260" stroke="#ffffff" stroke-width="2" stroke-dasharray="14,10" filter="url(#softGlow)" />
+
+  <!-- Glowing golden Christmas tree on the right side of runway -->
+  <g transform="translate(430, 140)">
+    <!-- Tree glow -->
+    <circle cx="0" cy="50" r="40" fill="url(#goldGlow)" />
+    <!-- Tree layers -->
+    <polygon points="0,0 -16,30 16,30" fill="#fef08a" opacity="0.9" filter="url(#softGlow)" />
+    <polygon points="0,18 -24,55 24,55" fill="#f59e0b" opacity="0.85" filter="url(#softGlow)" />
+    <polygon points="0,40 -32,85 32,85" fill="#d97706" opacity="0.8" filter="url(#softGlow)" />
+    <!-- Tree trunk -->
+    <rect x="-4" y="85" width="8" height="15" fill="#78350f" />
+    <!-- Star on top of tree -->
+    <polygon points="0,-8 2,-2 8,-2 3,2 5,8 0,4 -5,8 -3,2 -8,-2 -2,-2" fill="#ffffff" filter="url(#softGlow)" />
+    <!-- Festive tree light dots -->
+    <circle cx="-8" cy="22" r="2" fill="#ffffff" />
+    <circle cx="6" cy="26" r="2.2" fill="#de6a09" />
+    <circle cx="-14" cy="45" r="2.5" fill="#fde047" />
+    <circle cx="12" cy="48" r="2" fill="#ffffff" />
+    <circle cx="-2" cy="38" r="2" fill="#fde047" />
+    <circle cx="-20" cy="72" r="2.5" fill="#de6a09" />
+    <circle cx="18" cy="74" r="2.5" fill="#ffffff" />
+    <circle cx="0" cy="68" r="3" fill="#fde047" />
+  </g>
+
+  <!-- Glowing smaller holiday tree on left side -->
+  <g transform="translate(130, 160) scale(0.65)">
+    <polygon points="0,0 -16,30 16,30" fill="#fef08a" opacity="0.75" />
+    <polygon points="0,18 -24,55 24,55" fill="#f59e0b" opacity="0.7" />
+    <polygon points="0,40 -30,85 30,85" fill="#d97706" opacity="0.65" />
+    <polygon points="0,-6 1.5,-1.5 6,-1.5 2,1.5 3.5,6 0,3 -3.5,6 -2,1.5 -6,-1.5 -1.5,-1.5" fill="#ffffff" />
+  </g>
+
+  <!-- SLEEK MODERN AIRLINER CLIMBING UPWARDS TOWARDS TOP CENTER -->
+  <g transform="translate(280, 105)">
+    <!-- Jet exhaust glow -->
+    <ellipse cx="-16" cy="22" rx="4" ry="12" fill="#fde047" opacity="0.8" filter="url(#softGlow)" />
+    <ellipse cx="16" cy="22" rx="4" ry="12" fill="#fde047" opacity="0.8" filter="url(#softGlow)" />
+    <ellipse cx="0" cy="28" rx="6" ry="16" fill="#fef08a" opacity="0.6" filter="url(#softGlow)" />
+
+    <!-- Jetliner Silhouette & Highlights -->
+    <!-- Swept Wings -->
+    <path d="M 0,-8 L 68,14 L 68,19 L 8,11 L 0,-8 Z" fill="url(#planeGold)" filter="url(#softGlow)" />
+    <path d="M 0,-8 L -68,14 L -68,19 L -8,11 L 0,-8 Z" fill="url(#planeGold)" filter="url(#softGlow)" />
+    
+    <!-- Winglets -->
+    <path d="M 68,14 L 70,8 L 66,14 Z" fill="#ffffff" />
+    <path d="M -68,14 L -70,8 L -66,14 Z" fill="#ffffff" />
+
+    <!-- Engine nacelles -->
+    <rect x="18" y="6" width="7" height="18" rx="3.5" fill="#ffffff" />
+    <rect x="-25" y="6" width="7" height="18" rx="3.5" fill="#ffffff" />
+
+    <!-- Tail horizontal stabilizers -->
+    <path d="M 0,22 L 28,34 L 28,37 L 4,31 L 0,22 Z" fill="url(#planeGold)" />
+    <path d="M 0,22 L -28,34 L -28,37 L -4,31 L 0,22 Z" fill="url(#planeGold)" />
+
+    <!-- Fuselage Body -->
+    <path d="M 0,-42 C 4.5,-32 7.5,-15 7.5,12 L 6.5,28 L 0,38 L -6.5,28 L -7.5,12 C -7.5,-15 -4.5,-32 0,-42 Z" fill="#ffffff" filter="url(#softGlow)" />
+    <path d="M 0,-42 C 3.5,-32 6,-15 6,12 L 5,26 L 0,34 L -5,26 L -6,12 C -6,-15 -3.5,-32 0,-42 Z" fill="url(#planeGold)" />
+
+    <!-- Cockpit glass highlight -->
+    <path d="M 0,-34 C 2,-30 3,-26 0,-24 C -3,-26 -2,-30 0,-34 Z" fill="#02141f" />
+    <!-- Spine reflection line -->
+    <line x1="0" y1="-28" x2="0" y2="28" stroke="#ffffff" stroke-width="1.8" opacity="0.9" />
+  </g>
+
+  <!-- HEADER TEXT OVERLAYS: FESTIVE & EXECUTIVE -->
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <!-- Subtitle tag -->
+    <text x="280" y="24" font-size="10" font-weight="bold" fill="#38bdf8" letter-spacing="2.5">
+      ★ 10 ДЕКАБРЯ 2026 // НОВОГОДНИЙ РЕЙС ★
+    </text>
+
+    <!-- Main Title -->
+    <text x="280" y="48" font-size="22" font-weight="900" fill="#ffffff" letter-spacing="1">
+      ВЫЛЕТ В НОВЫЙ ГОД 2027
+    </text>
+    
+    <!-- Tagline -->
+    <text x="280" y="65" font-size="10.5" font-weight="bold" fill="#f4b860" letter-spacing="2">
+      ТРИ ГОРОДА &bull; ОДИН РЕЙС &bull; ОДНА КОМАНДА
+    </text>
+  </g>
+</svg>"""
+
+with open('hero_v1_festive.svg', 'w', encoding='utf-8') as f:
+    f.write(svg_content)
+
+cwd = os.path.dirname(os.path.abspath(__file__))
+chrome = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+tmp_html = os.path.join(cwd, "render_v1_hero.html")
+html = f"""<!DOCTYPE html><html><head><meta charset="utf-8">
+<style>body {{ margin:0; padding:0; background:transparent; overflow:hidden; }} svg {{ display:block; width:560px; height:260px; }}</style>
+</head><body>{svg_content}</body></html>"""
+
+with open(tmp_html, 'w', encoding='utf-8') as f:
+    f.write(html)
+
+png_path = os.path.join(cwd, "hero_v1_festive.jpg")
+cmd = [
+    chrome, "--headless=new", "--disable-gpu",
+    "--window-size=560,260", "--device-scale-factor=2",
+    f"--screenshot={png_path}",
+    f"file:///{tmp_html.replace(os.sep, '/')}"
+]
+subprocess.run(cmd, check=True)
+if os.path.exists(tmp_html):
+    os.remove(tmp_html)
+
+print("Rendered hero_v1_festive.jpg successfully! Size:", os.path.getsize(png_path), "bytes")

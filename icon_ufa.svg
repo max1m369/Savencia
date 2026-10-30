@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" fill="none" stroke="#004b62" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Ground cliff line / Pedestal rock -->
+  <line x1="6" y1="74" x2="74" y2="74" stroke-width="2" />
+  <path d="M 12,74 C 18,73 24,70 28,64 C 32,58 46,57 52,62 C 58,67 66,72 70,74" fill="#004b62" fill-opacity="0.1" />
+  <!-- Rock texture lines -->
+  <line x1="26" y1="68" x2="36" y2="74" stroke-width="1.2" />
+  <line x1="42" y1="65" x2="50" y2="74" stroke-width="1.2" />
+
+  <!-- Horse Body & Legs -->
+  <!-- Rearing front legs -->
+  <path d="M 32,54 C 28,48 24,40 22,34 L 20,35" stroke-width="2" />
+  <path d="M 34,51 C 31,44 28,37 28,31 L 26,32" stroke-width="1.8" />
+  <!-- Horse barrel/body -->
+  <path d="M 30,52 C 34,48 42,47 50,50 C 56,52 60,56 61,63" fill="#ffffff" stroke-width="2"/>
+  <!-- Hind legs planted on rock -->
+  <path d="M 52,51 L 56,62 L 54,67" stroke-width="2" />
+  <path d="M 48,52 L 49,63 L 47,66" stroke-width="1.8" />
+  <!-- Horse neck and head -->
+  <path d="M 33,48 C 30,42 29,36 31,31 C 32,28 34,27 36,29 C 38,32 37,38 41,44" fill="#ffffff" stroke-width="2"/>
+  <path d="M 32,28 L 33,26" stroke-width="1.5" /> <!-- Ear -->
+  <!-- Horse tail flowing back -->
+  <path d="M 60,56 C 66,60 68,67 67,72" stroke-width="1.8" stroke-dasharray="1,1" />
+
+  <!-- Rider: Salavat Yulaev -->
+  <!-- Torso & Cloak -->
+  <path d="M 44,44 L 43,30 C 43,26 47,26 48,30 L 49,44" fill="#ffffff" stroke-width="2" />
+  <!-- Head & traditional Bashkir fur cap (Bureck) -->
+  <circle cx="45" cy="22" r="4" fill="#004b62" fill-opacity="0.2"/>
+  <path d="M 41,20 C 41,17 49,17 49,20 Z" fill="#de6a09" stroke="#de6a09" />
+  <!-- Raised arm with whip pointing high -->
+  <path d="M 42,30 C 38,24 35,16 33,10" stroke="#de6a09" stroke-width="2.2" />
+  <path d="M 33,10 L 31,6" stroke="#de6a09" stroke-width="1.5" /> <!-- Whip / lash -->
+  <!-- Left hand holding reins -->
+  <path d="M 46,34 L 38,35" stroke-width="1.5" />
+</svg>

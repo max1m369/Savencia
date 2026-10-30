@@ -1,0 +1,9 @@
+node_modules/
+SOL/node_modules/
+SOL/package-lock.json
+_temp_*
+*.tmp
+*.log
+.~lock.*
+.DS_Store
+Thumbs.db

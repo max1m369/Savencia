@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireframe - Новогодняя рассылка Savencia (Тема: Аэропорт)</title>
+  <style>
+    /* Базовые сбросы для почтовой верстки */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #e9ecef;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+    .wrapper {
+      width: 100%;
+      table-layout: fixed;
+      background-color: #e9ecef;
+      padding: 30px 0;
+    }
+    .main-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 2px solid #1a1a1a;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    
+    /* Стили для варфрейма (чёрно-белый стиль) */
+    .wf-badge {
+      display: inline-block;
+      border: 1px solid #1a1a1a;
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: #f0f0f0;
+    }
+    .wf-placeholder {
+      background-color: #f5f5f5;
+      border: 2px dashed #999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666666;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    /* Хедер */
+    .header {
+      padding: 16px 24px;
+      border-bottom: 2px solid #1a1a1a;
+      background-color: #ffffff;
+    }
+    .header-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .logo-ph {
+      font-weight: 900;
+      letter-spacing: 2px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+    .preheader-link {
+      text-align: right;
+      font-size: 12px;
+      color: #666;
+      text-decoration: underline;
+    }
+
+    /* Блок: Посадочный билет (Hero Boarding Pass) */
+    .ticket-hero {
+      padding: 24px;
+      background: #fafafa;
+      border-bottom: 2px solid #1a1a1a;
+      position: relative;
+    }
+    .ticket-card {
+      border: 2px solid #1a1a1a;
+      background: #ffffff;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .ticket-top {
+      background: #1a1a1a;
+      color: #ffffff;
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ticket-body {
+      padding: 20px 16px;
+    }
+    .route-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 1px dashed #999;
+      padding-bottom: 16px;
+    }
+    .route-item {
+      text-align: left;
+    }
+    .route-item.right {
+      text-align: right;
+    }
+    .route-code {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+    .route-sub {
+      font-size: 11px;
+      color: #666;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+    .route-plane {
+      font-size: 24px;
+      text-align: center;
+      padding: 0 10px;
+    }
+    .ticket-details {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 12px;
+    }
+    .td-col strong {
+      display: block;
+      font-size: 10px;
+      color: #666;
+      text-transform: uppercase;
+    }
+    .td-col span {
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .ticket-perforation {
+      border-top: 2px dashed #999;
+      margin: 16px 0;
+      position: relative;
+    }
+    .ticket-barcode-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .barcode-ph {
+      height: 40px;
+      width: 220px;
+      background: repeating-linear-gradient(90deg, #1a1a1a, #1a1a1a 2px, #fff 2px, #fff 5px, #1a1a1a 5px, #1a1a1a 8px, #fff 8px, #fff 10px);
+    }
+    .lottery-notice {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 1px solid #1a1a1a;
+      padding: 6px 10px;
+      background: #f0f0f0;
+      text-align: right;
+    }
+
+    /* Блок: Главное обращение (Интро) */
+    .intro-section {
+      padding: 28px 24px;
+      border-bottom: 2px solid #1a1a1a;
+    }
+    .intro-slogan {
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-left: 4px solid #1a1a1a;
+      padding-left: 10px;
+      margin-bottom: 14px;
+    }
+    .intro-title {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 0 0 14px 0;
+    }
+    .intro-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 16px;
+    }
+    .intro-image-ph {
+      height: 160px;
+      margin: 16px 0;
+    }
+
+    /* Блок: Табло вылетов (Flight Information Display / Timetable) */
+    .fids-section {
+      padding: 28px 24px;
+      border-bottom: 2px solid #1a1a1a;
+      background-color: #fafafa;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin: 0 0 6px 0;
+    }
+    .section-subtitle {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* Карточки расписания */
+    .city-card {
+      border: 2px solid #1a1a1a;
+      background: #ffffff;
+      margin-bottom: 20px;
+    }
+    .city-header {
+      background: #1a1a1a;
+      color: #ffffff;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .city-name {
+      font-weight: 900;
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+    .city-badge {
+      font-size: 11px;
+      border: 1px solid #ffffff;
+      padding: 2px 6px;
+    }
+    .city-content {
+      padding: 16px;
+    }
+    .timeline-item {
+      display: flex;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .timeline-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .timeline-time {
+      width: 110px;
+      flex-shrink: 0;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .timeline-info {
+      flex-grow: 1;
+    }
+    .timeline-stage {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+    .timeline-desc {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.4;
+    }
+    .airport-box {
+      margin-top: 14px;
+      background: #f0f0f0;
+      border: 1px dashed #1a1a1a;
+      padding: 10px 12px;
+      font-size: 12px;
+    }
+    .airport-title {
+      font-weight: 900;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    /* Блок: Памятка пассажиру */
+    .rules-section {
+      padding: 24px;
+      border-bottom: 2px solid #1a1a1a;
+      background: #ffffff;
+    }
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .rule-box {
+      border: 1px solid #1a1a1a;
+      padding: 12px;
+      text-align: center;
+      background: #fcfcfc;
+    }
+    .rule-icon-ph {
+      width: 36px;
+      height: 36px;
+      border: 1px solid #1a1a1a;
+      border-radius: 50%;
+      margin: 0 auto 8px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 14px;
+    }
+    .rule-title {
+      font-weight: 700;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+    .rule-desc {
+      font-size: 11px;
+      color: #666;
+    }
+
+    /* Финал / Подвал */
+    .cta-outro {
+      padding: 28px 24px;
+      text-align: center;
+      background: #fafafa;
+      border-bottom: 2px solid #1a1a1a;
+    }
+    .outro-title {
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .outro-text {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+    .wf-button {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #ffffff;
+      padding: 14px 28px;
+      font-size: 13px;
+      font-weight: 900;
+      text-decoration: none;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: 2px solid #1a1a1a;
+    }
+    
+    .footer {
+      padding: 24px;
+      text-align: center;
+      font-size: 11px;
+      color: #666;
+      background: #ffffff;
+    }
+    .footer-crew {
+      font-weight: 900;
+      font-size: 13px;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .footer-links {
+      margin-top: 10px;
+    }
+    .footer-links a {
+      color: #666;
+      margin: 0 6px;
+      text-decoration: underline;
+    }
+
+    /* Адаптив для мобильных экранов */
+    @media only screen and (max-width: 480px) {
+      .ticket-details {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .rules-grid {
+        grid-template-columns: 1fr;
+      }
+      .timeline-item {
+        flex-direction: column;
+      }
+      .timeline-time {
+        width: 100%;
+        margin-bottom: 4px;
+      }
+      .ticket-barcode-wrap {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .barcode-ph {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="main-container">
+    
+    <!-- 1. ХЕДЕР ПИСЬМА -->
+    <div class="header">
+      <table class="header-table">
+        <tr>
+          <td>
+            <div class="logo-ph">[ GROUPE SAVENCIA LOGO ]</div>
+          </td>
+          <td class="preheader-link">
+            Веб-версия рассылки
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 2. БЛОК HERO: ПОСАДОЧНЫЙ ТАЛОН (BOARDING PASS) -->
+    <div class="ticket-hero">
+      <div class="ticket-card">
+        <div class="ticket-top">
+          <span>BOARDING PASS / ПОСАДОЧНЫЙ ТАЛОН</span>
+          <span>FLIGHT SV-2026</span>
+        </div>
+        <div class="ticket-body">
+          <div class="route-grid">
+            <div class="route-item">
+              <div class="route-code">MOW · UFA · BEL</div>
+              <div class="route-sub">Три города отправления</div>
+            </div>
+            <div class="route-plane">✈</div>
+            <div class="route-item right">
+              <div class="route-code">NEW YEAR</div>
+              <div class="route-sub">Пункт назначения</div>
+            </div>
+          </div>
+
+          <div class="ticket-details">
+            <div class="td-col">
+              <strong>Пассажир</strong>
+              <span>Коллега Savencia</span>
+            </div>
+            <div class="td-col">
+              <strong>Дата вылета</strong>
+              <span>10 декабря</span>
+            </div>
+            <div class="td-col">
+              <strong>Класс</strong>
+              <span>Одна Команда</span>
+            </div>
+            <div class="td-col">
+              <strong>Гейт</strong>
+              <span>2026</span>
+            </div>
+          </div>
+
+          <div class="ticket-perforation"></div>
+
+          <div class="ticket-barcode-wrap">
+            <div class="barcode-ph"></div>
+            <div class="lottery-notice">
+              Билет для розыгрыша призов
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. ОБРАЩЕНИЕ К ПАССАЖИРАМ (ИНТРО) -->
+    <div class="intro-section">
+      <div class="intro-slogan">ТРИ ГОРОДА. ОДИН РЕЙС. ОДНА КОМАНДА.</div>
+      <h1 class="intro-title">Внимание, объявляется посадка на особый новогодний рейс!</h1>
+      <p class="intro-text">
+        <strong>Дорогие коллеги!</strong><br>
+        10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников Savencia из трёх городов — Москвы, Уфы и Белебея.
+      </p>
+      
+      <!-- Заглушка под фотоиллюминатор / атмосферное фото аэропорта -->
+      <div class="wf-placeholder intro-image-ph">
+        [ ИЗОБРАЖЕНИЕ: Стилизованный аэропорт / Иллюминатор самолёта / Праздничный терминал ]
+      </div>
+
+      <p class="intro-text">
+        В этот день наши праздничные площадки превратятся в настоящие аэропорты, а каждый из вас станет пассажиром рейса с конечным пунктом назначения — <strong>Новый год!</strong>
+      </p>
+      <p class="intro-text">
+        <strong>В программе полёта:</strong> тёплые встречи с коллегами, яркие эмоции, заслуженные награды, приятные сюрпризы, музыка и праздничное настроение.
+      </p>
+      <p class="intro-text" style="margin-bottom: 0;">
+        🎫 <em>На регистрации каждый получит свой персональный посадочный билет, который пригодится во время новогоднего розыгрыша подарков!</em>
+      </p>
+    </div>
+
+    <!-- 4. РАСПИСАНИЕ РЕЙСА (ТАБЛО ВЫЛЕТОВ / TIMETABLE) -->
+    <div class="fids-section">
+      <div class="section-header">
+        <div class="wf-badge">FLIGHT SCHEDULE</div>
+        <h2 class="section-title">Расписание нашего рейса</h2>
+        <div class="section-subtitle">Сверьте ваши посадочные часы и зоны вылета</div>
+      </div>
+
+      <!-- Карточка 1: Москва и Уфа -->
+      <div class="city-card">
+        <div class="city-header">
+          <div class="city-name">✈️ МОСКВА И УФА</div>
+          <div class="city-badge">по местному времени</div>
+        </div>
+        <div class="city-content">
+          <div class="timeline-item">
+            <div class="timeline-time">17:00 – 18:00</div>
+            <div class="timeline-info">
+              <div class="timeline-stage">Регистрация на рейс (Welcome)</div>
+              <div class="timeline-desc">Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">18:00 – 20:00</div>
+            <div class="timeline-info">
+              <div class="timeline-stage">Взлёт. Торжественная часть</div>
+              <div class="timeline-desc">Церемония награждения сотрудников и праздничная программа.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">20:00 – 23:00</div>
+            <div class="timeline-info">
+              <div class="timeline-stage">Полёт в Новый год</div>
+              <div class="timeline-desc">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</div>
+            </div>
+          </div>
+
+          <div class="airport-box">
+            <div class="airport-title">📍 Аэропорты отправления:</div>
+            <div><strong>МОСКВА:</strong> проспект Андропова, 11, корпус 2, Южный Event-Port.</div>
+            <div style="margin-top: 4px;"><strong>УФА:</strong> улица Менделеева, 205А, ресторан «Пастернак».</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 2: Белебей -->
+      <div class="city-card">
+        <div class="city-header">
+          <div class="city-name">✈️ БЕЛЕБЕЙ</div>
+          <div class="city-badge">по местному времени</div>
+        </div>
+        <div class="city-content">
+          <div class="timeline-item">
+            <div class="timeline-time">15:00 – 15:30</div>
+            <div class="timeline-info">
+              <div class="timeline-stage">Регистрация на рейс (Welcome)</div>
+              <div class="timeline-desc">Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">15:30 – 18:00</div>
+            <div class="timeline-info">
+              <div class="timeline-stage">Взлёт. Торжественная часть</div>
+              <div class="timeline-desc">Церемония награждения сотрудников и праздничная программа.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">18:00 – 20:00</div>
+            <div class="timeline-info">
+              <div class="timeline-stage">Полёт в Новый год</div>
+              <div class="timeline-desc">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</div>
+            </div>
+          </div>
+
+          <div class="airport-box">
+            <div class="airport-title">📍 Аэропорт отправления:</div>
+            <div><strong>БЕЛЕБЕЙ:</strong> улица Амирова, 10А, Центральный дворец культуры Белебеевского района.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. ПАМЯТКА ДЛЯ ПАССАЖИРОВ -->
+    <div class="rules-section">
+      <div class="section-header" style="margin-bottom: 12px;">
+        <div class="wf-badge">SAFETY & COMFORT</div>
+        <h2 class="section-title" style="font-size: 16px;">Информация для пассажиров</h2>
+      </div>
+      
+      <div class="rules-grid">
+        <div class="rule-box">
+          <div class="rule-icon-ph">1</div>
+          <div class="rule-title">Настроение</div>
+          <div class="rule-desc">Подготовьте праздничное настроение и заряд энергии</div>
+        </div>
+        <div class="rule-box">
+          <div class="rule-icon-ph">2</div>
+          <div class="rule-title">Посадочный билет</div>
+          <div class="rule-desc">Получите на Welcome-зоне для розыгрыша призов</div>
+        </div>
+        <div class="rule-box">
+          <div class="rule-icon-ph">3</div>
+          <div class="rule-title">Тайминг</div>
+          <div class="rule-desc">Рекомендуем прибыть ко времени открытия регистрации</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. ПРИЗЫВ И ЗАКЛЮЧЕНИЕ -->
+    <div class="cta-outro">
+      <div class="outro-title">Уважаемые пассажиры!</div>
+      <div class="outro-text">
+        Просим заранее подготовить хорошее настроение и быть готовыми к незабываемому путешествию.<br>
+        Наш новогодний рейс уже готовится к вылету. На борту ждём каждого!
+      </div>
+      <a href="#confirm" class="wf-button">ДО ВСТРЕЧИ 10 ДЕКАБРЯ! ✈</a>
+    </div>
+
+    <!-- 7. ФУТЕР -->
+    <div class="footer">
+      <div class="footer-crew">Ваш экипаж Savencia ✈️</div>
+      <div>Groupe Savencia • Leading the way to better food</div>
+      <div class="footer-links">
+        <a href="#">Добавить в календарь</a> • 
+        <a href="#">Контакты организаторов</a> • 
+        <a href="#">Отписаться</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

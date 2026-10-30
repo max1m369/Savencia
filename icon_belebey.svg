@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" fill="none" stroke="#004b62" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Ground line -->
+  <line x1="6" y1="74" x2="74" y2="74" stroke-width="2" />
+  
+  <!-- Base frame skid -->
+  <rect x="14" y="70" width="54" height="4" fill="#004b62" fill-opacity="0.1" />
+
+  <!-- Triangular Samson Post / A-Frame Tower -->
+  <line x1="42" y1="28" x2="30" y2="70" stroke-width="2.2" />
+  <line x1="42" y1="28" x2="54" y2="70" stroke-width="2.2" />
+  <line x1="33" y1="58" x2="51" y2="58" stroke-width="1.5" />
+  <line x1="37" y1="44" x2="47" y2="44" stroke-width="1.5" />
+
+  <!-- Walking Beam (Балансир) pivoted at (42, 28) -->
+  <!-- Beam tilted: left side up, right side down -->
+  <line x1="16" y1="20" x2="62" y2="34" stroke="#004b62" stroke-width="3.5" />
+  <!-- Center pivot bearing -->
+  <circle cx="42" cy="28" r="3" fill="#de6a09" stroke="#004b62" stroke-width="1.5" />
+
+  <!-- Horsehead (головка балансира) on the left -->
+  <path d="M 16,14 C 12,18 12,24 16,30 L 17,20 Z" fill="#de6a09" stroke="#de6a09" stroke-width="1.5" />
+
+  <!-- Polished Rod / Wellhead hanging from horsehead -->
+  <line x1="12" y1="26" x2="12" y2="66" stroke="#475569" stroke-width="1.5" />
+  <!-- Wellhead equipment / stuffing box -->
+  <rect x="9" y="66" width="6" height="4" fill="#004b62" />
+
+  <!-- Counterweight & Pitman arm on the right -->
+  <!-- Pitman arm -->
+  <line x1="60" y1="34" x2="58" y2="52" stroke-width="2" />
+  <!-- Rotating crank and counterweight -->
+  <circle cx="58" cy="56" r="6" fill="#ffffff" stroke="#de6a09" stroke-width="1.5" />
+  <path d="M 54,54 C 56,50 64,52 62,60 Z" fill="#de6a09" stroke="#de6a09" />
+  
+  <!-- Motor housing box on skid -->
+  <rect x="62" y="62" width="8" height="8" fill="#004b62" fill-opacity="0.2" />
+</svg>

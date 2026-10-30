@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" fill="none" stroke="#004b62" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Ground line -->
+  <line x1="6" y1="74" x2="74" y2="74" stroke-width="2" />
+  
+  <!-- Kremlin wall left -->
+  <path d="M 8,74 L 8,56 L 14,56 L 14,60 L 18,60 L 18,56 L 24,56 L 24,74" fill="#f0fdf4" fill-opacity="0.2"/>
+  <path d="M 10,56 L 12,52 L 14,56" />
+  <path d="M 20,56 L 22,52 L 24,56" />
+  <!-- Small left turret -->
+  <rect x="24" y="52" width="6" height="22" />
+  <path d="M 24,52 L 27,42 L 30,52 Z" />
+
+  <!-- Kremlin wall right -->
+  <path d="M 56,74 L 56,52 L 62,52 L 62,74" />
+  <path d="M 56,52 L 59,42 L 62,52 Z" />
+  <path d="M 62,74 L 62,56 L 68,56 L 68,60 L 72,60 L 72,56 L 74,56 L 74,74" />
+  <path d="M 64,56 L 66,52 L 68,56" />
+
+  <!-- Main Spasskaya Tower Body -->
+  <!-- Lower level -->
+  <rect x="30" y="46" width="20" height="28" fill="#ffffff" fill-opacity="0.9"/>
+  <!-- Central arched gate -->
+  <path d="M 36,74 L 36,62 C 36,58 44,58 44,62 L 44,74" fill="#004b62" stroke="none"/>
+  
+  <!-- Middle clock tier -->
+  <rect x="33" y="34" width="14" height="12" fill="#ffffff" />
+  <!-- Chimes clock face -->
+  <circle cx="40" cy="40" r="4.5" stroke="#de6a09" stroke-width="1.2" fill="#fff7ed"/>
+  <line x1="40" y1="40" x2="40" y2="37.5" stroke="#de6a09" stroke-width="1.2" />
+  <line x1="40" y1="40" x2="42" y2="40" stroke="#de6a09" stroke-width="1.2" />
+
+  <!-- Upper octagonal tier -->
+  <path d="M 35,34 L 37,24 L 43,24 L 45,34" fill="#ffffff"/>
+  
+  <!-- Tent roof spire -->
+  <path d="M 37,24 L 40,8 L 43,24 Z" fill="#004b62" fill-opacity="0.15" />
+  <line x1="40" y1="8" x2="40" y2="4" stroke-width="1.5" />
+  
+  <!-- Ruby Star on top -->
+  <polygon points="40,2 41.2,5 44,5 41.8,6.8 42.6,9.5 40,7.8 37.4,9.5 38.2,6.8 36,5 38.8,5" fill="#de6a09" stroke="#de6a09" stroke-width="0.8"/>
+</svg>

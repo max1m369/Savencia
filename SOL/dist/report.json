@@ -1,0 +1,37 @@
+[
+  {
+    "variant": "a",
+    "name": "А — Табло вылетов",
+    "htmlBytes": 53340,
+    "copyCheck": "passed",
+    "mjmlValidation": "passed"
+  },
+  {
+    "variant": "b",
+    "name": "Б — Ночной взлёт",
+    "htmlBytes": 53340,
+    "copyCheck": "passed",
+    "mjmlValidation": "passed"
+  },
+  {
+    "variant": "c",
+    "name": "В — Посадочный билет",
+    "htmlBytes": 53354,
+    "copyCheck": "passed",
+    "mjmlValidation": "passed"
+  },
+  {
+    "variant": "d",
+    "name": "Г — Большая дата",
+    "htmlBytes": 68636,
+    "copyCheck": "passed",
+    "mjmlValidation": "passed"
+  },
+  {
+    "variant": "e",
+    "name": "Д — Маршрутная лента",
+    "htmlBytes": 68374,
+    "copyCheck": "passed",
+    "mjmlValidation": "passed"
+  }
+]
