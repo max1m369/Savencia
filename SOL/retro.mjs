@@ -4,12 +4,19 @@ import { fileURLToPath } from "node:url";
 import mjml2html from "mjml";
 import sharp from "sharp";
 
+/* =========================================================
+   ПАПКИ И НАСТРОЙКИ
+   ========================================================= */
+
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(ROOT, "dist");
 const ASSETS = path.join(OUT, "assets");
 
 await fs.mkdir(ASSETS, { recursive: true });
 
+// Для локального просмотра менять не требуется.
+// Перед рассылкой разместите картинки на HTTPS-хостинге
+// и укажите здесь адрес папки с ними.
 const BASE = (
   process.env.ASSET_BASE ||
   "https://example.com/savencia-assets"
@@ -58,136 +65,190 @@ function decode(value) {
 }
 
 /* =========================================================
-   БЕРЁМ ТЕКСТ ИЗ ПРЕДЫДУЩЕГО ВАРИАНТА
+   ТЕКСТ ПИСЬМА
+   Служебные строки «Информационная рассылка в почте»
+   и «Тема:» в тело письма не включаются.
    ========================================================= */
 
-let previous;
+const T = {
+  emailSubject: "10 декабря — Вылет в Новый ГОД!",
+  date: "10 декабря",
+  headline: "— Вылет в Новый ГОД!",
 
-try {
-  previous = await fs.readFile(
-    path.join(OUT, "f.mjml"),
-    "utf8"
-  );
-} catch {
-  throw new Error(
-    "Не найден dist/f.mjml. " +
-    "Сначала выполните node award.mjs, " +
-    "затем node retro.mjs."
-  );
-}
+  greeting: "Дорогие коллеги!",
 
-const items = Array.from(
-  previous.matchAll(
-    /<mj-text\b[^>]*>([\s\S]*?)<\/mj-text>/gi
-  ),
-  match => normalize(
-    decode(match[1].replace(/<[^>]*>/g, " "))
-  )
-);
+  attention:
+    "Внимание, объявляется посадка на особый новогодний рейс!",
 
-const greetingIndex = items.indexOf("Дорогие коллеги!");
+  journey:
+    "10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников Savencia из трёх городов — Москвы, Уфы и Белебея.",
 
-if (greetingIndex < 2) {
-  throw new Error(
-    "Не удалось распознать структуру f.mjml."
-  );
-}
+  slogan:
+    "ТРИ ГОРОДА. ОДИН РЕЙС. ОДНА КОМАНДА.",
 
-const documentTitle = items[0];
-const subject = normalize(
-  items.slice(1, greetingIndex).join(" ")
-);
-const body = items.slice(greetingIndex);
+  airports:
+    "В этот день наши праздничные площадки превратятся в аэропорты, а каждый из вас станет пассажиром рейса с конечным пунктом назначения — Новый год!",
 
-if (subject !== "Тема: 10 декабря — Вылет в Новый ГОД!") {
-  throw new Error(
-    "Тема в исходном файле отличается от ожидаемой:\n" +
-    subject
-  );
-}
+  program:
+    "В программе полёта: тёплые встречи с коллегами, яркие эмоции, заслуженные награды, приятные сюрпризы, музыка и праздничное настроение.",
 
-const sloganIndex = body.indexOf(
-  "ТРИ ГОРОДА. ОДИН РЕЙС. ОДНА КОМАНДА."
-);
+  ticket:
+    "На регистрации каждый получит свой посадочный билет, который пригодится во время новогоднего розыгрыша подарков.",
 
-const scheduleIndex = body.indexOf(
-  "Расписание нашего рейса"
-);
+  schedule:
+    "Расписание нашего рейса",
 
-const firstGroupIndex = body.findIndex(
-  value => value.includes("МОСКВА и УФА")
-);
+  registration:
+    "Регистрация на рейс (Welcome)",
 
-const secondGroupIndex = body.findIndex(
-  value => value.includes("БЕЛЕБЕЙ")
-);
+  registrationDescription:
+    "Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.",
 
-const closingIndex = body.indexOf(
-  "Уважаемые пассажиры!"
-);
+  takeoff:
+    "Взлёт. Торжественная часть",
 
-if (
-  sloganIndex < 0 ||
-  scheduleIndex <= sloganIndex ||
-  firstGroupIndex <= scheduleIndex ||
-  secondGroupIndex <= firstGroupIndex ||
-  closingIndex <= secondGroupIndex
-) {
-  throw new Error(
-    "Структура исходного письма не распознана. " +
-    "Нужен f.mjml из предыдущего варианта."
-  );
-}
+  takeoffDescription:
+    "Церемония награждения сотрудников и праздничная программа.",
 
-const intro = body.slice(0, sloganIndex);
+  flight:
+    "Полёт в Новый год",
 
-const middle = body.slice(
-  sloganIndex + 1,
-  scheduleIndex
-);
+  flightDescription:
+    "Музыка, фуршет, развлечения, общение и новогодние сюрпризы.",
 
-const groups = [
-  body.slice(firstGroupIndex, secondGroupIndex),
-  body.slice(secondGroupIndex, closingIndex)
+  passengers:
+    "Уважаемые пассажиры!",
+
+  mood:
+    "Просим заранее подготовить хорошее настроение и быть готовыми к незабываемому путешествию.",
+
+  waiting:
+    "Наш новогодний рейс уже готовится к вылету. На борту ждём каждого!",
+
+  meeting:
+    "До встречи 10 декабря!",
+
+  crew:
+    "Ваш экипаж Savencia ✈️"
+};
+
+const GROUPS = [
+  {
+    title: "✈️ МОСКВА и УФА(по местному времени)",
+
+    addressTitle: "Аэропорты отправления:",
+
+    addresses: [
+      [
+        "МОСКВА:",
+        "проспект Андропова, 11, корпус 2, Южный Event-Port."
+      ],
+      [
+        "УФА:",
+        "улица Менделеева, 205А, ресторан «Пастернак»."
+      ]
+    ],
+
+    rows: [
+      [
+        "17:00–18:00",
+        T.registration,
+        T.registrationDescription
+      ],
+      [
+        "18:00–20:00",
+        T.takeoff,
+        T.takeoffDescription
+      ],
+      [
+        "20:00–23:00",
+        T.flight,
+        T.flightDescription
+      ]
+    ]
+  },
+
+  {
+    title: "✈️  БЕЛЕБЕЙ",
+
+    addressTitle: "Аэропорт отправления:",
+
+    addresses: [
+      [
+        "",
+        "улица Амирова, 10А, Центральный дворец культуры Белебеевского района."
+      ]
+    ],
+
+    rows: [
+      [
+        "15:00–15:30",
+        T.registration,
+        T.registrationDescription
+      ],
+      [
+        "15:30–18:00",
+        T.takeoff,
+        T.takeoffDescription
+      ],
+      [
+        "18:00–20:00",
+        T.flight,
+        T.flightDescription
+      ]
+    ]
+  }
 ];
 
-const closing = body.slice(closingIndex);
-
 /* =========================================================
-   ЛОГОТИП
+   ЛОГОТИП: ЛОКАЛЬНЫЙ ФАЙЛ, БЕЗ СКАЧИВАНИЯ ИЗ ИНТЕРНЕТА
    ========================================================= */
 
 let logoPath = null;
 
-for (const candidate of [
-  path.join(ASSETS, "f-logo.png"),
+const logoCandidates = [
   path.join(ROOT, "logo.png"),
   path.join(ROOT, "logo.jpg"),
   path.join(ROOT, "logo.jpeg"),
-  path.join(ROOT, "logo.webp")
-]) {
+  path.join(ROOT, "logo.webp"),
+  path.join(ASSETS, "g-logo.png"),
+  path.join(ASSETS, "f-logo.png")
+];
+
+for (const candidate of logoCandidates) {
   try {
     await fs.access(candidate);
     logoPath = candidate;
     break;
-  } catch {}
+  } catch {
+    // Проверяем следующий файл.
+  }
 }
 
 if (!logoPath) {
   throw new Error(
-    "Не найден логотип. " +
-    "Положите logo.png рядом с retro.mjs."
+    "Не найден логотип. Положите logo.png рядом с retro.mjs."
   );
 }
 
-await sharp(await fs.readFile(logoPath))
+// Сначала читаем в память: это позволяет безопасно
+// использовать уже существующий dist/assets/g-logo.png.
+const logoBuffer = await fs.readFile(logoPath);
+
+await sharp(logoBuffer)
   .flatten({ background: "#ffffff" })
-  .resize({ width: 560, withoutEnlargement: true })
+  .resize({
+    width: 560,
+    withoutEnlargement: true
+  })
   .png({ compressionLevel: 9 })
   .toFile(path.join(ASSETS, "g-logo.png"));
 
+console.log("Логотип подготовлен.");
+
 /* =========================================================
-   АФИШНАЯ ИЛЛЮСТРАЦИЯ БЕЗ НАДПИСЕЙ
+   АФИШНАЯ ИЛЛЮСТРАЦИЯ
+   Без надписей. В письмо включается PNG.
    ========================================================= */
 
 function star(cx, cy, outer, inner, rotation = 0) {
@@ -220,12 +281,16 @@ const illustration = `
           fill="${C.orange}"/>
 
   <path d="M838 194Q962 117 1080 159"
-        fill="none" stroke="#ffffff"
-        stroke-width="4" opacity=".5"/>
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="4"
+        opacity=".5"/>
 
   <path d="M-50 548C250 548 445 470 698 324"
-        fill="none" stroke="${C.blue}"
-        stroke-width="3" stroke-dasharray="12 16"/>
+        fill="none"
+        stroke="${C.blue}"
+        stroke-width="3"
+        stroke-dasharray="12 16"/>
 
   <g transform="translate(777 316) rotate(55) scale(1.65)">
     <path d="
@@ -242,14 +307,17 @@ const illustration = `
       fill="#ffffff"/>
   </g>
 
-  <polygon points="${star(190, 188, 48, 20, 0.1)}"
-           fill="${C.green}"/>
+  <polygon
+    points="${star(190, 188, 48, 20, 0.1)}"
+    fill="${C.green}"/>
 
-  <polygon points="${star(429, 316, 25, 10, 0.3)}"
-           fill="${C.blue}"/>
+  <polygon
+    points="${star(429, 316, 25, 10, 0.3)}"
+    fill="${C.blue}"/>
 
-  <polygon points="${star(1132, 584, 30, 12)}"
-           fill="${C.green}"/>
+  <polygon
+    points="${star(1132, 584, 30, 12)}"
+    fill="${C.green}"/>
 
   <g fill="${C.navy}">
     <circle cx="347" cy="125" r="6"/>
@@ -277,105 +345,102 @@ await sharp(Buffer.from(illustration))
   .png({ palette: true, compressionLevel: 9 })
   .toFile(path.join(ASSETS, "g-poster.png"));
 
+console.log("Иллюстрация подготовлена.");
+
 /* =========================================================
-   MJML-КОМПОНЕНТЫ
+   КОМПОНЕНТЫ MJML
    ========================================================= */
 
-const txt = (value, attrs = "") =>
-  `<mj-text ${attrs}>${esc(value)}</mj-text>`;
+function txt(value, attributes = "") {
+  return `<mj-text ${attributes}>${esc(value)}</mj-text>`;
+}
 
-function section(content, attrs = "") {
+function section(content, attributes = "") {
   return `
-    <mj-section padding="0 30px"
-                background-color="${C.paper}" ${attrs}>
-      <mj-column>${content}</mj-column>
+    <mj-section
+      padding="0 30px"
+      background-color="${C.paper}"
+      ${attributes}>
+      <mj-column>
+        ${content}
+      </mj-column>
     </mj-section>
   `;
 }
 
-function groupBlock(values, groupIndex) {
-  const heading = values[0];
-  const rows = [];
-  const addresses = [];
-
-  for (let i = 1; i < values.length; i++) {
-    const match = values[i].match(
-      /^(\d{2}:\d{2}–\d{2}:\d{2}) — (.+)$/u
-    );
-
-    if (match) {
-      if (!values[i + 1]) {
-        throw new Error("Не найдено описание этапа.");
-      }
-
-      rows.push({
-        time: match[1],
-        title: match[2],
-        description: values[++i]
-      });
-    } else {
-      addresses.push(values[i]);
-    }
-  }
-
-  if (rows.length !== 3) {
-    throw new Error(
-      "Ожидались три этапа расписания для каждой группы."
-    );
-  }
-
+function groupBlock(group, groupIndex) {
   const accent = groupIndex === 0 ? C.orange : C.blue;
 
   return `
-    <mj-section padding="19px 30px"
-                background-color="${C.navy}"
-                border-top="5px solid ${accent}">
+    <mj-section
+      padding="19px 30px"
+      background-color="${C.navy}"
+      border-top="5px solid ${accent}">
       <mj-column>
-        ${txt(heading,
-          `font-size="22px" line-height="1.35"
-           font-weight="700" color="#ffffff"
+        ${txt(group.title,
+          `font-size="22px"
+           line-height="1.35"
+           font-weight="700"
+           color="#ffffff"
            padding="0"`)}
       </mj-column>
     </mj-section>
 
-    ${rows.map((row, index) => `
-      <mj-section padding="22px 30px 18px"
-                  background-color="${C.paper}">
+    ${group.rows.map(([time, title, description], index) => `
+      <mj-section
+        padding="22px 30px 18px"
+        background-color="${C.paper}">
+
         <mj-column width="42%" vertical-align="top">
-          ${txt(`${row.time} —`,
-            `font-size="27px" line-height="1.2"
+          ${txt(`${time} —`,
+            `font-size="27px"
+             line-height="1.2"
              font-weight="700"
              color="${index === 1 ? C.orange : C.navy}"
              padding="0 15px 12px 0"`)}
         </mj-column>
 
         <mj-column width="58%" vertical-align="top">
-          ${txt(row.title,
-            `font-size="19px" line-height="1.35"
-             font-weight="700" padding="0 0 10px"`)}
-          ${txt(row.description,
-            `font-size="16px" line-height="1.65"
+          ${txt(title,
+            `font-size="19px"
+             line-height="1.35"
+             font-weight="700"
+             padding="0 0 10px"`)}
+          ${txt(description,
+            `font-size="16px"
+             line-height="1.65"
              padding="0"`)}
         </mj-column>
+
       </mj-section>
 
       ${section(`
-        <mj-divider border-color="${C.line}"
-                    border-width="1px" padding="0"/>
+        <mj-divider
+          border-color="${C.line}"
+          border-width="1px"
+          padding="0"/>
       `)}
     `).join("")}
 
     ${section(`
-      ${addresses.map((value, index) => {
-        const label = index === 0 || /:$/.test(value);
+      ${txt(group.addressTitle,
+        `font-size="14px"
+         font-weight="700"
+         color="${C.navy}"
+         padding="14px 0 5px"`)}
 
-        return txt(value,
-          label
-            ? `font-size="14px" font-weight="700"
-               color="${C.navy}" padding="14px 0 5px"`
-            : `font-size="16px" padding="0 0 8px"`
-        );
-      }).join("")}
+      ${group.addresses.map(([city, address]) => `
+        ${city ? txt(city,
+          `font-size="14px"
+           font-weight="700"
+           color="${C.navy}"
+           padding="14px 0 5px"`) : ""}
+
+        ${txt(address,
+          `font-size="16px"
+           padding="0 0 8px"`)}
+      `).join("")}
+
       <mj-spacer height="27px"/>
     `)}
   `;
@@ -388,15 +453,19 @@ function groupBlock(values, groupIndex) {
 const source = `
 <mjml lang="ru">
   <mj-head>
-    <mj-title>${esc(subject.replace(/^Тема: /, ""))}</mj-title>
+    <mj-title>${esc(T.emailSubject)}</mj-title>
+
     <mj-breakpoint width="480px"/>
 
     <mj-attributes>
       <mj-all font-family="Arial, Helvetica, sans-serif"/>
-      <mj-text font-size="17px"
-               line-height="1.65"
-               color="${C.ink}"
-               padding="0 0 17px"/>
+
+      <mj-text
+        font-size="17px"
+        line-height="1.65"
+        color="${C.ink}"
+        padding="0 0 17px"/>
+
       <mj-image padding="0"/>
     </mj-attributes>
 
@@ -406,10 +475,12 @@ const source = `
           font-size:48px !important;
           line-height:1.05 !important;
         }
+
         .headline div {
           font-size:31px !important;
           line-height:1.12 !important;
         }
+
         .statement div {
           font-size:29px !important;
           line-height:1.18 !important;
@@ -420,97 +491,134 @@ const source = `
 
   <mj-body width="640px" background-color="#e3e8e3">
 
-    <mj-section padding="25px 30px 18px"
-                background-color="#ffffff">
+    <mj-section
+      padding="25px 30px 24px"
+      background-color="#ffffff">
       <mj-column>
-        <mj-image src="${asset("g-logo.png")}"
-                  alt="Groupe Savencia"
-                  width="216px" align="left"
-                  padding="0 0 22px"/>
-        ${txt(documentTitle,
-          `font-size="12px" color="${C.muted}" padding="0"`)}
+        <mj-image
+          src="${asset("g-logo.png")}"
+          alt="Groupe Savencia"
+          width="216px"
+          align="left"
+          padding="0"/>
       </mj-column>
     </mj-section>
 
-    <mj-section padding="28px 30px 0"
-                background-color="${C.sky}">
+    <mj-section
+      padding="28px 30px 0"
+      background-color="${C.sky}">
       <mj-column>
-        ${txt("Тема:",
-          `font-size="12px" color="${C.muted}"
-           padding="0 0 12px"`)}
-        ${txt("10 декабря",
-          `font-size="68px" line-height="1"
-           font-weight="700" color="${C.navy}"
-           padding="0 0 12px" css-class="date"`)}
-        ${txt("— Вылет в Новый ГОД!",
-          `font-size="41px" line-height="1.1"
-           font-weight="700" color="${C.navy}"
-           padding="0" css-class="headline"`)}
+
+        ${txt(T.date,
+          `font-size="68px"
+           line-height="1"
+           font-weight="700"
+           color="${C.navy}"
+           padding="0 0 12px"
+           css-class="date"`)}
+
+        ${txt(T.headline,
+          `font-size="41px"
+           line-height="1.1"
+           font-weight="700"
+           color="${C.navy}"
+           padding="0"
+           css-class="headline"`)}
+
       </mj-column>
     </mj-section>
 
     <mj-section padding="0" background-color="${C.sky}">
       <mj-column>
-        <mj-image src="${asset("g-poster.png")}"
-                  alt="" width="640px" padding="0"/>
+        <mj-image
+          src="${asset("g-poster.png")}"
+          alt=""
+          width="640px"
+          padding="0"/>
       </mj-column>
     </mj-section>
 
     ${section(`
-      ${intro.map((value, index) => txt(value,
-        index === 0
-          ? `font-size="23px" font-weight="700"
-             padding="29px 0 17px"`
-          : `padding="0 0 18px"`
-      )).join("")}
+      ${txt(T.greeting,
+        `font-size="23px"
+         font-weight="700"
+         padding="29px 0 17px"`)}
+
+      ${txt(T.attention, `padding="0 0 18px"`)}
+
+      ${txt(T.journey, `padding="0 0 18px"`)}
+
       <mj-spacer height="8px"/>
     `)}
 
-    <mj-section padding="27px 30px"
-                background-color="${C.green}">
+    <mj-section
+      padding="27px 30px"
+      background-color="${C.green}">
       <mj-column>
-        ${txt(body[sloganIndex],
-          `font-size="36px" line-height="1.15"
-           font-weight="700" color="${C.navy}"
-           padding="0" css-class="statement"`)}
+
+        ${txt(T.slogan,
+          `font-size="36px"
+           line-height="1.15"
+           font-weight="700"
+           color="${C.navy}"
+           padding="0"
+           css-class="statement"`)}
+
       </mj-column>
     </mj-section>
 
     ${section(`
-      ${middle.map((value, index) => txt(value,
-        `padding="${index === 0 ? "27px" : "0"} 0 18px"`
-      )).join("")}
+      ${txt(T.airports, `padding="27px 0 18px"`)}
 
-      <mj-divider border-color="${C.orange}"
-                  border-width="4px" padding="8px 0 24px"/>
+      ${txt(T.program, `padding="0 0 18px"`)}
 
-      ${txt(body[scheduleIndex],
-        `font-size="31px" line-height="1.2"
-         font-weight="700" padding="0 0 26px"`)}
+      ${txt(T.ticket, `padding="0 0 18px"`)}
+
+      <mj-divider
+        border-color="${C.orange}"
+        border-width="4px"
+        padding="8px 0 24px"/>
+
+      ${txt(T.schedule,
+        `font-size="31px"
+         line-height="1.2"
+         font-weight="700"
+         padding="0 0 26px"`)}
     `)}
 
-    ${groups.map(groupBlock).join("")}
+    ${GROUPS.map(groupBlock).join("")}
 
     ${section(`
-      ${closing.slice(0, -2).map((value, index) => txt(value,
-        index === 0
-          ? `font-size="22px" font-weight="700"
-             padding="2px 0 17px"`
-          : `padding="0 0 18px"`
-      )).join("")}
+      ${txt(T.passengers,
+        `font-size="22px"
+         font-weight="700"
+         padding="2px 0 17px"`)}
+
+      ${txt(T.mood, `padding="0 0 18px"`)}
+
+      ${txt(T.waiting, `padding="0 0 18px"`)}
+
       <mj-spacer height="9px"/>
     `)}
 
-    <mj-section padding="28px 30px 32px"
-                background-color="${C.navy}"
-                border-top="5px solid ${C.orange}">
+    <mj-section
+      padding="28px 30px 32px"
+      background-color="${C.navy}"
+      border-top="5px solid ${C.orange}">
       <mj-column>
-        ${txt(closing.at(-2),
-          `font-size="30px" line-height="1.2"
-           font-weight="700" color="#ffffff"
+
+        ${txt(T.meeting,
+          `font-size="30px"
+           line-height="1.2"
+           font-weight="700"
+           color="#ffffff"
            padding="0 0 15px"`)}
-        ${txt(closing.at(-1),
-          `font-size="17px" color="#ffffff" padding="0"`)}
+
+        ${txt(T.crew,
+          `font-size="17px"
+           color="#ffffff"
+           padding="0"`)}
+
       </mj-column>
     </mj-section>
 
@@ -519,7 +627,7 @@ const source = `
 `.trim();
 
 /* =========================================================
-   КОМПИЛЯЦИЯ И ПРОВЕРКА СОВПАДЕНИЯ ТЕКСТА
+   КОМПИЛЯЦИЯ
    ========================================================= */
 
 const result = await mjml2html(source, {
@@ -527,7 +635,10 @@ const result = await mjml2html(source, {
 });
 
 if (result.errors?.length) {
-  throw new Error(JSON.stringify(result.errors, null, 2));
+  throw new Error(
+    "Ошибки MJML:\n" +
+    JSON.stringify(result.errors, null, 2)
+  );
 }
 
 if (typeof result.html !== "string") {
@@ -535,8 +646,10 @@ if (typeof result.html !== "string") {
 }
 
 const html = result.html.trim();
+
 const bytes = Buffer.byteLength(html, "utf8");
 
+// Запас относительно пользовательского ограничения 100 КБ.
 if (bytes >= 90_000) {
   throw new Error(
     `HTML занимает ${bytes} байт. ` +
@@ -544,32 +657,115 @@ if (bytes >= 90_000) {
   );
 }
 
-const actual = normalize(
-  decode(
-    html
-      .replace(/<!--[\s\S]*?-->/g, " ")
-      .replace(/<head[\s\S]*?<\/head>/i, " ")
-      .replace(/<style[\s\S]*?<\/style>/gi, " ")
-      .replace(/<[^>]*>/g, " ")
-  )
-);
+/* =========================================================
+   ПРОВЕРКА ВИДИМОГО ТЕКСТА
+   CSS И HEAD НЕ УЧАСТВУЮТ В СРАВНЕНИИ
+   ========================================================= */
 
-const expected = normalize(
-  [documentTitle, subject, ...body].join(" ")
-);
-
-if (actual !== expected) {
-  throw new Error(
-    "Текст нового письма отличается от исходного f.mjml. " +
-    "Сборка остановлена."
+function visibleText(value) {
+  return normalize(
+    decode(
+      value
+        .replace(/<!--[\s\S]*?-->/g, " ")
+        .replace(/<head\b[^>]*>[\s\S]*?<\/head>/gi, " ")
+        .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
+        .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
+        .replace(/<[^>]*>/g, " ")
+    )
   );
 }
 
-await fs.writeFile(path.join(OUT, "g.mjml"), source, "utf8");
-await fs.writeFile(path.join(OUT, "g.html"), html, "utf8");
+const required = [
+  T.date,
+  T.headline,
+  T.greeting,
+  T.attention,
+  T.journey,
+  T.slogan,
+  T.airports,
+  T.program,
+  T.ticket,
+  T.schedule,
+
+  ...GROUPS.flatMap(group => [
+    group.title,
+
+    ...group.rows.flatMap(([time, title, description]) => [
+      `${time} — ${title}`,
+      description
+    ]),
+
+    group.addressTitle,
+
+    ...group.addresses.flatMap(([city, address]) =>
+      city ? [city, address] : [address]
+    )
+  ]),
+
+  T.passengers,
+  T.mood,
+  T.waiting,
+  T.meeting,
+  T.crew
+];
+
+const expected = normalize(required.join(" "));
+const actual = visibleText(html);
+
+if (actual !== expected) {
+  let cursor = 0;
+
+  for (const fragment of required) {
+    const target = normalize(fragment);
+    const index = actual.indexOf(target, cursor);
+
+    if (index === -1) {
+      throw new Error(
+        "Проверка текста не пройдена.\n" +
+        "Не найден фрагмент в нужном порядке:\n" +
+        fragment
+      );
+    }
+
+    cursor = index + target.length;
+  }
+
+  throw new Error(
+    "В теле письма обнаружены дополнительные " +
+    "или изменённые текстовые фрагменты."
+  );
+}
+
+if (
+  actual.includes("Информационная рассылка в почте") ||
+  actual.includes("Тема:") ||
+  actual.includes("@media")
+) {
+  throw new Error(
+    "В письмо попали служебные надписи. Сборка остановлена."
+  );
+}
 
 /* =========================================================
-   ЛОКАЛЬНЫЙ ПРЕДПРОСМОТР
+   СОХРАНЕНИЕ ФАЙЛОВ ДЛЯ РАССЫЛКИ
+   ========================================================= */
+
+await fs.writeFile(
+  path.join(OUT, "g.mjml"),
+  source,
+  "utf8"
+);
+
+await fs.writeFile(
+  path.join(OUT, "g.html"),
+  html,
+  "utf8"
+);
+
+/* =========================================================
+   ЛОКАЛЬНЫЙ ПРОСМОТРЩИК
+   BASE64 ИСПОЛЬЗУЕТСЯ ТОЛЬКО В НЁМ.
+   В g.html ОСТАЮТСЯ ОБЫЧНЫЕ HTTPS-ССЫЛКИ.
    ========================================================= */
 
 let localHTML = html;
@@ -592,10 +788,16 @@ const preview = `<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1">
+
   <title>Savencia — новогодняя авиационная афиша</title>
+
   <style>
-    * { box-sizing:border-box; }
+    * {
+      box-sizing:border-box;
+    }
 
     body {
       margin:0;
@@ -617,7 +819,10 @@ const preview = `<!doctype html>
       border-bottom:1px solid #c3d7de;
     }
 
-    h1 { margin:0 auto 0 0; font-size:18px; }
+    h1 {
+      margin:0 auto 0 0;
+      font-size:18px;
+    }
 
     button {
       padding:10px 13px;
@@ -642,9 +847,15 @@ const preview = `<!doctype html>
       line-height:1.6;
     }
 
-    a { color:#004b62; margin-left:12px; }
+    a {
+      color:#004b62;
+      margin-left:12px;
+    }
 
-    .stage { overflow-x:auto; padding:0 12px 40px; }
+    .stage {
+      overflow-x:auto;
+      padding:0 12px 40px;
+    }
 
     iframe {
       display:block;
@@ -656,15 +867,20 @@ const preview = `<!doctype html>
       box-shadow:0 12px 36px rgba(0,45,65,.12);
     }
 
-    body.mobile iframe { width:375px; }
+    body.mobile iframe {
+      width:375px;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Новогодняя авиационная афиша</h1>
+
     <button id="desktop" class="active" type="button">
       Компьютер · 640 px
     </button>
+
     <button id="mobile" type="button">
       Телефон · 375 px
     </button>
@@ -672,13 +888,17 @@ const preview = `<!doctype html>
 
   <div class="info">
     HTML: ${(bytes / 1024).toFixed(1)} КиБ.
-    Текст совпадает с предыдущим письмом.
+    Текст проверен.
+
     <a href="g.mjml">MJML</a>
     <a href="g.html">HTML для рассылки</a>
   </div>
 
   <div class="stage">
-    <iframe id="frame" title="Письмо Savencia"></iframe>
+    <iframe
+      id="frame"
+      title="Предпросмотр письма Savencia">
+    </iframe>
   </div>
 
   <script>
@@ -689,6 +909,7 @@ const preview = `<!doctype html>
     function resizeFrame() {
       try {
         const doc = frame.contentDocument;
+
         if (!doc || !doc.body) return;
 
         frame.style.height = "1px";
@@ -709,25 +930,43 @@ const preview = `<!doctype html>
       document.body.classList.toggle("mobile", enabled);
       desktop.classList.toggle("active", !enabled);
       mobile.classList.toggle("active", enabled);
+
       setTimeout(resizeFrame, 100);
       setTimeout(resizeFrame, 500);
     }
 
-    desktop.addEventListener("click", () => setMobile(false));
-    mobile.addEventListener("click", () => setMobile(true));
+    desktop.addEventListener("click", () => {
+      setMobile(false);
+    });
+
+    mobile.addEventListener("click", () => {
+      setMobile(true);
+    });
 
     frame.addEventListener("load", () => {
       resizeFrame();
+
       setTimeout(resizeFrame, 300);
       setTimeout(resizeFrame, 900);
 
       try {
-        frame.contentDocument.querySelectorAll("img").forEach(img => {
-          if (!img.complete) {
-            img.addEventListener("load", resizeFrame, { once:true });
-            img.addEventListener("error", resizeFrame, { once:true });
-          }
-        });
+        frame.contentDocument
+          .querySelectorAll("img")
+          .forEach(img => {
+            if (!img.complete) {
+              img.addEventListener(
+                "load",
+                resizeFrame,
+                { once:true }
+              );
+
+              img.addEventListener(
+                "error",
+                resizeFrame,
+                { once:true }
+              );
+            }
+          });
       } catch {}
     });
 
@@ -735,7 +974,9 @@ const preview = `<!doctype html>
       setTimeout(resizeFrame, 100);
     });
 
-    if (window.innerWidth < 500) setMobile(true);
+    if (window.innerWidth < 500) {
+      setMobile(true);
+    }
 
     frame.srcdoc = ${embedded};
   </script>
@@ -753,16 +994,27 @@ await fs.writeFile(
   JSON.stringify({
     variant: "Новогодняя авиационная афиша",
     htmlBytes: bytes,
-    copyCheck: "matched f.mjml",
-    mjmlValidation: "passed"
+    copyCheck: "passed",
+    mjmlValidation: "passed",
+    removedServiceLabels: true
   }, null, 2),
   "utf8"
 );
 
 console.log("");
-console.log("Новый вариант собран.");
-console.log(`HTML: ${bytes} байт.`);
-console.log("Текст совпадает с f.mjml.");
+console.log("Письмо собрано.");
+console.log(`Размер HTML: ${bytes} байт.`);
+console.log("Основной текст, расписание и адреса проверены.");
+console.log("Служебные надписи удалены.");
 console.log("");
 console.log("Откройте:");
 console.log(path.join(OUT, "g-preview.html"));
+console.log("");
+console.log(
+  "Для рассылки разместите картинки на HTTPS-хостинге, " +
+  "укажите ASSET_BASE и повторите сборку."
+);
+console.log(
+  "Перед массовой отправкой проверьте тестовое письмо " +
+  "в Gmail, Outlook и на телефоне."
+);

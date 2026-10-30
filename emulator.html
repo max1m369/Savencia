@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Эмулятор рассылки Savencia — Тестирование адаптивности (ПК и Смартфон)</title>
+  <title>Эмулятор рассылки Savencia — Варианты 1–8 и Варфрейм</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -20,64 +20,46 @@
     header {
       background: #1e293b;
       border-bottom: 1px solid #334155;
-      padding: 12px 24px;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-shrink: 0;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
       gap: 12px;
-      font-weight: 700;
-      font-size: 15px;
-      letter-spacing: 0.5px;
-    }
-    .badge {
-      background: #008fd0;
-      color: #fff;
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      font-weight: 700;
+      flex-wrap: wrap;
     }
     .variant-selector {
       display: flex;
-      gap: 6px;
+      gap: 4px;
       background: #0f172a;
       padding: 4px;
       border-radius: 8px;
       border: 1px solid #334155;
-      flex-wrap: wrap;
+      align-items: center;
     }
     .btn-var {
       background: transparent;
       border: none;
       color: #94a3b8;
-      padding: 8px 12px;
-      font-size: 12.5px;
-      font-weight: 600;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 700;
       cursor: pointer;
       border-radius: 6px;
       transition: all 0.2s ease;
       display: flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      min-width: 38px;
     }
     .btn-var:hover {
       color: #fff;
+      background: rgba(255, 255, 255, 0.05);
     }
     .btn-var.active {
       background: #008fd0;
       color: #ffffff;
-      box-shadow: 0 2px 6px rgba(0, 143, 208, 0.4);
-    }
-    .btn-var.highlight {
-      border: 1px solid rgba(222, 106, 9, 0.4);
+      box-shadow: 0 2px 8px rgba(0, 143, 208, 0.45);
     }
     .btn-var.highlight.active {
       background: #de6a09;
@@ -96,7 +78,7 @@
       background: transparent;
       border: none;
       color: #94a3b8;
-      padding: 8px 12px;
+      padding: 7px 14px;
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
@@ -118,9 +100,9 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 24px;
+      padding: 20px;
       overflow: auto;
-      gap: 32px;
+      gap: 28px;
     }
     .device-wrap {
       display: flex;
@@ -201,40 +183,38 @@
 <body>
 
   <header>
-    <div class="brand">
-      <span>SAVENCIA FLIGHT STUDIO</span>
-      <span class="badge">Эмулятор рассылки</span>
-    </div>
-
-    <!-- Переключатель вариантов макета -->
+    <!-- Переключатель вариантов: Варфрейм и просто цифры 1..8 -->
     <div class="variant-selector">
       <button class="btn-var" onclick="setVariant('wireframe.html', this)">
-        <span>📐</span> Варфрейм
+        Варфрейм
       </button>
       <button class="btn-var" onclick="setVariant('variant1.html', this)">
-        <span>🎫</span> Вар. 1 (Билет)
+        1
       </button>
       <button class="btn-var" onclick="setVariant('variant2.html', this)">
-        <span>🏢</span> Вар. 2 (Терминал)
+        2
       </button>
       <button class="btn-var" onclick="setVariant('variant3.html', this)">
-        <span>🛫</span> Вар. 3 (Полоса)
+        3
       </button>
       <button class="btn-var" onclick="setVariant('variant4.html', this)">
-        <span>✉️</span> Вар. 4 (Aéropostale Folio)
+        4
       </button>
       <button class="btn-var" onclick="setVariant('variant5.html', this)">
-        <span>🇨🇭</span> Вар. 5 (Swiss Wayfinding)
+        5
       </button>
       <button class="btn-var" onclick="setVariant('variant6.html', this)">
-        <span>🎨</span> Вар. 6 (Colorful Terminal)
+        6
       </button>
-      <button class="btn-var highlight active" onclick="setVariant('variant7.html', this)">
-        <span>🪟</span> Вариант 7 (Editorial Window)
+      <button class="btn-var" onclick="setVariant('variant7.html', this)">
+        7
+      </button>
+      <button class="btn-var highlight active" onclick="setVariant('variant8.html', this)">
+        8
       </button>
     </div>
 
-    <!-- Режим экранов -->
+    <!-- Режим экранов: Рядом, ПК, Смартфон -->
     <div class="controls">
       <button class="btn-mode active" onclick="setMode('side-by-side', this)">
         <span>📱💻</span> Рядом
@@ -254,10 +234,10 @@
       <div class="device-title">
         <span>💻 Компьютер / Outlook & Gmail Web</span>
         <span class="size-indicator">600–740px</span>
-        <span class="weight-indicator" id="weightDesktop">HTML: 54.3 KB (&lt; 100 KB)</span>
+        <span class="weight-indicator" id="weightDesktop">HTML: 49.6 KB (&lt; 100 KB)</span>
       </div>
       <div class="device-frame desktop">
-        <iframe id="iframeDesktop" src="variant7.html"></iframe>
+        <iframe id="iframeDesktop" src="variant8.html"></iframe>
       </div>
     </div>
 
@@ -268,17 +248,21 @@
         <span class="size-indicator">375px</span>
       </div>
       <div class="device-frame mobile">
-        <iframe id="iframeMobile" src="variant7.html"></iframe>
+        <iframe id="iframeMobile" src="variant8.html"></iframe>
       </div>
     </div>
   </main>
 
   <script>
-    let currentVariant = 'variant7.html';
+    let currentVariant = 'variant8.html';
 
     function setVariant(url, btn) {
-      document.querySelectorAll('.btn-var').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.btn-var').forEach(b => {
+        b.classList.remove('active');
+        b.classList.remove('highlight');
+      });
       btn.classList.add('active');
+      btn.classList.add('highlight');
       currentVariant = url;
       document.getElementById('iframeDesktop').src = url;
       document.getElementById('iframeMobile').src = url;
@@ -298,6 +282,8 @@
         weightEl.textContent = 'HTML: 72.2 KB (< 100 KB)';
       } else if (url === 'variant7.html') {
         weightEl.textContent = 'HTML: 54.3 KB (< 100 KB)';
+      } else if (url === 'variant8.html') {
+        weightEl.textContent = 'HTML: 49.6 KB (< 100 KB)';
       } else {
         weightEl.textContent = 'Ч/Б варфрейм';
       }

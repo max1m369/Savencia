@@ -1,6 +1,7 @@
 {
   "variant": "Новогодняя авиационная афиша",
-  "htmlBytes": 69621,
-  "copyCheck": "matched f.mjml",
-  "mjmlValidation": "passed"
+  "htmlBytes": 68462,
+  "copyCheck": "passed",
+  "mjmlValidation": "passed",
+  "removedServiceLabels": true
 }
