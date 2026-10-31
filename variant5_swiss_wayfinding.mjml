@@ -10,6 +10,15 @@
       <mj-image padding="0" />
     </mj-attributes>
     <mj-style>
+      /* Hallmark · built: Savencia · redesign: polish · genre: editorial */
+      :root {
+        --color-bg-base: #e8eff2;
+        --color-navy: #00303f;
+        --color-orange: #de6a09;
+        --color-slate-text: #334155;
+        --color-slate-muted: #64748b;
+        --color-border: #cbd5e1;
+      }
       .mono {
         font-family: "Courier New", Courier, monospace, sans-serif !important;
       }
@@ -85,7 +94,7 @@
       <mj-column width="45%" vertical-align="middle">
         <mj-text align="right" font-family="'Courier New', Courier, monospace" font-size="11px" font-weight="bold" color="#64748b" letter-spacing="1px">
           FLIGHT: <span style="color:#004b62; font-weight:900;">SV-2027</span> &nbsp;|&nbsp; GATE: <span style="color:#de6a09; font-weight:900;">2027</span><br />
-          <span style="font-size:9px; color:#94a3b8;">DISPATCH: 10.12.2026 // ON SCHEDULE</span>
+          <span style="font-size:9px; color:#94a3b8;">DISPATCH: 10.12.2027 // ON SCHEDULE</span>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -489,15 +498,10 @@
       </mj-column>
     </mj-section>
 
-    <!-- 7. ФУТЕР: КОЛОФОН В ШВЕЙЦАРСКОМ СТИЛЕ (Ref 5) -->
-    <mj-section background-color="#e8eff2" padding="10px 20px 36px 20px" css-class="px">
+    <!-- 7. ДЕЛИКАТНЫЙ ПОДВАЛ -->
+    <mj-section background-color="#e8eff2" padding="12px 20px 32px 20px" css-class="px">
       <mj-column width="100%">
-        <mj-divider border-width="1px" border-color="#cbd5e1" padding="0 0 16px 0" />
-        <mj-text align="center" font-family="'Courier New', monospace" font-size="10px" color="#64748b" line-height="1.6">
-          GROUPE SAVENCIA • LEADING THE WAY TO BETTER FOOD<br />
-          MOW [55.7558° N] • UFA [54.7388° N] • BEL [54.1031° N]<br />
-          FLIGHT SV-2027 // ALL SYSTEMS OPERATIONAL // PRE-FLIGHT DISPATCH
-        </mj-text>
+        <mj-spacer height="8px" />
       </mj-column>
     </mj-section>
 
