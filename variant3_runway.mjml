@@ -35,6 +35,18 @@
           display: inline-block !important;
           margin-bottom: 6px !important;
         }
+        .sched-table, .sched-table tbody, .sched-table tr, .sched-time-col, .sched-desc-col {
+          display: block !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+        }
+        .sched-time-col {
+          margin-bottom: 6px !important;
+        }
+        .sched-desc-col {
+          padding-left: 0 !important;
+          margin-bottom: 14px !important;
+        }
         .city-box {
           display: block !important;
           width: 100% !important;
@@ -129,12 +141,12 @@
             <!-- Этапы вылета -->
             <div style="padding: 20px 22px;">
               <!-- Этап 1 -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
+              <table class="sched-table" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
                 <tr>
-                  <td width="120" valign="top">
+                  <td class="sched-time-col" width="120" valign="top">
                     <span class="time-badge" style="display:inline-block; background-color: #004b62; color: #ffffff; font-weight: bold; font-size: 11px; padding: 5px 10px; border-radius: 6px;">17:00 – 18:00</span>
                   </td>
-                  <td valign="top" style="padding-left: 8px;">
+                  <td class="sched-desc-col" valign="top" style="padding-left: 8px;">
                     <div style="color: #ffffff; font-weight: bold; font-size: 14px;">Регистрация на рейс (Welcome)</div>
                     <div style="color: #94a3b8; font-size: 12px; margin-top: 3px; line-height: 1.45;">Встреча пассажиров, посадочные билеты, фотозона, угощения и старт праздника.</div>
                   </td>
@@ -142,12 +154,12 @@
               </table>
 
               <!-- Этап 2 -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
+              <table class="sched-table" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
                 <tr>
-                  <td width="120" valign="top">
+                  <td class="sched-time-col" width="120" valign="top">
                     <span class="time-badge" style="display:inline-block; background-color: #de6a09; color: #ffffff; font-weight: bold; font-size: 11px; padding: 5px 10px; border-radius: 6px;">18:00 – 20:00</span>
                   </td>
-                  <td valign="top" style="padding-left: 8px;">
+                  <td class="sched-desc-col" valign="top" style="padding-left: 8px;">
                     <div style="color: #ffffff; font-weight: bold; font-size: 14px;">Взлёт. Торжественная часть</div>
                     <div style="color: #94a3b8; font-size: 12px; margin-top: 3px; line-height: 1.45;">Церемония награждения сотрудников и официальная новогодняя программа.</div>
                   </td>
@@ -155,12 +167,12 @@
               </table>
 
               <!-- Этап 3 -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
+              <table class="sched-table" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
                 <tr>
-                  <td width="120" valign="top">
+                  <td class="sched-time-col" width="120" valign="top">
                     <span class="time-badge" style="display:inline-block; background-color: #008fd0; color: #ffffff; font-weight: bold; font-size: 11px; padding: 5px 10px; border-radius: 6px;">20:00 – 23:00</span>
                   </td>
-                  <td valign="top" style="padding-left: 8px;">
+                  <td class="sched-desc-col" valign="top" style="padding-left: 8px;">
                     <div style="color: #ffffff; font-weight: bold; font-size: 14px;">Полёт в Новый год</div>
                     <div style="color: #94a3b8; font-size: 12px; margin-top: 3px; line-height: 1.45;">Праздничный фуршет, музыка, общение и новогодние сюрпризы.</div>
                   </td>
@@ -201,12 +213,12 @@
             <!-- Этапы вылета -->
             <div style="padding: 20px 22px;">
               <!-- Этап 1 -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
+              <table class="sched-table" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
                 <tr>
-                  <td width="120" valign="top">
+                  <td class="sched-time-col" width="120" valign="top">
                     <span class="time-badge" style="display:inline-block; background-color: #004b62; color: #ffffff; font-weight: bold; font-size: 11px; padding: 5px 10px; border-radius: 6px;">15:00 – 15:30</span>
                   </td>
-                  <td valign="top" style="padding-left: 8px;">
+                  <td class="sched-desc-col" valign="top" style="padding-left: 8px;">
                     <div style="color: #ffffff; font-weight: bold; font-size: 14px;">Регистрация на рейс (Welcome)</div>
                     <div style="color: #94a3b8; font-size: 12px; margin-top: 3px; line-height: 1.45;">Встреча пассажиров, билеты для розыгрыша, фотозона и угощения.</div>
                   </td>
@@ -214,12 +226,12 @@
               </table>
 
               <!-- Этап 2 -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
+              <table class="sched-table" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
                 <tr>
-                  <td width="120" valign="top">
+                  <td class="sched-time-col" width="120" valign="top">
                     <span class="time-badge" style="display:inline-block; background-color: #de6a09; color: #ffffff; font-weight: bold; font-size: 11px; padding: 5px 10px; border-radius: 6px;">15:30 – 18:00</span>
                   </td>
-                  <td valign="top" style="padding-left: 8px;">
+                  <td class="sched-desc-col" valign="top" style="padding-left: 8px;">
                     <div style="color: #ffffff; font-weight: bold; font-size: 14px;">Взлёт. Торжественная часть</div>
                     <div style="color: #94a3b8; font-size: 12px; margin-top: 3px; line-height: 1.45;">Награждение сотрудников и яркая праздничная программа.</div>
                   </td>
@@ -227,12 +239,12 @@
               </table>
 
               <!-- Этап 3 -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
+              <table class="sched-table" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
                 <tr>
-                  <td width="120" valign="top">
+                  <td class="sched-time-col" width="120" valign="top">
                     <span class="time-badge" style="display:inline-block; background-color: #008fd0; color: #ffffff; font-weight: bold; font-size: 11px; padding: 5px 10px; border-radius: 6px;">18:00 – 20:00</span>
                   </td>
-                  <td valign="top" style="padding-left: 8px;">
+                  <td class="sched-desc-col" valign="top" style="padding-left: 8px;">
                     <div style="color: #ffffff; font-weight: bold; font-size: 14px;">Полёт в Новый год</div>
                     <div style="color: #94a3b8; font-size: 12px; margin-top: 3px; line-height: 1.45;">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</div>
                   </td>
