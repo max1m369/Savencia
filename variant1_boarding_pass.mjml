@@ -340,7 +340,7 @@
       <mj-column width="33.33%" padding="0 6px 12px 6px">
         <mj-table padding="0">
           <tr>
-            <td style="background-color: #0b1f36; border: 1px solid #173254; border-radius: 12px; padding: 18px 14px; text-align: center;">
+            <td height="154" valign="top" style="background-color: #0b1f36; background-image: url('remember-bg-01.png'); background-repeat: no-repeat; background-position: center 75%; background-size: 85px 85px; border: 1px solid #173254; border-radius: 12px; padding: 18px 14px; text-align: center; height: 154px; vertical-align: top;">
               <div style="display:inline-block; background-color: #004b62; color: #38bdf8; font-weight: 900; font-size: 13px; width: 32px; height: 32px; line-height: 32px; border-radius: 50%; margin-bottom: 10px;">01</div>
               <div style="color: #ffffff; font-weight: bold; font-size: 13px; margin-bottom: 6px;">Настроение</div>
               <div style="color: #94a3b8; font-size: 11px; line-height: 1.4;">Подготовьте улыбки и готовность к ярким впечатлениям.</div>
@@ -353,7 +353,7 @@
       <mj-column width="33.33%" padding="0 6px 12px 6px">
         <mj-table padding="0">
           <tr>
-            <td style="background-color: #0b1f36; border: 1px solid #173254; border-radius: 12px; padding: 18px 14px; text-align: center;">
+            <td height="154" valign="top" style="background-color: #0b1f36; background-image: url('remember-bg-02.png'); background-repeat: no-repeat; background-position: center 75%; background-size: 95px auto; border: 1px solid #173254; border-radius: 12px; padding: 18px 14px; text-align: center; height: 154px; vertical-align: top;">
               <div style="display:inline-block; background-color: #de6a09; color: #ffffff; font-weight: 900; font-size: 13px; width: 32px; height: 32px; line-height: 32px; border-radius: 50%; margin-bottom: 10px;">02</div>
               <div style="color: #ffffff; font-weight: bold; font-size: 13px; margin-bottom: 6px;">Посадочный</div>
               <div style="color: #94a3b8; font-size: 11px; line-height: 1.4;">Заберите свой билет на стойке Welcome для розыгрыша.</div>
@@ -366,7 +366,7 @@
       <mj-column width="33.33%" padding="0 6px 12px 6px">
         <mj-table padding="0">
           <tr>
-            <td style="background-color: #0b1f36; border: 1px solid #173254; border-radius: 12px; padding: 18px 14px; text-align: center;">
+            <td height="154" valign="top" style="background-color: #0b1f36; background-image: url('remember-bg-03.png'); background-repeat: no-repeat; background-position: center 75%; background-size: 85px 85px; border: 1px solid #173254; border-radius: 12px; padding: 18px 14px; text-align: center; height: 154px; vertical-align: top;">
               <div style="display:inline-block; background-color: #008fd0; color: #ffffff; font-weight: 900; font-size: 13px; width: 32px; height: 32px; line-height: 32px; border-radius: 50%; margin-bottom: 10px;">03</div>
               <div style="color: #ffffff; font-weight: bold; font-size: 13px; margin-bottom: 6px;">Пунктуальность</div>
               <div style="color: #94a3b8; font-size: 11px; line-height: 1.4;">Прибывайте без опозданий к началу регистрации.</div>

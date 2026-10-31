@@ -437,16 +437,16 @@
         </mj-text>
       </mj-column>
 
-      <!-- Карточка 01 -->
+      <!-- Карточка 01: Настроение -->
       <mj-column width="32%" css-class="briefing-col">
         <mj-table padding="0">
           <tr>
-            <td align="center" style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 12px;">
+            <td align="center" height="152" valign="top" style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 12px; height: 152px; vertical-align: top;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                   <td align="center" style="padding-bottom: 8px;">
-                    <div style="width: 32px; height: 32px; line-height: 32px; border-radius: 50%; background-color: #e0f2fe; color: #0077aa; font-weight: 800; font-size: 13px; text-align: center;">
-                      01
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #e0f2fe; margin: 0 auto;">
+                      <img src="remember-icon-01.png" width="22" height="22" alt="Настроение" style="display: block; margin: 7px auto; border: 0;" />
                     </div>
                   </td>
                 </tr>
@@ -468,16 +468,16 @@
 
       <mj-column width="2%"><mj-spacer height="10px" /></mj-column>
 
-      <!-- Карточка 02 -->
+      <!-- Карточка 02: Посадочный билет -->
       <mj-column width="32%" css-class="briefing-col">
         <mj-table padding="0">
           <tr>
-            <td align="center" style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 12px;">
+            <td align="center" height="152" valign="top" style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 12px; height: 152px; vertical-align: top;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                   <td align="center" style="padding-bottom: 8px;">
-                    <div style="width: 32px; height: 32px; line-height: 32px; border-radius: 50%; background-color: #fef3c7; color: #b45309; font-weight: 800; font-size: 13px; text-align: center;">
-                      02
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #fef3c7; margin: 0 auto;">
+                      <img src="remember-icon-02.png" width="24" height="24" alt="Посадочный билет" style="display: block; margin: 6px auto; border: 0;" />
                     </div>
                   </td>
                 </tr>
@@ -499,16 +499,16 @@
 
       <mj-column width="2%"><mj-spacer height="10px" /></mj-column>
 
-      <!-- Карточка 03 -->
+      <!-- Карточка 03: Пунктуальность -->
       <mj-column width="32%" css-class="briefing-col">
         <mj-table padding="0">
           <tr>
-            <td align="center" style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 12px;">
+            <td align="center" height="152" valign="top" style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 12px; height: 152px; vertical-align: top;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                   <td align="center" style="padding-bottom: 8px;">
-                    <div style="width: 32px; height: 32px; line-height: 32px; border-radius: 50%; background-color: #ecfdf5; color: #047857; font-weight: 800; font-size: 13px; text-align: center;">
-                      03
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #ecfdf5; margin: 0 auto;">
+                      <img src="remember-icon-03.png" width="22" height="22" alt="Пунктуальность" style="display: block; margin: 7px auto; border: 0;" />
                     </div>
                   </td>
                 </tr>

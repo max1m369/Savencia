@@ -54,7 +54,10 @@ with tempfile.TemporaryDirectory() as tmp:
 all_files = [f"v{i}_full.png" for i in range(1, 8)] + [f"variant{i}_emulator.png" for i in range(1, 8)] + [
     "g-poster.svg", "g-poster.png", "g-logo.png",
     "A_clean_cinematic_hero.png", "hero-v1.png",
-    "icon_moscow.svg", "icon_moscow.png", "icon_ufa.svg", "icon_ufa.png", "icon_belebey.svg", "icon_belebey.png", "hero_v1_festive.jpg", "barcode.png"
+    "icon_moscow.svg", "icon_moscow.png", "icon_ufa.svg", "icon_ufa.png", "icon_belebey.svg", "icon_belebey.png", "hero_v1_festive.jpg", "barcode.png",
+    "icons-remember-01.svg", "icons-remember-02.svg", "icons-remember-03.svg",
+    "remember-icon-01.png", "remember-icon-02.png", "remember-icon-03.png",
+    "remember-bg-01.png", "remember-bg-02.png", "remember-bg-03.png"
 ]
 for fname in all_files:
     src = os.path.join(workspace, fname)
