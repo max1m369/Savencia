@@ -261,6 +261,116 @@
       </mj-column>
     </mj-section>
 
+    <!-- ПАМЯТКА ПАССАЖИРА ПЕРЕД ВЫЛЕТОМ (ТРИ САМОСТОЯТЕЛЬНЫЕ ПЛАШКИ ПОД УГЛОМ - ВАРИАНТ Б) -->
+    <mj-section background-color="#061a24" padding="10px 20px 28px 20px" css-class="px-m">
+      <mj-column width="100%">
+        
+        <!-- Заголовок памятки и вводный текст из документа -->
+        <mj-text align="center" padding="0 0 20px">
+          <div style="font-family:'Courier New', monospace; font-size:11px; font-weight:bold; color:#38bdf8; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px;">
+            &#x2708;&#xFE0E; PRE-FLIGHT BRIEFING // ПАМЯТКА ПАССАЖИРА
+          </div>
+          <div style="font-family:Arial, Helvetica, sans-serif; font-size:26px; line-height:1.2; font-weight:900; color:#ffffff; letter-spacing:-0.5px; margin-bottom:8px;">
+            Уважаемые пассажиры!
+          </div>
+          <div style="font-size:14px; line-height:1.55; color:#94a3b8; max-width:520px; margin:0 auto;">
+            Просим заранее подготовить хорошее настроение и быть готовыми к незабываемому путешествию. Наш новогодний рейс уже готовится к вылету. На борту ждём каждого!
+          </div>
+        </mj-text>
+
+        <!-- ПЛАШКА 1: НАСТРОЕНИЕ (Оранжевый акцент, наклон -1.2 deg) -->
+        <mj-text padding="0 0 16px">
+          <div style="transform: rotate(-1.2deg); -webkit-transform: rotate(-1.2deg); margin: 4px 6px; box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35); border-radius: 12px; overflow: hidden;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="background-color: #f8fafc; border-radius: 12px; padding: 18px 22px; border-left: 5px solid #de6a09;">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td align="left" valign="top">
+                        <span style="display:inline-block; background-color:#fff7ed; color:#de6a09; font-family:'Courier New', monospace; font-weight:900; font-size:10px; padding:3px 8px; border-radius:4px; letter-spacing:1px; margin-bottom:6px;">
+                          01 &bull; НАСТРОЕНИЕ
+                        </span>
+                        <div style="font-size: 16px; font-weight: 900; color: #004b62; margin-bottom: 4px;">
+                          Подготовьте улыбки и яркие эмоции
+                        </div>
+                        <div style="font-size: 13px; color: #475569; line-height: 1.5;">
+                          Будьте готовы к незабываемому путешествию и праздничной атмосфере — наш новогодний рейс гарантирует отличное настроение!
+                        </div>
+                      </td>
+                      <td width="48" align="right" valign="middle" style="padding-left:12px;">
+                        <img src="v1-icon-mood-orange.png" width="40" height="40" alt="Настроение" style="display:block; width:40px; height:40px;" />
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </mj-text>
+
+        <!-- ПЛАШКА 2: ПОСАДОЧНЫЙ БИЛЕТ (Синий акцент, наклон +1.2 deg) -->
+        <mj-text padding="0 0 16px">
+          <div style="transform: rotate(1.2deg); -webkit-transform: rotate(1.2deg); margin: 4px 6px; box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35); border-radius: 12px; overflow: hidden;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="background-color: #f8fafc; border-radius: 12px; padding: 18px 22px; border-left: 5px solid #008fd0;">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td align="left" valign="top">
+                        <span style="display:inline-block; background-color:#f0f9ff; color:#008fd0; font-family:'Courier New', monospace; font-weight:900; font-size:10px; padding:3px 8px; border-radius:4px; letter-spacing:1px; margin-bottom:6px;">
+                          02 &bull; ПОСАДОЧНЫЙ БИЛЕТ
+                        </span>
+                        <div style="font-size: 16px; font-weight: 900; color: #004b62; margin-bottom: 4px;">
+                          Ключ к новогоднему розыгрышу призов
+                        </div>
+                        <div style="font-size: 13px; color: #475569; line-height: 1.5;">
+                          На регистрации каждый получит свой персональный посадочный билет. Обязательно сохраните его для участия в розыгрыше подарков!
+                        </div>
+                      </td>
+                      <td width="48" align="right" valign="middle" style="padding-left:12px;">
+                        <img src="v1-icon-pass-blue.png" width="44" height="26" alt="Посадочный билет" style="display:block; width:44px; height:auto;" />
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </mj-text>
+
+        <!-- ПЛАШКА 3: ПУНКТУАЛЬНОСТЬ (Зеленый акцент, наклон -0.8 deg) -->
+        <mj-text padding="0 0 4px">
+          <div style="transform: rotate(-0.8deg); -webkit-transform: rotate(-0.8deg); margin: 4px 6px; box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35); border-radius: 12px; overflow: hidden;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="background-color: #f8fafc; border-radius: 12px; padding: 18px 22px; border-left: 5px solid #10b981;">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td align="left" valign="top">
+                        <span style="display:inline-block; background-color:#f0fdf4; color:#15803d; font-family:'Courier New', monospace; font-weight:900; font-size:10px; padding:3px 8px; border-radius:4px; letter-spacing:1px; margin-bottom:6px;">
+                          03 &bull; ПУНКТУАЛЬНОСТЬ
+                        </span>
+                        <div style="font-size: 16px; font-weight: 900; color: #004b62; margin-bottom: 4px;">
+                          Прибытие точно по расписанию
+                        </div>
+                        <div style="font-size: 13px; color: #475569; line-height: 1.5;">
+                          Посадка на наш новогодний рейс начинается точно по расписанию. Прибывайте к открытию регистрации без опозданий!
+                        </div>
+                      </td>
+                      <td width="48" align="right" valign="middle" style="padding-left:12px;">
+                        <img src="v1-icon-time-green.png" width="40" height="40" alt="Пунктуальность" style="display:block; width:40px; height:40px;" />
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </mj-text>
+
+      </mj-column>
+    </mj-section>
+
     <!-- ФИНАЛЬНЫЙ БЛОК: ДО ВСТРЕЧИ 10 ДЕКАБРЯ -->
     <mj-section background-color="#0d2e40" padding="32px 28px" border-radius="0" css-class="px-m">
       <mj-column width="100%">

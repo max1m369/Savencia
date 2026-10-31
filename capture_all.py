@@ -13,7 +13,7 @@ with open(os.path.join(workspace, 'index.html'), 'r', encoding='utf-8') as f:
 
 with tempfile.TemporaryDirectory() as tmp:
     # 1. Capture full email scrolls for all variants 1..7
-    variants = [(f'v{i}_full.png', f'variant{i}.html') for i in range(1, 8)]
+    variants = [(f'v{i}_full.png', f'variant{i}.html') for i in range(1, 7)]
     for vname, vfile in variants:
         out_path = os.path.join(workspace, vname)
         cmd = [
@@ -25,7 +25,7 @@ with tempfile.TemporaryDirectory() as tmp:
         print(f"Captured {vname}")
 
     # 2. Capture dual-screen emulator for variants 1..7
-    for num in [str(i) for i in range(1, 8)]:
+    for num in [str(i) for i in range(1, 7)]:
         vfile = f'variant{num}.html'
         out_name = f'variant{num}_emulator.png'
         out_path = os.path.join(workspace, out_name)
@@ -60,7 +60,7 @@ with tempfile.TemporaryDirectory() as tmp:
         print(f"Captured {out_name}")
 
 # Copy all screenshots and assets to brain directory
-all_files = [f"v{i}_full.png" for i in range(1, 8)] + [f"variant{i}_emulator.png" for i in range(1, 8)] + [
+all_files = [f"v{i}_full.png" for i in range(1, 7)] + [f"variant{i}_emulator.png" for i in range(1, 7)] + [
     "g-poster.svg", "g-poster.png", "g-logo.png",
     "A_clean_cinematic_hero.png", "hero-v1.png",
     "icon_moscow.svg", "icon_moscow.png", "icon_ufa.svg", "icon_ufa.png", "icon_belebey.svg", "icon_belebey.png", "hero_v1_festive.jpg", "barcode.png",
@@ -77,7 +77,7 @@ for fname in all_files:
         shutil.copy(src, os.path.join(brain, fname))
 
 # Clean up any leftover variant8 files
-for v8_file in ['v8_full.png', 'variant8_emulator.png', 'variant8.html', 'variant8_retro_poster.mjml']:
+for v8_file in ['v8_full.png', 'variant8_emulator.png', 'variant8.html', 'variant8_retro_poster.mjml', 'v7_full.png', 'variant7_emulator.png', 'variant7.html', 'variant7_retro_poster.mjml', 'variant6_colorful_terminal.mjml', 'variant6_user_input.mjml', 'build_variant6.py']:
     p = os.path.join(workspace, v8_file)
     if os.path.exists(p):
         os.remove(p)
