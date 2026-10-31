@@ -33,6 +33,15 @@ with tempfile.TemporaryDirectory() as tmp:
         # Modify active button and iframe src in emulator
         mod = em_base.replace("let currentVariant = 'variant1.html';", f"let currentVariant = '{vfile}';")
         mod = mod.replace('src="variant1.html"', f'src="{vfile}"')
+        trigger_script = f"""
+        <script>
+        window.addEventListener('load', () => {{
+          const btn = document.querySelector("button[onclick*='{vfile}']");
+          if (btn) btn.click();
+        }});
+        </script>
+        </body>"""
+        mod = mod.replace('</body>', trigger_script)
         
         tmp_em_name = f'_temp_em_{num}.html'
         tmp_em_path = os.path.join(workspace, tmp_em_name)
@@ -59,7 +68,8 @@ all_files = [f"v{i}_full.png" for i in range(1, 8)] + [f"variant{i}_emulator.png
     "remember-icon-01.png", "remember-icon-02.png", "remember-icon-03.png",
     "remember-bg-01.png", "remember-bg-02.png", "remember-bg-03.png",
     "v1-icon-mood-orange.png", "v1-icon-pass-blue.png", "v1-icon-time-green.png",
-    "v2-icon-mood-blue.png", "v2-icon-pass-orange.png", "v2-icon-time-green.png"
+    "v2-icon-mood-blue.png", "v2-icon-pass-orange.png", "v2-icon-time-green.png",
+    "terminal-barcode-header.png"
 ]
 for fname in all_files:
     src = os.path.join(workspace, fname)
