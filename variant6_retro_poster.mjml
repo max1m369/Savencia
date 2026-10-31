@@ -38,47 +38,14 @@
 
   <mj-body width="640px" background-color="#e3e8e3">
 
-    <mj-section
-      padding="25px 30px 24px"
-      background-color="#ffffff">
-      <mj-column>
-        <mj-image
-          src="g-logo.png"
-          alt="Groupe Savencia"
-          width="216px"
-          align="left"
-          padding="0"/>
-      </mj-column>
-    </mj-section>
-
-    <mj-section
-      padding="28px 30px 0"
-      background-color="#004b62">
-      <mj-column>
-
-        <mj-text font-size="68px"
-           line-height="1"
-           font-weight="700"
-           color="#ffffff"
-           padding="0 0 12px"
-           css-class="date">10 декабря</mj-text>
-
-        <mj-text font-size="41px"
-           line-height="1.1"
-           font-weight="700"
-           color="#ffffff"
-           padding="0"
-           css-class="headline">— Вылет в Новый ГОД!</mj-text>
-
-      </mj-column>
-    </mj-section>
-
-    <mj-section padding="0" background-color="#004b62">
-      <mj-column>
+    <!-- 1. ГЛУБОКИЙ ВЕКТОРНЫЙ ХИРО С БЕЛЫМ ЛОГОТИПОМ И РАДИАЛЬНЫМ ГРАДИЕНТОМ -->
+    <mj-section padding="0" background-color="#001822">
+      <mj-column width="100%">
         <mj-image
           src="g-poster.png"
-          alt=""
+          alt="10 декабря — Вылет в Новый ГОД! | Groupe Savencia"
           width="640px"
+          fluid-on-mobile="true"
           padding="0"/>
       </mj-column>
     </mj-section>

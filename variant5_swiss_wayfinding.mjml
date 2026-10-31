@@ -1,11 +1,11 @@
-<mjml>
+<mjml lang="ru">
   <mj-head>
     <mj-title>10 декабря — Вылет в Новый ГОД! | Savencia Swiss Aeronavigation</mj-title>
     <mj-preview>10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников Savencia из трёх городов — Москвы, Уфы и Белебея.</mj-preview>
     <mj-breakpoint width="480px" />
     <mj-attributes>
       <mj-all font-family="Arial, Helvetica, sans-serif" padding="0" />
-      <mj-text font-size="14px" line-height="1.6" color="#334155" />
+      <mj-text font-size="15px" line-height="1.6" color="#334155" />
       <mj-section background-color="#e8eff2" />
     </mj-attributes>
     <mj-style>
@@ -24,11 +24,11 @@
         color: #38bdf8;
         border: 1px solid #1f2c3f;
         border-radius: 4px;
-        padding: 4px 8px;
-        font-family: "Courier New", Courier, monospace;
+        padding: 4px 10px;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 11px;
-        font-weight: 900;
-        letter-spacing: 1.5px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
       }
       .gate-pill {
         display: inline-block;
@@ -37,24 +37,24 @@
         border: 1px solid #38bdf8;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 11px;
-        font-weight: 900;
-        letter-spacing: 1px;
-        padding: 3px 8px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        padding: 4px 10px;
         border-radius: 4px;
       }
       .time-badge {
         display: inline-block;
         background-color: #de6a09;
         color: #ffffff;
-        font-family: "Courier New", Courier, monospace;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 5px 9px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: 900;
+        padding: 5px 10px;
         border-radius: 4px;
         white-space: nowrap;
       }
       @media only screen and (max-width: 479px) {
-        .px { padding-left: 16px !important; padding-right: 16px !important; }
+        .px { padding-left: 14px !important; padding-right: 14px !important; }
         .iata-code { font-size: 20px !important; }
         .row-stack { display: block !important; width: 100% !important; }
         .time-col { width: 100% !important; padding-bottom: 6px !important; }
@@ -95,39 +95,39 @@
       </mj-column>
     </mj-section>
 
-    <!-- 2. СВЕТЛАЯ ШАПКА В ШВЕЙЦАРСКОЙ СЕТКЕ -->
+    <!-- 2. СВЕТЛАЯ ШАПКА В ШВЕЙЦАРСКОЙ СЕТКЕ (ЧИСТЫЙ ГРОТЕСК) -->
     <mj-section background-color="#ffffff" padding="18px 24px 16px 24px" border-bottom="1px solid #cbd5e1" css-class="px">
       <mj-column width="55%" vertical-align="middle">
         <mj-image src="logo_color.png" width="160px" align="left" alt="GROUPE SAVENCIA" />
       </mj-column>
       <mj-column width="45%" vertical-align="middle">
-        <mj-text align="right" font-family="'Courier New', Courier, monospace" font-size="11px" font-weight="bold" color="#64748b" letter-spacing="1px">
-          FLIGHT: <span style="color:#004b62; font-weight:900;">SV-2027</span> &nbsp;|&nbsp; GATE: <span style="color:#de6a09; font-weight:900;">2027</span><br />
-          <span style="font-size:9px; color:#94a3b8;">DISPATCH: 10.12.2026 // ON SCHEDULE</span>
+        <mj-text align="right" font-size="12px" color="#64748b" line-height="1.4">
+          <strong style="color:#00232f;">Рейс:</strong> <span style="color:#008fd0; font-weight:800;">SV-2027</span> &nbsp;|&nbsp; <strong style="color:#00232f;">Гейт:</strong> <span style="color:#de6a09; font-weight:800;">2027</span><br />
+          <span style="font-size:11px; color:#94a3b8;">10 декабря 2026 · По расписанию</span>
         </mj-text>
       </mj-column>
     </mj-section>
 
-    <!-- 3. КАРТОЧКА БИЛЕТА: ПОСАДОЧНЫЙ ТАЛОН -->
+    <!-- 3. КАРТОЧКА БИЛЕТА: ПОСАДОЧНЫЙ ТАЛОН (SWISS PRECISION) -->
     <mj-section background-color="#e8eff2" padding="24px 20px 20px 20px" css-class="px">
       <mj-column width="100%">
         <mj-text padding="0">
           <div style="background-color: #ffffff; border-radius: 16px; border: 1px solid #cbd5e1; box-shadow: 0 12px 32px rgba(0, 48, 63, 0.09); overflow: hidden;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
               
-              <!-- Информационная плашка Solari: NOW BOARDING -->
+              <!-- Информационная плашка Solari -->
               <tr>
                 <td style="background-color: #00232f; padding: 12px 20px; border-bottom: 2px solid #de6a09;">
                   <table width="100%" cellpadding="0" cellspacing="0" border="0">
                     <tr>
                       <td align="left" valign="middle">
-                        <span style="font-family:'Courier New', Courier, monospace; font-size:10px; font-weight:bold; letter-spacing:1.5px; color:#cbd5e1;">
-                          SAVENCIA SPECIAL FLIGHT // SV-2027
+                        <span style="font-size:11px; font-weight:700; color:#e2e8f0; letter-spacing:0.5px;">
+                          SAVENCIA AIRLINES · РЕЙС SV-2027
                         </span>
                       </td>
                       <td align="right" valign="middle">
                         <span class="split-flap">
-                          ● NOW BOARDING
+                          ПОСАДКА ОТКРЫТА
                         </span>
                       </td>
                     </tr>
@@ -141,28 +141,28 @@
                   <table width="100%" cellpadding="0" cellspacing="0" border="0">
                     <tr>
                       <td width="42%" align="left" valign="middle">
-                        <div style="font-family:'Courier New', monospace; font-size:10px; font-weight:bold; color:#64748b; letter-spacing:1.5px;">ОТПРАВЛЕНИЕ // FROM</div>
-                        <div class="iata-code" style="font-family:Arial, Helvetica, sans-serif; font-size:24px; font-weight:900; color:#004b62; letter-spacing:1px; line-height:1.15; margin-top:4px;">
+                        <div style="font-size:11px; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:0.5px;">ОТПРАВЛЕНИЕ</div>
+                        <div class="iata-code" style="font-family:Arial, Helvetica, sans-serif; font-size:24px; font-weight:900; color:#004b62; line-height:1.15; margin-top:4px;">
                           MOW · UFA · BEL
                         </div>
-                        <div style="font-size:11px; color:#64748b; margin-top:4px; font-weight:600;">
-                          Москва • Уфа • Белебей
+                        <div style="font-size:12px; color:#475569; margin-top:4px; font-weight:600;">
+                          Москва · Уфа · Белебей
                         </div>
                       </td>
                       <td width="16%" align="center" valign="middle">
                         <div style="width:36px; height:36px; border:2px solid #de6a09; border-radius:50%; display:inline-block; line-height:34px; text-align:center; font-size:16px; color:#de6a09;">
                           ✈
                         </div>
-                        <div style="font-family:'Courier New', monospace; font-size:9px; font-weight:bold; color:#de6a09; letter-spacing:1px; margin-top:4px;">
-                          DIRECT
+                        <div style="font-size:10px; font-weight:800; color:#de6a09; margin-top:4px;">
+                          ПРЯМОЙ
                         </div>
                       </td>
                       <td width="42%" align="right" valign="middle">
-                        <div style="font-family:'Courier New', monospace; font-size:10px; font-weight:bold; color:#64748b; letter-spacing:1.5px;">НАЗНАЧЕНИЕ // TO</div>
-                        <div class="iata-code" style="font-family:Arial, Helvetica, sans-serif; font-size:24px; font-weight:900; color:#de6a09; letter-spacing:1px; line-height:1.15; margin-top:4px;">
+                        <div style="font-size:11px; font-weight:700; color:#de6a09; text-transform:uppercase; letter-spacing:0.5px;">НАЗНАЧЕНИЕ</div>
+                        <div class="iata-code" style="font-family:Arial, Helvetica, sans-serif; font-size:24px; font-weight:900; color:#de6a09; line-height:1.15; margin-top:4px;">
                           NEW YEAR
                         </div>
-                        <div style="font-size:11px; color:#64748b; margin-top:4px; font-weight:600;">
+                        <div style="font-size:12px; color:#b45309; margin-top:4px; font-weight:700;">
                           2027 ГОД
                         </div>
                       </td>
@@ -173,20 +173,20 @@
                   <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px; padding-top:14px; border-top:1px solid #e2e8f0;">
                     <tr>
                       <td class="pass-col" width="25%" align="left" valign="top">
-                        <div style="font-family:'Courier New', monospace; font-size:9px; font-weight:bold; color:#94a3b8; text-transform:uppercase;">Пассажир</div>
-                        <div style="font-size:12px; font-weight:bold; color:#0f172a; margin-top:3px;">Savencia Team</div>
+                        <div style="font-size:10px; font-weight:700; color:#64748b;">Пассажир</div>
+                        <div style="font-size:12px; font-weight:800; color:#0f172a; margin-top:3px;">Savencia Team</div>
                       </td>
                       <td class="pass-col" width="25%" align="left" valign="top">
-                        <div style="font-family:'Courier New', monospace; font-size:9px; font-weight:bold; color:#94a3b8; text-transform:uppercase;">Дата вылета</div>
-                        <div style="font-size:12px; font-weight:bold; color:#0f172a; margin-top:3px;">10 ДЕК 2026</div>
+                        <div style="font-size:10px; font-weight:700; color:#64748b;">Дата вылета</div>
+                        <div style="font-size:12px; font-weight:800; color:#0f172a; margin-top:3px;">10 дек 2026</div>
                       </td>
                       <td class="pass-col" width="25%" align="left" valign="top">
-                        <div style="font-family:'Courier New', monospace; font-size:9px; font-weight:bold; color:#94a3b8; text-transform:uppercase;">Класс</div>
-                        <div style="font-size:12px; font-weight:bold; color:#008fd0; margin-top:3px;">Одна Команда</div>
+                        <div style="font-size:10px; font-weight:700; color:#64748b;">Класс</div>
+                        <div style="font-size:12px; font-weight:800; color:#008fd0; margin-top:3px;">Одна Команда</div>
                       </td>
                       <td class="pass-col" width="25%" align="left" valign="top">
-                        <div style="font-family:'Courier New', monospace; font-size:9px; font-weight:bold; color:#94a3b8; text-transform:uppercase;">Посадка</div>
-                        <div style="font-size:12px; font-weight:bold; color:#10b981; margin-top:3px;">ON SCHEDULE</div>
+                        <div style="font-size:10px; font-weight:700; color:#64748b;">Посадка</div>
+                        <div style="font-size:12px; font-weight:800; color:#10b981; margin-top:3px;">По расписанию</div>
                       </td>
                     </tr>
                   </table>
@@ -208,7 +208,7 @@
                       <!-- На мобильном отображается первым и на всю ширину (100%) -->
                       <td class="stub-col" width="46%" align="right" valign="middle" dir="ltr" style="padding-left: 12px;">
                         <div class="stub-raffle-card" style="background-color:#fff7ed; border:1.5px dashed #de6a09; padding:10px 14px; border-radius:8px; text-align:center;">
-                          <div style="font-family:'Courier New', monospace; font-size:11px; font-weight:bold; color:#de6a09; letter-spacing:1px;">
+                          <div style="font-size:11px; font-weight:900; color:#de6a09; letter-spacing:0.5px;">
                             ★ РОЗЫГРЫШ ПРИЗОВ
                           </div>
                           <div style="font-size:10px; color:#64748b; margin-top:3px; line-height:1.3;">
@@ -242,15 +242,12 @@
                   <table width="100%" cellpadding="0" cellspacing="0" border="0">
                     <tr>
                       <td align="left" valign="middle">
-                        <div style="font-family:'Courier New', monospace; font-size:11px; font-weight:bold; color:#ffe8d6; letter-spacing:2px; text-transform:uppercase;">
-                          OFFICIAL FLIGHT DISPATCH
-                        </div>
-                        <div style="font-family:Arial, Helvetica, sans-serif; font-size:17px; font-weight:900; color:#ffffff; letter-spacing:0.8px; margin-top:2px;">
+                        <div style="font-size:18px; font-weight:900; color:#ffffff; line-height:1.2;">
                           ТРИ ГОРОДА. ОДИН РЕЙС. ОДНА КОМАНДА.
                         </div>
                       </td>
-                      <td width="36" align="right" valign="middle" style="font-size:24px; color:#ffffff;">
-                        &#x2295;
+                      <td width="36" align="right" valign="middle" style="font-size:20px; color:#ffffff;">
+                        ✈
                       </td>
                     </tr>
                   </table>
@@ -259,26 +256,26 @@
             </table>
 
             <!-- Заголовок -->
-            <div style="font-family:Arial, Helvetica, sans-serif; font-size:22px; font-weight:900; color:#00303f; line-height:1.25; margin-bottom:14px;">
+            <div style="font-size:22px; font-weight:900; color:#00232f; line-height:1.25; margin-bottom:12px;">
               Внимание, объявляется посадка на особый новогодний рейс!
             </div>
 
             <!-- Текст обращения -->
-            <div style="font-size:14px; line-height:1.65; color:#334155;">
-              <p style="margin:0 0 12px 0;"><strong>Дорогие коллеги!</strong></p>
+            <div style="font-size:15px; line-height:1.6; color:#334155;">
+              <p style="margin:0 0 12px 0;"><strong style="color:#de6a09; font-size:16px;">Дорогие коллеги!</strong></p>
               <p style="margin:0 0 12px 0;">
                 10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников <strong>Savencia</strong> из трёх городов — Москвы, Уфы и Белебея.
               </p>
               <p style="margin:0 0 12px 0;">
                 В этот день наши праздничные площадки превратятся в аэропорты, а каждый из вас станет пассажиром рейса с конечным пунктом назначения — <span style="color:#008fd0; font-weight:bold;">Новый год!</span>
               </p>
-              <p style="margin:0 0 14px 0;">
+              <p style="margin:0 0 16px 0;">
                 В программе полёта: тёплые встречи с коллегами, яркие эмоции, заслуженные награды, приятные сюрпризы, музыка и праздничное настроение.
               </p>
               
-              <!-- Посадочный билет напоминание -->
-              <div style="background-color:#f1f7f9; border-left:3px solid #004b62; padding:12px 14px; font-size:13px; color:#0f172a; border-radius:0 6px 6px 0;">
-                ★ <strong>Посадочный талон:</strong> <em>На регистрации каждый получит свой посадочный билет, который пригодится во время новогоднего розыгрыша подарков.</em>
+              <!-- Посадочный билет напоминание (лаконичный блок без курсива) -->
+              <div style="background-color:#f8fafc; border-left:4px solid #de6a09; padding:12px 16px; font-size:13px; color:#0f172a; border-radius:0 6px 6px 0; line-height:1.5;">
+                🎫 <strong style="color:#00232f;">Посадочный билет:</strong> На регистрации каждый получит свой персональный билет, который пригодится во время новогоднего розыгрыша подарков.
               </div>
             </div>
           </div>
@@ -286,7 +283,7 @@
       </mj-column>
     </mj-section>
 
-    <!-- 5. ТАБЛО ВЫЛЕТОВ: ШВЕЙЦАРСКАЯ СИСТЕМА НАВИГАЦИИ (Скругленные углы 16px) -->
+    <!-- 5. ТАБЛО ВЫЛЕТОВ: ШВЕЙЦАРСКАЯ СИСТЕМА НАВИГАЦИИ -->
     <mj-section background-color="#e8eff2" padding="0 20px 24px 20px" css-class="px">
       <mj-column width="100%">
         <mj-text padding="0">
@@ -295,7 +292,7 @@
             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid #143542;">
               <tr>
                 <td align="left" valign="middle">
-                  <div style="font-family:Arial, Helvetica, sans-serif; font-size:18px; font-weight:900; letter-spacing:1px; color:#ffffff;">
+                  <div style="font-size:18px; font-weight:900; color:#ffffff;">
                     РАСПИСАНИЕ НАШЕГО РЕЙСА
                   </div>
                 </td>
@@ -312,16 +309,16 @@
               <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;">
                 <tr>
                   <td align="left" valign="middle">
-                    <span style="font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:900; color:#38bdf8; letter-spacing:1px;">
+                    <span style="font-size:14px; font-weight:900; color:#38bdf8; letter-spacing:0.5px;">
                       ✈ МОСКВА И УФА
                     </span>
-                    <span style="font-family:'Courier New', monospace; font-size:10px; color:#94a3b8; margin-left:8px;">
-                      (ПО МЕСТНОМУ ВРЕМЕНИ)
+                    <span style="font-size:11px; color:#94a3b8; margin-left:8px;">
+                      (по местному времени)
                     </span>
                   </td>
                   <td align="right" valign="middle">
                     <span class="gate-pill">
-                      GATES A·1–2
+                      ГЕЙТ А-1
                     </span>
                   </td>
                 </tr>
@@ -334,8 +331,8 @@
                     <span class="time-badge">17:00–18:00</span>
                   </td>
                   <td class="row-stack" valign="top">
-                    <div style="font-size:13px; font-weight:bold; color:#ffffff;">Регистрация на рейс (Welcome)</div>
-                    <div style="font-size:12px; color:#94a3b8; margin-top:2px; line-height:1.4;">Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.</div>
+                    <div style="font-size:14px; font-weight:bold; color:#ffffff;">Регистрация на рейс (Welcome)</div>
+                    <div style="font-size:13px; color:#94a3b8; margin-top:2px; line-height:1.45;">Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.</div>
                   </td>
                 </tr>
               </table>
@@ -347,8 +344,8 @@
                     <span class="time-badge">18:00–20:00</span>
                   </td>
                   <td class="row-stack" valign="top">
-                    <div style="font-size:13px; font-weight:bold; color:#ffffff;">Взлёт. Торжественная часть</div>
-                    <div style="font-size:12px; color:#94a3b8; margin-top:2px; line-height:1.4;">Церемония награждения сотрудников и праздничная программа.</div>
+                    <div style="font-size:14px; font-weight:bold; color:#ffffff;">Взлёт. Торжественная часть</div>
+                    <div style="font-size:13px; color:#94a3b8; margin-top:2px; line-height:1.45;">Церемония награждения сотрудников и праздничная программа.</div>
                   </td>
                 </tr>
               </table>
@@ -360,8 +357,8 @@
                     <span class="time-badge">20:00–23:00</span>
                   </td>
                   <td class="row-stack" valign="top">
-                    <div style="font-size:13px; font-weight:bold; color:#ffffff;">Полёт в Новый год</div>
-                    <div style="font-size:12px; color:#94a3b8; margin-top:2px; line-height:1.4;">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</div>
+                    <div style="font-size:14px; font-weight:bold; color:#ffffff;">Полёт в Новый год</div>
+                    <div style="font-size:13px; color:#94a3b8; margin-top:2px; line-height:1.45;">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</div>
                   </td>
                 </tr>
               </table>
@@ -378,16 +375,16 @@
               <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;">
                 <tr>
                   <td align="left" valign="middle">
-                    <span style="font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:900; color:#de6a09; letter-spacing:1px;">
+                    <span style="font-size:14px; font-weight:900; color:#de6a09; letter-spacing:0.5px;">
                       ✈ БЕЛЕБЕЙ
                     </span>
-                    <span style="font-family:'Courier New', monospace; font-size:10px; color:#94a3b8; margin-left:8px;">
-                      (ПО МЕСТНОМУ ВРЕМЕНИ)
+                    <span style="font-size:11px; color:#94a3b8; margin-left:8px;">
+                      (по местному времени)
                     </span>
                   </td>
                   <td align="right" valign="middle">
                     <span class="gate-pill" style="border-color:#de6a09; color:#de6a09;">
-                      GATE B·1
+                      ГЕЙТ B-1
                     </span>
                   </td>
                 </tr>
@@ -400,8 +397,8 @@
                     <span class="time-badge">15:00–15:30</span>
                   </td>
                   <td class="row-stack" valign="top">
-                    <div style="font-size:13px; font-weight:bold; color:#ffffff;">Регистрация на рейс (Welcome)</div>
-                    <div style="font-size:12px; color:#94a3b8; margin-top:2px; line-height:1.4;">Встреча пассажиров, посадочные билеты, фотозона, угощения.</div>
+                    <div style="font-size:14px; font-weight:bold; color:#ffffff;">Регистрация на рейс (Welcome)</div>
+                    <div style="font-size:13px; color:#94a3b8; margin-top:2px; line-height:1.45;">Встреча пассажиров, посадочные билеты, фотозона, угощения.</div>
                   </td>
                 </tr>
               </table>
@@ -413,8 +410,8 @@
                     <span class="time-badge">15:30–18:00</span>
                   </td>
                   <td class="row-stack" valign="top">
-                    <div style="font-size:13px; font-weight:bold; color:#ffffff;">Взлёт. Торжественная часть</div>
-                    <div style="font-size:12px; color:#94a3b8; margin-top:2px; line-height:1.4;">Церемония награждения сотрудников и праздничная программа.</div>
+                    <div style="font-size:14px; font-weight:bold; color:#ffffff;">Взлёт. Торжественная часть</div>
+                    <div style="font-size:13px; color:#94a3b8; margin-top:2px; line-height:1.45;">Церемония награждения сотрудников и праздничная программа.</div>
                   </td>
                 </tr>
               </table>
@@ -426,8 +423,8 @@
                     <span class="time-badge">18:00–20:00</span>
                   </td>
                   <td class="row-stack" valign="top">
-                    <div style="font-size:13px; font-weight:bold; color:#ffffff;">Полёт в Новый год</div>
-                    <div style="font-size:12px; color:#94a3b8; margin-top:2px; line-height:1.4;">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</div>
+                    <div style="font-size:14px; font-weight:bold; color:#ffffff;">Полёт в Новый год</div>
+                    <div style="font-size:13px; color:#94a3b8; margin-top:2px; line-height:1.45;">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</div>
                   </td>
                 </tr>
               </table>
@@ -442,7 +439,112 @@
       </mj-column>
     </mj-section>
 
-    <!-- 6. ФИНАЛЬНЫЙ БЛОК: ДО ВСТРЕЧИ 10 ДЕКАБРЯ -->
+    <!-- 6. ПАМЯТКА ПАССАЖИРА ПЕРЕД ВЫЛЕТОМ (SWISS WAYFINDING BRIEFING) -->
+    <mj-section background-color="#e8eff2" padding="0 20px 24px 20px" css-class="px">
+      <mj-column width="100%">
+        <mj-text padding="0">
+          <div style="background-color:#ffffff; border-radius:16px; border:1px solid #cbd5e1; box-shadow:0 12px 32px rgba(0, 48, 63, 0.08); overflow:hidden; padding:26px 22px;">
+            
+            <!-- Заголовок блока и официальный текст из документа -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid #e2e8f0;">
+              <tr>
+                <td>
+                  <div style="font-size:11px; font-weight:bold; color:#008fd0; letter-spacing:0.5px; text-transform:uppercase; margin-bottom:4px;">
+                    PRE-FLIGHT BRIEFING · ПАМЯТКА
+                  </div>
+                  <div style="font-size:22px; font-weight:900; color:#00232f; line-height:1.2; margin-bottom:8px;">
+                    Уважаемые пассажиры!
+                  </div>
+                  <div style="font-size:14px; line-height:1.55; color:#475569;">
+                    Просим заранее подготовить хорошее настроение и быть готовыми к незабываемому путешествию. Наш новогодний рейс уже готовится к вылету. На борту ждём каждого!
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <!-- 3 навигационных модуля -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <!-- Модуль 1: Настроение -->
+              <tr>
+                <td style="padding:12px 14px; background-color:#fff7ed; border-radius:8px; border-left:4px solid #de6a09;">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td valign="top">
+                        <div style="font-size:11px; font-weight:900; color:#de6a09; letter-spacing:0.5px; text-transform:uppercase;">
+                          01 · НАСТРОЕНИЕ
+                        </div>
+                        <div style="font-size:15px; font-weight:800; color:#00232f; margin-top:2px;">
+                          Подготовьте улыбки и яркие эмоции
+                        </div>
+                        <div style="font-size:13px; color:#475569; margin-top:3px; line-height:1.45;">
+                          Будьте готовы к незабываемому праздничному путешествию и встречам с коллегами.
+                        </div>
+                      </td>
+                      <td width="44" align="right" valign="middle" style="padding-left:10px;">
+                        <img src="v1-icon-mood-orange.png" width="38" height="38" alt="Настроение" style="display:block; width:38px; height:38px;" />
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr><td height="10" style="font-size:0; line-height:0;">&nbsp;</td></tr>
+              
+              <!-- Модуль 2: Посадочный билет -->
+              <tr>
+                <td style="padding:12px 14px; background-color:#f0f9ff; border-radius:8px; border-left:4px solid #008fd0;">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td valign="top">
+                        <div style="font-size:11px; font-weight:900; color:#008fd0; letter-spacing:0.5px; text-transform:uppercase;">
+                          02 · ПОСАДОЧНЫЙ БИЛЕТ
+                        </div>
+                        <div style="font-size:15px; font-weight:800; color:#00232f; margin-top:2px;">
+                          Ключ к новогоднему розыгрышу призов
+                        </div>
+                        <div style="font-size:13px; color:#475569; margin-top:3px; line-height:1.45;">
+                          Заберите свой персональный билет на стойке Welcome для участия в розыгрыше подарков.
+                        </div>
+                      </td>
+                      <td width="44" align="right" valign="middle" style="padding-left:10px;">
+                        <img src="v1-icon-pass-blue.png" width="42" height="25" alt="Посадочный" style="display:block; width:42px; height:auto;" />
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr><td height="10" style="font-size:0; line-height:0;">&nbsp;</td></tr>
+
+              <!-- Модуль 3: Пунктуальность -->
+              <tr>
+                <td style="padding:12px 14px; background-color:#f0fdf4; border-radius:8px; border-left:4px solid #10b981;">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td valign="top">
+                        <div style="font-size:11px; font-weight:900; color:#15803d; letter-spacing:0.5px; text-transform:uppercase;">
+                          03 · ПУНКТУАЛЬНОСТЬ
+                        </div>
+                        <div style="font-size:15px; font-weight:800; color:#00232f; margin-top:2px;">
+                          Прибытие точно по расписанию
+                        </div>
+                        <div style="font-size:13px; color:#475569; margin-top:3px; line-height:1.45;">
+                          Прибывайте к открытию регистрации без опозданий — посадка начинается вовремя!
+                        </div>
+                      </td>
+                      <td width="44" align="right" valign="middle" style="padding-left:10px;">
+                        <img src="v1-icon-time-green.png" width="38" height="38" alt="Пунктуальность" style="display:block; width:38px; height:38px;" />
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+          </div>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- 7. ФИНАЛЬНЫЙ БЛОК: ДО ВСТРЕЧИ 10 ДЕКАБРЯ -->
     <mj-section background-color="#00232f" padding="28px 24px" border-radius="16px" css-class="px">
       <mj-column width="100%">
         <mj-text font-size="24px" font-weight="900" color="#ffffff" align="center" line-height="1.2">
