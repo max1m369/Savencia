@@ -35,15 +35,6 @@
   </mj-head>
   <mj-body background-color="#f5f2eb" width="600px">
 
-    <!-- PREHEADER: CLEAN ONLINE VERSION LINK -->
-    <mj-section background-color="#f5f2eb" padding="12px 24px">
-      <mj-column width="100%">
-        <mj-text align="center" font-size="11px" color="#64748b">
-          Новогодний рейс Savencia SV-2027 &nbsp;•&nbsp; 
-          <a href="#" style="color: #008fd0; text-decoration: underline;">Открыть онлайн-версию</a>
-        </mj-text>
-      </mj-column>
-    </mj-section>
 
     <!-- HEADER: BRAND LOGO & CENTERED FLIGHT STATUS BADGE -->
     <mj-section background-color="#ffffff" padding="20px 24px" border-radius="16px 16px 0 0">

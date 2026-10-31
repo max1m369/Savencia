@@ -62,15 +62,6 @@
   </mj-head>
   <mj-body background-color="#071726" width="600px">
     
-    <!-- PREHEADER & WEB LINK -->
-    <mj-section background-color="#071726" padding="12px 24px">
-      <mj-column width="100%">
-        <mj-text align="center" font-size="11px" color="#798fa8">
-          Новогодний рейс Savencia SV-2027 &nbsp;•&nbsp; 
-          <a href="#" style="color: #38bdf8; text-decoration: underline;">Веб-версия рассылки</a>
-        </mj-text>
-      </mj-column>
-    </mj-section>
 
     <!-- HEADER: LOGO (COLOR) -->
     <mj-section background-color="#ffffff" padding="20px 26px 18px 26px" border-radius="16px 16px 0 0" css-class="px-m">
