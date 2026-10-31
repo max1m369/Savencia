@@ -68,7 +68,7 @@
     <!-- HERO IMAGE: SIMPLER FESTIVE NEW YEAR FLIGHT -->
     <mj-section background-color="#0a1526" padding="16px 20px 0 20px">
       <mj-column width="100%">
-        <mj-image src="hero_v1_festive.jpg" alt="Праздничный рейс в Новый год 2027" border-radius="8px 8px 0 0" width="560px" />
+        <mj-image src="hero-v1.png" alt="10 декабря — Вылет в Новый ГОД!" border-radius="8px 8px 0 0" width="560px" />
       </mj-column>
     </mj-section>
 

@@ -94,11 +94,11 @@
     <mj-section background-color="#e8eff2" padding="24px 20px 24px 20px" css-class="px">
       <mj-column width="100%">
         <mj-text padding="0">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-radius: 12px; border: 1px solid #cbd5e1; border-collapse: separate; box-shadow: 0 12px 32px rgba(0, 48, 63, 0.09);">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-radius: 16px; border: 1px solid #cbd5e1; border-collapse: separate; box-shadow: 0 12px 32px rgba(0, 48, 63, 0.09); overflow: hidden;">
             
             <!-- Информационная плашка Solari: NOW BOARDING (Ref 4) -->
             <tr>
-              <td style="background-color: #00232f; padding: 12px 20px; border-radius: 11px 11px 0 0; border-bottom: 2px solid #de6a09;">
+              <td style="background-color: #00232f; padding: 12px 20px; border-radius: 15px 15px 0 0; border-bottom: 2px solid #de6a09;">
                 <table width="100%" cellpadding="0" cellspacing="0" border="0">
                   <tr>
                     <td align="left" valign="middle">
@@ -174,24 +174,16 @@
               </td>
             </tr>
 
-            <!-- Перфорация билета с боковыми вырезами (Notches под фон #e8eff2) -->
+            <!-- Натуральная пунктирная линия отрыва билета -->
             <tr>
-              <td style="background-color: #ffffff; padding: 0;">
-                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="height:24px;">
-                  <tr>
-                    <td width="14" bgcolor="#e8eff2" style="width:14px; border-radius:0 14px 14px 0; font-size:0; line-height:0; border-right:1px solid #cbd5e1;">&nbsp;</td>
-                    <td valign="middle" style="padding:0 8px;">
-                      <div style="border-top:2px dashed #cbd5e1; font-size:0; line-height:0; height:0;">&nbsp;</div>
-                    </td>
-                    <td width="14" bgcolor="#e8eff2" style="width:14px; border-radius:14px 0 0 14px; font-size:0; line-height:0; border-left:1px solid #cbd5e1;">&nbsp;</td>
-                  </tr>
-                </table>
+              <td style="background-color: #ffffff; padding: 6px 20px;">
+                <div style="border-top: 2px dashed #cbd5e1; font-size: 0; line-height: 0; height: 1px;">&nbsp;</div>
               </td>
             </tr>
 
             <!-- Отрывной корешок билета со штрихкодом и лотереей (Ref 1 & 5) -->
             <tr>
-              <td style="background-color: #f8fafc; padding: 16px 24px 20px 24px; border-radius: 0 0 11px 11px; border-top: 1px solid #f1f5f9;">
+              <td style="background-color: #f8fafc; padding: 16px 24px 20px 24px; border-radius: 0 0 15px 15px;">
                 <table width="100%" cellpadding="0" cellspacing="0" border="0">
                   <tr>
                     <td class="stub-col" width="55%" align="left" valign="middle" style="padding-right: 12px;">
@@ -220,9 +212,9 @@
     <mj-section background-color="#e8eff2" padding="0 20px 24px 20px" css-class="px">
       <mj-column width="100%">
         <mj-text padding="0">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border-radius:12px; border:1px solid #cbd5e1; box-shadow:0 12px 32px rgba(0, 48, 63, 0.08); overflow:hidden;">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border-radius:16px; border:1px solid #cbd5e1; border-collapse:separate; box-shadow:0 12px 32px rgba(0, 48, 63, 0.08); overflow:hidden;">
             <tr>
-              <td style="padding:28px 24px;">
+              <td style="padding:28px 24px; border-radius:16px;">
                 <!-- Оранжевый акцентный манифест-блок (Ref 5) -->
                 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#de6a09; border-radius:6px; margin-bottom:20px;">
                   <tr>
@@ -280,9 +272,9 @@
     <mj-section background-color="#e8eff2" padding="0 20px 24px 20px" css-class="px">
       <mj-column width="100%">
         <mj-text padding="0">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#00232f; border:1px solid #143542; border-radius:12px; box-shadow:0 15px 35px rgba(0, 35, 47, 0.35);">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#00232f; border-radius:16px; border-collapse:separate; overflow:hidden; box-shadow:0 15px 35px rgba(0, 35, 47, 0.35);">
             <tr>
-              <td style="padding:24px 20px;">
+              <td style="padding:24px 20px; border-radius:16px;">
                 <!-- Заголовок табло в стиле навигационных указателей аэропорта (Ref 2 & 4) -->
                 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid #143542;">
                   <tr>
@@ -472,9 +464,9 @@
     <mj-section background-color="#e8eff2" padding="0 20px 28px 20px" css-class="px">
       <mj-column width="100%">
         <mj-text padding="0">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border-radius:12px; border:1px solid #cbd5e1; box-shadow:0 12px 32px rgba(0, 48, 63, 0.08);">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border-radius:16px; border:1px solid #cbd5e1; border-collapse:separate; box-shadow:0 12px 32px rgba(0, 48, 63, 0.08); overflow:hidden;">
             <tr>
-              <td style="padding:28px 24px; text-align:center;">
+              <td style="padding:28px 24px; text-align:center; border-radius:16px;">
                 <div style="font-family:Arial, Helvetica, sans-serif; font-size:18px; font-weight:bold; color:#00303f; margin-bottom:8px;">
                   Уважаемые пассажиры!
                 </div>
