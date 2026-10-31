@@ -57,7 +57,9 @@ all_files = [f"v{i}_full.png" for i in range(1, 8)] + [f"variant{i}_emulator.png
     "icon_moscow.svg", "icon_moscow.png", "icon_ufa.svg", "icon_ufa.png", "icon_belebey.svg", "icon_belebey.png", "hero_v1_festive.jpg", "barcode.png",
     "icons-remember-01.svg", "icons-remember-02.svg", "icons-remember-03.svg",
     "remember-icon-01.png", "remember-icon-02.png", "remember-icon-03.png",
-    "remember-bg-01.png", "remember-bg-02.png", "remember-bg-03.png"
+    "remember-bg-01.png", "remember-bg-02.png", "remember-bg-03.png",
+    "v1-icon-mood-orange.png", "v1-icon-pass-blue.png", "v1-icon-time-green.png",
+    "v2-icon-mood-blue.png", "v2-icon-pass-orange.png", "v2-icon-time-green.png"
 ]
 for fname in all_files:
     src = os.path.join(workspace, fname)

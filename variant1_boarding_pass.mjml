@@ -336,12 +336,18 @@
         </mj-text>
       </mj-column>
       
-      <!-- Шаг 1 -->
+      <!-- Шаг 1: Настроение — оранжевое -->
       <mj-column width="33.33%" padding="0 6px 12px 6px">
         <mj-table padding="0">
           <tr>
-            <td height="154" valign="top" style="background-color: #0b1f36; background-image: url('remember-bg-01.png'); background-repeat: no-repeat; background-position: center 75%; background-size: 85px 85px; border: 1px solid #173254; border-radius: 12px; padding: 18px 14px; text-align: center; height: 154px; vertical-align: top;">
-              <div style="display:inline-block; background-color: #004b62; color: #38bdf8; font-weight: 900; font-size: 13px; width: 32px; height: 32px; line-height: 32px; border-radius: 50%; margin-bottom: 10px;">01</div>
+            <td height="162" valign="top" style="background-color: #0b1f36; border: 1px solid #173254; border-radius: 12px; padding: 20px 14px 18px 14px; text-align: center; height: 162px; vertical-align: top;">
+              <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto 12px auto;">
+                <tr>
+                  <td align="center" valign="middle" height="44" style="text-align: center; vertical-align: middle;">
+                    <img src="v1-icon-mood-orange.png" width="44" height="44" alt="Настроение" style="display: block; margin: 0 auto; border: 0;" />
+                  </td>
+                </tr>
+              </table>
               <div style="color: #ffffff; font-weight: bold; font-size: 13px; margin-bottom: 6px;">Настроение</div>
               <div style="color: #94a3b8; font-size: 11px; line-height: 1.4;">Подготовьте улыбки и готовность к ярким впечатлениям.</div>
             </td>
@@ -349,12 +355,18 @@
         </mj-table>
       </mj-column>
 
-      <!-- Шаг 2 -->
+      <!-- Шаг 2: Посадочная — голубое -->
       <mj-column width="33.33%" padding="0 6px 12px 6px">
         <mj-table padding="0">
           <tr>
-            <td height="154" valign="top" style="background-color: #0b1f36; background-image: url('remember-bg-02.png'); background-repeat: no-repeat; background-position: center 75%; background-size: 95px auto; border: 1px solid #173254; border-radius: 12px; padding: 18px 14px; text-align: center; height: 154px; vertical-align: top;">
-              <div style="display:inline-block; background-color: #de6a09; color: #ffffff; font-weight: 900; font-size: 13px; width: 32px; height: 32px; line-height: 32px; border-radius: 50%; margin-bottom: 10px;">02</div>
+            <td height="162" valign="top" style="background-color: #0b1f36; border: 1px solid #173254; border-radius: 12px; padding: 20px 14px 18px 14px; text-align: center; height: 162px; vertical-align: top;">
+              <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto 12px auto;">
+                <tr>
+                  <td align="center" valign="middle" height="44" style="text-align: center; vertical-align: middle;">
+                    <img src="v1-icon-pass-blue.png" width="48" height="29" alt="Посадочный" style="display: block; margin: 0 auto; border: 0;" />
+                  </td>
+                </tr>
+              </table>
               <div style="color: #ffffff; font-weight: bold; font-size: 13px; margin-bottom: 6px;">Посадочный</div>
               <div style="color: #94a3b8; font-size: 11px; line-height: 1.4;">Заберите свой билет на стойке Welcome для розыгрыша.</div>
             </td>
@@ -362,12 +374,18 @@
         </mj-table>
       </mj-column>
 
-      <!-- Шаг 3 -->
+      <!-- Шаг 3: Пунктуальность — зелёным -->
       <mj-column width="33.33%" padding="0 6px 12px 6px">
         <mj-table padding="0">
           <tr>
-            <td height="154" valign="top" style="background-color: #0b1f36; background-image: url('remember-bg-03.png'); background-repeat: no-repeat; background-position: center 75%; background-size: 85px 85px; border: 1px solid #173254; border-radius: 12px; padding: 18px 14px; text-align: center; height: 154px; vertical-align: top;">
-              <div style="display:inline-block; background-color: #008fd0; color: #ffffff; font-weight: 900; font-size: 13px; width: 32px; height: 32px; line-height: 32px; border-radius: 50%; margin-bottom: 10px;">03</div>
+            <td height="162" valign="top" style="background-color: #0b1f36; border: 1px solid #173254; border-radius: 12px; padding: 20px 14px 18px 14px; text-align: center; height: 162px; vertical-align: top;">
+              <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto 12px auto;">
+                <tr>
+                  <td align="center" valign="middle" height="44" style="text-align: center; vertical-align: middle;">
+                    <img src="v1-icon-time-green.png" width="44" height="44" alt="Пунктуальность" style="display: block; margin: 0 auto; border: 0;" />
+                  </td>
+                </tr>
+              </table>
               <div style="color: #ffffff; font-weight: bold; font-size: 13px; margin-bottom: 6px;">Пунктуальность</div>
               <div style="color: #94a3b8; font-size: 11px; line-height: 1.4;">Прибывайте без опозданий к началу регистрации.</div>
             </td>
