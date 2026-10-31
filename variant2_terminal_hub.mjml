@@ -33,11 +33,11 @@
       }
     </mj-style>
   </mj-head>
-  <mj-body background-color="#f5f2eb" width="600px">
+  <mj-body background-color="#f5f2eb" width="640px">
 
 
     <!-- HEADER: BRAND LOGO & CENTERED FLIGHT STATUS BADGE -->
-    <mj-section background-color="#ffffff" padding="20px 24px" border-radius="16px 16px 0 0">
+    <mj-section background-color="#ffffff" padding="20px 24px" border-radius="0">
       <mj-column width="50%" vertical-align="middle" css-class="mobile-center">
         <mj-image align="left" width="190px" src="logo_color.png" alt="Groupe Savencia" />
       </mj-column>
@@ -57,7 +57,7 @@
     <!-- PANORAMIC HERO BANNER: CINEMATIC AIRLINER & FESTIVE LIGHTS -->
     <mj-section background-color="#00232f" padding="0">
       <mj-column width="100%">
-        <mj-image src="A_clean_cinematic_hero.png" alt="Праздничный вылет Savencia в Новый год 2027" width="600px" />
+        <mj-image src="A_clean_cinematic_hero.png" alt="Праздничный вылет Savencia в Новый год 2027" width="640px" />
       </mj-column>
     </mj-section>
 
@@ -543,7 +543,7 @@
     </mj-section>
 
     <!-- FOOTER: ELEGANT CORPORATE FAREWELL (LEGAL & FINE PRINT REMOVED AS REQUESTED) -->
-    <mj-section background-color="#004b62" padding="32px 24px" border-radius="0 0 16px 16px">
+    <mj-section background-color="#004b62" padding="32px 24px" border-radius="0">
       <mj-column width="100%">
         <mj-text align="center" font-size="18px" font-weight="900" color="#ffffff" letter-spacing="1.5px">
           ДО ВСТРЕЧИ 10 ДЕКАБРЯ!
@@ -554,12 +554,5 @@
       </mj-column>
     </mj-section>
 
-    <!-- BOTTOM SPACING -->
-    <mj-section background-color="#f5f2eb" padding="16px 0">
-      <mj-column>
-        <mj-spacer height="8px" />
-      </mj-column>
-    </mj-section>
-
-  </mj-body>
+    </mj-body>
 </mjml>

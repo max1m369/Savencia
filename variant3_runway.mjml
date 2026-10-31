@@ -47,12 +47,12 @@
       }
     </mj-style>
   </mj-head>
-  <mj-body width="600px" background-color="#04121a">
+  <mj-body width="640px" background-color="#04121a">
 
     
 
     <!-- ШАПКА: БЕЛЫЙ БЛОК С ЛОГОТИПОМ -->
-    <mj-section background-color="#ffffff" padding="22px 28px 18px 28px" border-radius="16px 16px 0 0" css-class="px-m">
+    <mj-section background-color="#ffffff" padding="22px 28px 18px 28px" border-radius="0" css-class="px-m">
       <mj-column width="50%" vertical-align="middle">
         <mj-image align="left" width="170px" src="logo_color.png" alt="Groupe Savencia" />
       </mj-column>
@@ -66,7 +66,7 @@
     <!-- СИНЕМАТИЧЕСКИЙ БАННЕР ВЗЛЁТА -->
     <mj-section background-color="#061a24" padding="0">
       <mj-column width="100%">
-        <mj-image src="A_clean_cinematic_hero.png" alt="Взлёт в Новый год — Savencia" width="600px" />
+        <mj-image src="A_clean_cinematic_hero.png" alt="Взлёт в Новый год — Savencia" width="640px" />
       </mj-column>
     </mj-section>
 
@@ -250,7 +250,7 @@
     </mj-section>
 
     <!-- ФИНАЛЬНЫЙ БЛОК: ДО ВСТРЕЧИ 10 ДЕКАБРЯ -->
-    <mj-section background-color="#0d2e40" padding="32px 28px" border-radius="0 0 16px 16px" css-class="px-m">
+    <mj-section background-color="#0d2e40" padding="32px 28px" border-radius="0" css-class="px-m">
       <mj-column width="100%">
         <mj-text font-size="26px" font-weight="900" color="#ffffff" align="center" line-height="1.2">
           До встречи 10 декабря!
@@ -262,7 +262,7 @@
     </mj-section>
 
     <!-- БРЕНДОВЫЙ ТРИКОЛОР -->
-    <mj-section background-color="#04121a" padding="16px 0 24px 0">
+    <mj-section background-color="#0d2e40" padding="0 0 24px 0">
       <mj-group width="240px">
         <mj-column width="33.33%">
           <mj-divider border-color="#008fd0" border-width="4px" padding="0" />

@@ -350,19 +350,19 @@
   <header>
     <div class="nav-left">
       <span class="nav-label">Концепции:</span>
-      <button class="btn-var" onclick="setVariant('wireframe.html', this, 'Варфрейм: Архитектурный прототип', 'Wireframe')">Варфрейм</button>
-      <button class="btn-var" onclick="setVariant('variant1.html', this, 'Концепция 1: Luxury Boarding Pass', '37.0 KB')">1</button>
-      <button class="btn-var" onclick="setVariant('variant2.html', this, 'Концепция 2: Interactive Terminal Hub', '44.9 KB')">2</button>
-      <button class="btn-var" onclick="setVariant('variant3.html', this, 'Концепция 3: Cinematic Runway Sunset', '30.6 KB')">3</button>
-      <button class="btn-var" onclick="setVariant('variant4.html', this, 'Концепция 4: Retro Poster Art Deco', '73.7 KB')">4</button>
-      <button class="btn-var" onclick="setVariant('variant5.html', this, 'Концепция 5: Swiss Wayfinding Board', '31.1 KB')">5</button>
-      <button class="btn-var active highlight" onclick="setVariant('variant6.html', this, 'Концепция 6: Skeuomorphic Boarding Pass & Bands', '64.1 KB')">6</button>
-      <button class="btn-var" onclick="setVariant('variant7.html', this, 'Концепция 7: Holiday Airline Poster', '48.5 KB')">7</button>
+      <button class="btn-var" onclick="setVariant('wireframe.html', this, 'Варфрейм', '21.2 KB')">Варфрейм</button>
+      <button class="btn-var active highlight" onclick="setVariant('variant1.html', this, 'Концепция 1', '36.9 KB')">1</button>
+      <button class="btn-var" onclick="setVariant('variant2.html', this, 'Концепция 2', '44.5 KB')">2</button>
+      <button class="btn-var" onclick="setVariant('variant3.html', this, 'Концепция 3', '29.5 KB')">3</button>
+      <button class="btn-var" onclick="setVariant('variant4.html', this, 'Концепция 4', '74.0 KB')">4</button>
+      <button class="btn-var" onclick="setVariant('variant5.html', this, 'Концепция 5', '31.4 KB')">5</button>
+      <button class="btn-var" onclick="setVariant('variant6.html', this, 'Концепция 6', '68.3 KB')">6</button>
+      <button class="btn-var" onclick="setVariant('variant7.html', this, 'Концепция 7', '48.7 KB')">7</button>
     </div>
 
     <div class="nav-center">
-      <div class="concept-title" id="conceptTitle">Концепция 6: Skeuomorphic Boarding Pass & Bands</div>
-      <div class="weight-badge" id="conceptWeight">HTML: 64.1 KB</div>
+      <div class="concept-title" id="conceptTitle">Концепция 1</div>
+      <div class="weight-badge" id="conceptWeight">HTML: 36.9 KB</div>
     </div>
 
     <div class="nav-right">
@@ -386,7 +386,7 @@
     <!-- 1. ЧИСТЫЙ РЕЖИМ (ВО ВСЮ СТРАНИЦУ БЕЗ РАМОК И СКРОЛЛОВ) -->
     <div class="clean-stage" id="cleanStage">
       <div class="clean-frame-wrap desktop" id="cleanFrameWrap">
-        <iframe id="frameClean" src="variant6.html" scrolling="no"></iframe>
+        <iframe id="frameClean" src="variant1.html" scrolling="no"></iframe>
       </div>
     </div>
 
@@ -404,21 +404,21 @@
           <div style="width: 40px;"></div>
         </div>
         <div class="monitor-body">
-          <iframe id="iframeDesktop" src="variant6.html"></iframe>
+          <iframe id="iframeDesktop" src="variant1.html"></iframe>
         </div>
       </div>
 
       <!-- МОКАП ТЕЛЕФОНА -->
       <div class="phone-mockup">
         <div class="phone-body">
-          <iframe id="iframeMobile" src="variant6.html"></iframe>
+          <iframe id="iframeMobile" src="variant1.html"></iframe>
         </div>
       </div>
     </div>
   </main>
 
   <script>
-    let currentVariant = 'variant6.html';
+    let currentVariant = 'variant1.html';
     let currentMode = 'desktop';
 
     // Автоматическая подгонка высоты фрейма в чистом режиме (без скроллбаров внутри)
