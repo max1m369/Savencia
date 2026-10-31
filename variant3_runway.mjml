@@ -49,15 +49,7 @@
   </mj-head>
   <mj-body width="600px" background-color="#04121a">
 
-    <!-- PREHEADER & WEB LINK -->
-    <mj-section background-color="#04121a" padding="12px 24px">
-      <mj-column width="100%">
-        <mj-text align="center" font-size="11px" color="#52798e">
-          Новогодний рейс Savencia SV-2027 &nbsp;•&nbsp; 
-          <a href="#" style="color: #38bdf8; text-decoration: underline;">Веб-версия рассылки</a>
-        </mj-text>
-      </mj-column>
-    </mj-section>
+    
 
     <!-- ШАПКА: БЕЛЫЙ БЛОК С ЛОГОТИПОМ -->
     <mj-section background-color="#ffffff" padding="22px 28px 18px 28px" border-radius="16px 16px 0 0" css-class="px-m">
@@ -97,9 +89,10 @@
     <mj-section background-color="#061a24" padding="10px 20px 24px 20px" css-class="px-m">
       <mj-column width="100%">
         <mj-text padding="0">
+          <div style="transform: rotate(-1.5deg); -webkit-transform: rotate(-1.5deg); margin: 6px 4px 10px; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.25); border-radius: 14px; overflow: hidden;">
           <table width="100%" cellpadding="0" cellspacing="0" border="0">
             <tr>
-              <td style="background-color: #f8fafc; border-radius: 14px; padding: 24px 26px; border-left: 4px solid #de6a09;">
+              <td style="background-color: #f8fafc; border-radius: 14px; padding: 24px 26px; border-left: 5px solid #de6a09;">
                 <div style="font-size: 19px; font-weight: 900; color: #004b62; margin-bottom: 10px;">Дорогие коллеги!</div>
                 <div style="font-size: 15px; font-weight: bold; color: #de6a09; margin-bottom: 12px; line-height: 1.45;">Внимание, объявляется посадка на особый новогодний рейс!</div>
                 <div style="font-size: 14px; color: #334155; line-height: 1.6; margin-bottom: 10px;">10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников Savencia из трёх городов — <strong>Москвы, Уфы и Белебея</strong>.</div>
@@ -108,6 +101,7 @@
               </td>
             </tr>
           </table>
+          </div>
         </mj-text>
       </mj-column>
     </mj-section>

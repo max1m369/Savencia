@@ -151,56 +151,94 @@
       box-shadow: 0 2px 6px rgba(0, 75, 98, 0.25);
     }
 
-    /* Основная область просмотра на светлом фоне */
+    /* Основная область просмотра */
     main {
       flex: 1;
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 36px;
-      padding: 30px 24px 40px 24px;
-      background-color: #eaedf2;
-    }
-
-    /* Контейнер мокапа */
-    .device-wrap {
-      display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
-      transition: all 0.2s ease;
+      padding: 24px 20px 40px;
     }
 
-    /* MOCKUP МОНИТОРЧИКА */
+    /* 1. ЧИСТЫЙ РЕЖИМ ВО ВСЮ СТРАНИЦУ (КАК В G-PREVIEW.HTML) */
+    .clean-stage {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .clean-frame-wrap {
+      background: #ffffff;
+      box-shadow: 0 14px 40px rgba(0, 45, 65, 0.12);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: width 0.2s ease;
+      display: flex;
+      justify-content: center;
+    }
+
+    .clean-frame-wrap.desktop {
+      width: 640px;
+    }
+
+    .clean-frame-wrap.mobile-375 {
+      width: 375px;
+    }
+
+    .clean-frame-wrap.mobile-320 {
+      width: 320px;
+    }
+
+    #frameClean {
+      width: 100%;
+      border: 0;
+      display: block;
+      background: #ffffff;
+    }
+
+    /* 2. РЕЖИМ С МОКАПАМИ РЯДОМ (ТОЛЬКО ПО КНОПКЕ "РЯДОМ") */
+    .mockups-stage {
+      display: none;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 36px;
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* MOCKUP МОНИТОРА */
     .monitor-mockup {
-      width: 660px;
+      width: 680px;
       background: #ffffff;
       border-radius: 12px;
-      border: 1px solid #cbd5e1;
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.14), 0 4px 12px rgba(15, 23, 42, 0.05);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.08);
       overflow: hidden;
       display: flex;
       flex-direction: column;
     }
 
     .monitor-header {
-      background-color: #f1f5f9;
-      border-bottom: 1px solid #e2e8f0;
-      padding: 8px 14px;
+      background: #e2e8f0;
+      padding: 10px 14px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid #cbd5e1;
     }
 
     .window-dots {
       display: flex;
+      align-items: center;
       gap: 6px;
     }
 
     .dot {
-      width: 10px;
-      height: 10px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
+      display: inline-block;
     }
 
     .dot.red { background-color: #ef4444; }
@@ -208,19 +246,23 @@
     .dot.green { background-color: #10b981; }
 
     .window-url {
+      flex: 1;
+      background: #ffffff;
+      padding: 4px 12px;
+      border-radius: 6px;
       font-size: 11px;
       font-family: monospace;
       color: #64748b;
-      background: #ffffff;
-      padding: 3px 18px;
-      border-radius: 4px;
-      border: 1px solid #e2e8f0;
+      text-align: center;
+      border: 1px solid #cbd5e1;
     }
 
     .monitor-body {
       width: 100%;
-      height: 840px;
-      background-color: #ffffff;
+      height: 780px;
+      background-color: #f8fafc;
+      overflow: hidden;
+      position: relative;
     }
 
     .monitor-body iframe {
@@ -228,22 +270,27 @@
       height: 100%;
       border: none;
       display: block;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
-    /* MOCKUP ТЕЛЕФОНЧИКА (375px) */
+    .monitor-body iframe::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* MOCKUP ТЕЛЕФОНА (375px) */
     .phone-mockup {
       width: 375px;
       background: #111827;
       border-radius: 46px;
       border: 6px solid #1f2937;
-      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.22), 0 0 0 1px #374151;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.22);
       overflow: hidden;
       position: relative;
       display: flex;
       flex-direction: column;
     }
 
-    /* Динамический островок iPhone */
     .phone-mockup::before {
       content: "";
       position: absolute;
@@ -251,10 +298,10 @@
       left: 50%;
       transform: translateX(-50%);
       width: 115px;
-      height: 22px;
+      height: 20px;
       background-color: #1f2937;
-      border-bottom-left-radius: 14px;
-      border-bottom-right-radius: 14px;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
       z-index: 20;
     }
 
@@ -264,7 +311,7 @@
       background-color: #ffffff;
       border-radius: 40px;
       overflow: hidden;
-      padding-top: 10px;
+      position: relative;
       box-sizing: border-box;
     }
 
@@ -273,17 +320,13 @@
       height: 100%;
       border: none;
       display: block;
+      background-color: #ffffff;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
-    /* MOCKUP УЗКОГО ЭКРАНА (320px) */
-    .phone-mockup.narrow {
-      width: 320px;
-      border-radius: 40px;
-    }
-
-    .phone-mockup.narrow .phone-body {
-      height: 720px;
-      border-radius: 34px;
+    .phone-body iframe::-webkit-scrollbar {
+      display: none;
     }
 
     @media (max-width: 1180px) {
@@ -294,7 +337,7 @@
       .nav-left, .nav-center, .nav-right {
         justify-content: center;
       }
-      main {
+      .mockups-stage {
         flex-direction: column;
         align-items: center;
       }
@@ -303,62 +346,53 @@
 </head>
 <body>
 
+  <!-- ВЕРХНЯЯ ПАНЕЛЬ УПРАВЛЕНИЯ -->
   <header>
-    <!-- Слева: Концепции 1..7 -->
     <div class="nav-left">
       <span class="nav-label">Концепции:</span>
-      <button class="btn-var" onclick="setVariant('wireframe.html', this, 'Ч/Б Варфрейм структуры', 'Wireframe')">
-        Варфрейм
-      </button>
-      <button class="btn-var highlight active" onclick="setVariant('variant1.html', this, 'Концепция 1: Luxury Boarding Pass', '38.7 KB')">
-        1
-      </button>
-      <button class="btn-var" onclick="setVariant('variant2.html', this, 'Концепция 2: Hallmark Terminal Hub', '46.6 KB')">
-        2
-      </button>
-      <button class="btn-var" onclick="setVariant('variant3.html', this, 'Концепция 3: Cinematic Runway Sunset', '30.4 KB')">
-        3
-      </button>
-      <button class="btn-var" onclick="setVariant('variant4.html', this, 'Концепция 4: Winter Pearl Terminal', '73.7 KB')">
-        4
-      </button>
-      <button class="btn-var" onclick="setVariant('variant5.html', this, 'Концепция 5: Swiss Aeronavigation', '31.1 KB')">
-        5
-      </button>
-      <button class="btn-var" onclick="setVariant('variant6.html', this, 'Концепция 6: Colorful Festive Hub', '39.8 KB')">
-        6
-      </button>
-      <button class="btn-var" onclick="setVariant('variant7.html', this, 'Концепция 7: Retro Airline Poster', '48.5 KB')">
-        7
-      </button>
+      <button class="btn-var" onclick="setVariant('wireframe.html', this, 'Варфрейм: Архитектурный прототип', 'Wireframe')">Варфрейм</button>
+      <button class="btn-var" onclick="setVariant('variant1.html', this, 'Концепция 1: Luxury Boarding Pass', '37.0 KB')">1</button>
+      <button class="btn-var" onclick="setVariant('variant2.html', this, 'Концепция 2: Interactive Terminal Hub', '44.9 KB')">2</button>
+      <button class="btn-var" onclick="setVariant('variant3.html', this, 'Концепция 3: Cinematic Runway Sunset', '30.6 KB')">3</button>
+      <button class="btn-var" onclick="setVariant('variant4.html', this, 'Концепция 4: Retro Poster Art Deco', '73.7 KB')">4</button>
+      <button class="btn-var" onclick="setVariant('variant5.html', this, 'Концепция 5: Swiss Wayfinding Board', '31.1 KB')">5</button>
+      <button class="btn-var active highlight" onclick="setVariant('variant6.html', this, 'Концепция 6: Skeuomorphic Boarding Pass & Bands', '64.1 KB')">6</button>
+      <button class="btn-var" onclick="setVariant('variant7.html', this, 'Концепция 7: Holiday Airline Poster', '48.5 KB')">7</button>
     </div>
 
-    <!-- По центру: название и вес активной концепции -->
     <div class="nav-center">
-      <span class="concept-title" id="conceptTitle">Концепция 1: Luxury Boarding Pass</span>
-      <span class="weight-badge" id="conceptWeight">HTML: 38.7 KB</span>
+      <div class="concept-title" id="conceptTitle">Концепция 6: Skeuomorphic Boarding Pass & Bands</div>
+      <div class="weight-badge" id="conceptWeight">HTML: 64.1 KB</div>
     </div>
 
-    <!-- Справа: 4 режима экранов -->
     <div class="nav-right">
-      <button class="btn-mode" onclick="setMode('desktop', this)">
+      <button class="btn-mode active" id="btnModeDesktop" onclick="setMode('desktop', this)">
         💻 Компьютер · 640 px
       </button>
-      <button class="btn-mode" onclick="setMode('mobile-375', this)">
+      <button class="btn-mode" id="btnModeMobile375" onclick="setMode('mobile-375', this)">
         📱 Телефон · 375 px
       </button>
-      <button class="btn-mode" onclick="setMode('mobile-320', this)">
+      <button class="btn-mode" id="btnModeMobile320" onclick="setMode('mobile-320', this)">
         📱 Узкий экран · 320 px
       </button>
-      <button class="btn-mode active" onclick="setMode('side-by-side', this)">
+      <button class="btn-mode" id="btnModeSideBySide" onclick="setMode('side-by-side', this)">
         💻📱 Рядом (Эмулятор)
       </button>
     </div>
   </header>
 
-  <main id="mainContainer">
-    <!-- MOCKUP МОНИТОРЧИКА -->
-    <div class="device-wrap" id="wrapDesktop">
+  <!-- ОСНОВНАЯ ОБЛАСТЬ ПРОСМОТРА -->
+  <main>
+    <!-- 1. ЧИСТЫЙ РЕЖИМ (ВО ВСЮ СТРАНИЦУ БЕЗ РАМОК И СКРОЛЛОВ) -->
+    <div class="clean-stage" id="cleanStage">
+      <div class="clean-frame-wrap desktop" id="cleanFrameWrap">
+        <iframe id="frameClean" src="variant6.html" scrolling="no"></iframe>
+      </div>
+    </div>
+
+    <!-- 2. РЕЖИМ МОКАПОВ (ТОЛЬКО ПО КНОПКЕ "РЯДОМ") -->
+    <div class="mockups-stage" id="mockupsStage">
+      <!-- МОКАП МОНИТОРА -->
       <div class="monitor-mockup">
         <div class="monitor-header">
           <div class="window-dots">
@@ -370,32 +404,68 @@
           <div style="width: 40px;"></div>
         </div>
         <div class="monitor-body">
-          <iframe id="iframeDesktop" src="variant1.html"></iframe>
+          <iframe id="iframeDesktop" src="variant6.html"></iframe>
         </div>
       </div>
-    </div>
 
-    <!-- MOCKUP ТЕЛЕФОНЧИКА (375px) -->
-    <div class="device-wrap" id="wrapMobile375">
+      <!-- МОКАП ТЕЛЕФОНА -->
       <div class="phone-mockup">
         <div class="phone-body">
-          <iframe id="iframeMobile" src="variant1.html"></iframe>
-        </div>
-      </div>
-    </div>
-
-    <!-- MOCKUP УЗКОГО ТЕЛЕФОНЧИКА (320px) -->
-    <div class="device-wrap" id="wrapMobile320" style="display: none;">
-      <div class="phone-mockup narrow">
-        <div class="phone-body">
-          <iframe id="iframeMobile320" src="variant1.html"></iframe>
+          <iframe id="iframeMobile" src="variant6.html"></iframe>
         </div>
       </div>
     </div>
   </main>
 
   <script>
-    let currentVariant = 'variant1.html';
+    let currentVariant = 'variant6.html';
+    let currentMode = 'desktop';
+
+    // Автоматическая подгонка высоты фрейма в чистом режиме (без скроллбаров внутри)
+    function resizeCleanFrame() {
+      try {
+        const frame = document.getElementById('frameClean');
+        const doc = frame.contentDocument || frame.contentWindow.document;
+        if (!doc || !doc.body) return;
+
+        // Отключаем внутренние скроллбары
+        frame.style.height = '1px';
+        const height = Math.max(
+          doc.body.scrollHeight,
+          doc.documentElement.scrollHeight,
+          doc.body.offsetHeight
+        );
+        frame.style.height = (height + 24) + 'px';
+      } catch (e) {
+        document.getElementById('frameClean').style.height = '4800px';
+      }
+    }
+
+    // Скрытие скроллбаров внутри iframes мокапов
+    function cleanMockupScrollbars(frameId) {
+      try {
+        const frame = document.getElementById(frameId);
+        const doc = frame.contentDocument || frame.contentWindow.document;
+        if (!doc || !doc.head) return;
+        const style = doc.createElement('style');
+        style.textContent = '*::-webkit-scrollbar { display: none !important; } * { scrollbar-width: none !important; -ms-overflow-style: none !important; }';
+        doc.head.appendChild(style);
+      } catch(e) {}
+    }
+
+    document.getElementById('frameClean').addEventListener('load', function() {
+      resizeCleanFrame();
+    });
+
+    document.getElementById('iframeDesktop').addEventListener('load', function() {
+      cleanMockupScrollbars('iframeDesktop');
+    });
+
+    document.getElementById('iframeMobile').addEventListener('load', function() {
+      cleanMockupScrollbars('iframeMobile');
+    });
+
+    window.addEventListener('resize', resizeCleanFrame);
 
     function setVariant(url, btn, title, weight) {
       document.querySelectorAll('.btn-var').forEach(b => {
@@ -406,9 +476,9 @@
       btn.classList.add('highlight');
       currentVariant = url;
       
+      document.getElementById('frameClean').src = url;
       document.getElementById('iframeDesktop').src = url;
       document.getElementById('iframeMobile').src = url;
-      document.getElementById('iframeMobile320').src = url;
 
       document.getElementById('conceptTitle').textContent = title;
       document.getElementById('conceptWeight').textContent = weight === 'Wireframe' ? 'Ч/Б варфрейм' : 'HTML: ' + weight;
@@ -417,29 +487,26 @@
     function setMode(mode, btn) {
       document.querySelectorAll('.btn-mode').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      currentMode = mode;
 
-      const wrapDesktop = document.getElementById('wrapDesktop');
-      const wrapMobile375 = document.getElementById('wrapMobile375');
-      const wrapMobile320 = document.getElementById('wrapMobile320');
+      const cleanStage = document.getElementById('cleanStage');
+      const cleanWrap = document.getElementById('cleanFrameWrap');
+      const mockupsStage = document.getElementById('mockupsStage');
 
       if (mode === 'side-by-side') {
-        wrapDesktop.style.display = 'flex';
-        wrapMobile375.style.display = 'flex';
-        wrapMobile320.style.display = 'none';
-      } else if (mode === 'desktop') {
-        wrapDesktop.style.display = 'flex';
-        wrapMobile375.style.display = 'none';
-        wrapMobile320.style.display = 'none';
-      } else if (mode === 'mobile-375') {
-        wrapDesktop.style.display = 'none';
-        wrapMobile375.style.display = 'flex';
-        wrapMobile320.style.display = 'none';
-      } else if (mode === 'mobile-320') {
-        wrapDesktop.style.display = 'none';
-        wrapMobile375.style.display = 'none';
-        wrapMobile320.style.display = 'flex';
+        cleanStage.style.display = 'none';
+        mockupsStage.style.display = 'flex';
+      } else {
+        cleanStage.style.display = 'flex';
+        mockupsStage.style.display = 'none';
+
+        cleanWrap.className = 'clean-frame-wrap ' + mode;
+        setTimeout(resizeCleanFrame, 50);
       }
     }
+
+    // Инициализация первой подгонки
+    setTimeout(resizeCleanFrame, 300);
   </script>
 </body>
 </html>
