@@ -1,319 +1,285 @@
 <mjml lang="ru">
   <mj-head>
-    <mj-title>10 декабря — Вылет в Новый ГОД! | Savencia Swiss Specimen</mj-title>
-    <mj-preview>10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников Savencia из трёх городов — Москвы, Уфы и Белебея.</mj-preview>
+    <mj-title>10 декабря — Вылет в Новый ГОД! | Savencia Runway</mj-title>
+    <mj-preview>10 декабря отправляемся в праздничное путешествие: Москва, Уфа и Белебей на одном новогоднем рейсе!</mj-preview>
     <mj-breakpoint width="480px" />
     <mj-attributes>
-      <mj-all font-family="Arial, Helvetica, sans-serif" />
-      <mj-text font-size="15px" line-height="1.65" color="#47636d" padding="0" />
-      <mj-section padding="0" />
-      <mj-column padding="0" />
-      <mj-image padding="0" />
+      <mj-all font-family="Arial, Helvetica, sans-serif" padding="0" />
+      <mj-text font-size="15px" line-height="1.6" color="#334155" />
+      <mj-section background-color="#061a24" />
     </mj-attributes>
     <mj-style>
-      /* Hallmark · built: Savencia · redesign: polish · genre: editorial */
+      /* Hallmark · built: Savencia · redesign: Cinematic Runway Sunset · genre: atmospheric */
       :root {
-        --color-petrol-deep: #00232f;
+        --color-bg-deep: #061a24;
+        --color-bg-dark-card: #0a2533;
+        --color-bg-paper: #f4f7f6;
+        --color-navy: #004b62;
         --color-orange: #de6a09;
-        --color-sky: #38bdf8;
-        --color-teal-dark: #002a37;
-        --color-slate-text: #47636d;
-        --color-bg-paper: #e6eef0;
+        --color-amber: #e58e26;
+        --color-sky: #008fd0;
+        --color-cyan: #38bdf8;
       }
-      @media only screen and (max-width:480px){
-        .px { padding-left: 20px !important; padding-right: 20px !important; }
-        .h1 div { font-size: 32px !important; line-height: 1.05 !important; }
-        .row-td { display: block !important; width: 100% !important; }
-        .row-time { padding: 16px 0 0 0 !important; }
-        .row-body { padding: 8px 0 16px 0 !important; }
-        .gate-td { display: block !important; width: 100% !important; padding: 0 0 12px 0 !important; }
-        .city { font-size: 11px !important; letter-spacing: 1.5px !important; }
+      .runway-card {
+        background-color: #0a2533;
+        border-radius: 16px;
+        border: 1px solid #143b50;
+        overflow: hidden;
+      }
+      @media only screen and (max-width: 479px) {
+        .px-m {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+        .time-badge {
+          display: inline-block !important;
+          margin-bottom: 6px !important;
+        }
+        .city-box {
+          display: block !important;
+          width: 100% !important;
+          margin-bottom: 12px !important;
+        }
+        .h1-mobile div {
+          font-size: 32px !important;
+          line-height: 1.1 !important;
+        }
       }
     </mj-style>
   </mj-head>
+  <mj-body width="600px" background-color="#04121a">
 
-  <mj-body width="600px" background-color="#e6eef0">
-
-    <!-- ОРАНЖЕВАЯ АКЦЕНТНАЯ ЛИНИЯ -->
-    <mj-section background-color="#de6a09" padding="0">
-      <mj-column><mj-text padding="0" font-size="1px" line-height="4px">&nbsp;</mj-text></mj-column>
-    </mj-section>
-
-    <!-- ШАПКА: ЛОГОТИП -->
-    <mj-section background-color="#ffffff" padding="24px 32px 20px 32px" css-class="px">
-      <mj-column>
-        <mj-image src="logo_color.png" width="160px" align="left" alt="GROUPE SAVENCIA" />
+    <!-- PREHEADER & WEB LINK -->
+    <mj-section background-color="#04121a" padding="12px 24px">
+      <mj-column width="100%">
+        <mj-text align="center" font-size="11px" color="#52798e">
+          Новогодний рейс Savencia SV-2027 &nbsp;•&nbsp; 
+          <a href="#" style="color: #38bdf8; text-decoration: underline;">Веб-версия рассылки</a>
+        </mj-text>
       </mj-column>
     </mj-section>
 
-    <!-- ГЕРОЙ: ЧИСТАЯ ШВЕЙЦАРСКАЯ ТИПОГРАФИКА (SWISS POSTER SPECIMEN) -->
-    <mj-section background-color="#00232f" padding="36px 32px 28px 32px" css-class="px">
-      <mj-column>
-        <!-- Мета-строка -->
-        <mj-text font-family="'Courier New', Courier, monospace" font-size="11px" font-weight="bold"
-                 letter-spacing="2.5px" color="#de6a09" line-height="1" padding="0 0 16px 0">
-          FLIGHT SV-2027 &nbsp;|&nbsp; DISPATCH: 10 ДЕКАБРЯ
+    <!-- ШАПКА: БЕЛЫЙ БЛОК С ЛОГОТИПОМ -->
+    <mj-section background-color="#ffffff" padding="22px 28px 18px 28px" border-radius="16px 16px 0 0" css-class="px-m">
+      <mj-column width="50%" vertical-align="middle">
+        <mj-image align="left" width="170px" src="logo_color.png" alt="Groupe Savencia" />
+      </mj-column>
+      <mj-column width="50%" vertical-align="middle">
+        <mj-text align="right" font-size="12px" color="#004b62" font-weight="bold">
+          РЕЙС: <span style="color:#008fd0;">SV-2027</span> &nbsp;|&nbsp; ГЕЙТ: <span style="color:#de6a09;">2027</span>
         </mj-text>
-        
-        <!-- Монументальный швейцарский заголовок -->
-        <mj-text font-family="Arial, Helvetica, sans-serif" font-size="44px" font-weight="900" line-height="0.98" letter-spacing="-1px"
-                 color="#ffffff" padding="0 0 14px 0" css-class="h1">
-          ВЫЛЕТ В<br /><span style="color:#de6a09;">НОВЫЙ ГОД</span>
-        </mj-text>
-        
-        <!-- Подзаголовок-манифест -->
-        <mj-text font-family="'Courier New', Courier, monospace" font-size="12px" font-weight="bold" letter-spacing="2px" line-height="1.6"
-                 color="#38bdf8" padding="0 0 24px 0">
-          ТРИ ГОРОДА. ОДИН РЕЙС. ОДНА КОМАНДА.
-        </mj-text>
+      </mj-column>
+    </mj-section>
 
-        <!-- Типографическая сетка параметров полета -->
-        <mj-table padding="0">
-          <tr>
-            <td>
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top: 1px solid #1a3c4a; border-bottom: 1px solid #1a3c4a; margin-top: 4px;">
+    <!-- СИНЕМАТИЧЕСКИЙ БАННЕР ВЗЛЁТА -->
+    <mj-section background-color="#061a24" padding="0">
+      <mj-column width="100%">
+        <mj-image src="A_clean_cinematic_hero.png" alt="Взлёт в Новый год — Savencia" width="600px" />
+      </mj-column>
+    </mj-section>
+
+    <!-- ТИТУЛЬНЫЙ МАНИФЕСТ РЕЙСА -->
+    <mj-section background-color="#061a24" padding="28px 28px 16px 28px" css-class="px-m">
+      <mj-column width="100%">
+        <mj-text font-size="12px" font-weight="bold" letter-spacing="2px" color="#38bdf8" text-transform="uppercase" padding-bottom="8px">
+          FLIGHT DISPATCH // 10 ДЕКАБРЯ 2026
+        </mj-text>
+        <mj-text font-size="34px" font-weight="900" line-height="1.15" color="#ffffff" css-class="h1-mobile">
+          ТРИ ГОРОДА. ОДИН РЕЙС.<br /><span style="color:#e58e26;">ОДНА КОМАНДА.</span>
+        </mj-text>
+        <mj-text font-size="17px" font-weight="bold" color="#de6a09" padding-top="8px">
+          10 декабря — Вылет в Новый ГОД!
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- ОБРАЩЕНИЕ К КОМАНДЕ (КРЕМОВАЯ ПОЛИГРАФИЧЕСКАЯ КАРТОЧКА) -->
+    <mj-section background-color="#061a24" padding="10px 20px 24px 20px" css-class="px-m">
+      <mj-column width="100%">
+        <mj-text padding="0">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td style="background-color: #f8fafc; border-radius: 14px; padding: 24px 26px; border-left: 4px solid #de6a09;">
+                <div style="font-size: 19px; font-weight: 900; color: #004b62; margin-bottom: 10px;">Дорогие коллеги!</div>
+                <div style="font-size: 15px; font-weight: bold; color: #de6a09; margin-bottom: 12px; line-height: 1.45;">Внимание, объявляется посадка на особый новогодний рейс!</div>
+                <div style="font-size: 14px; color: #334155; line-height: 1.6; margin-bottom: 10px;">10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников Savencia из трёх городов — <strong>Москвы, Уфы и Белебея</strong>.</div>
+                <div style="font-size: 14px; color: #475569; line-height: 1.6; margin-bottom: 10px;">В этот день наши площадки станут настоящими терминалами, а каждый сотрудник — пассажиром рейса к Новому году!</div>
+                <div style="font-size: 14px; color: #475569; line-height: 1.6;"><strong>В программе полёта:</strong> тёплые встречи, заслуженные награды, подарки, музыка и праздничное настроение.</div>
+              </td>
+            </tr>
+          </table>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- RUNWAY GLIDESLOPE: РАСПИСАНИЕ МОСКВА И УФА -->
+    <mj-section background-color="#061a24" padding="10px 20px 20px 20px" css-class="px-m">
+      <mj-column width="100%">
+        <mj-text padding="0">
+          <div class="runway-card">
+            <!-- Заголовок хаба -->
+            <div style="background-color: #0d2e40; padding: 16px 22px; border-bottom: 2px solid #e58e26;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td width="33%" align="left" style="padding: 14px 8px 14px 0; border-right: 1px solid #1a3c4a;">
-                    <div style="font-family:'Courier New', monospace; font-size:9px; color:#688995; letter-spacing:1px; text-transform:uppercase;">01 // МАРШРУТ</div>
-                    <div style="font-family:Arial, sans-serif; font-size:15px; font-weight:900; color:#ffffff; margin-top:3px;">MOW · UFA · BEL</div>
-                    <div style="font-family:'Courier New', monospace; font-size:10px; color:#1bbbe9; margin-top:2px;">DIRECT FLIGHT</div>
+                  <td align="left">
+                    <div style="font-size: 11px; font-weight: bold; color: #38bdf8; letter-spacing: 1.5px;">RUNWAY 01 // ТЕРМИНАЛЫ</div>
+                    <div style="font-size: 18px; font-weight: 900; color: #ffffff; margin-top: 3px;">✈ МОСКВА И УФА</div>
                   </td>
-                  <td width="34%" align="left" style="padding: 14px 8px 14px 14px; border-right: 1px solid #1a3c4a;">
-                    <div style="font-family:'Courier New', monospace; font-size:9px; color:#688995; letter-spacing:1px; text-transform:uppercase;">02 // ВЫЛЕТ</div>
-                    <div style="font-family:Arial, sans-serif; font-size:15px; font-weight:900; color:#de6a09; margin-top:3px;">10.12.2026</div>
-                    <div style="font-family:'Courier New', monospace; font-size:10px; color:#cbd5e1; margin-top:2px;">ПО РАСПИСАНИЮ</div>
-                  </td>
-                  <td width="33%" align="left" style="padding: 14px 0 14px 14px;">
-                    <div style="font-family:'Courier New', monospace; font-size:9px; color:#688995; letter-spacing:1px; text-transform:uppercase;">03 // ПАССАЖИРЫ</div>
-                    <div style="font-family:Arial, sans-serif; font-size:15px; font-weight:900; color:#ffffff; margin-top:3px;">SAVENCIA</div>
-                    <div style="font-family:'Courier New', monospace; font-size:10px; color:#10b981; margin-top:2px;">BOARDING CALL</div>
+                  <td align="right" valign="middle">
+                    <span style="background-color: #061a24; color: #cbd5e1; font-size: 10px; font-weight: bold; padding: 4px 8px; border-radius: 4px; border: 1px solid #1a4258;">МЕСТНОЕ ВРЕМЯ</span>
                   </td>
                 </tr>
               </table>
-            </td>
-          </tr>
-        </mj-table>
-      </mj-column>
-    </mj-section>
+            </div>
 
-    <!-- МАРШРУТ ГОРОДОВ -->
-    <mj-section background-color="#eef4f6" padding="0 20px" border-top="1px solid #dbe7ea">
-      <mj-column>
-        <mj-table padding="0">
-          <tr>
-            <td width="30%" align="center" valign="middle" style="padding:18px 0;">
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1;color:#de6a09;font-weight:bold;">✈</div>
-              <div class="city" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#004b62;padding-top:8px;">МОСКВА</div>
-            </td>
-            <td width="5%" valign="middle" style="padding:0 6px;"><div style="border-top:1px dashed #a7c1ca;font-size:0;line-height:0;">&nbsp;</div></td>
-            <td width="30%" align="center" valign="middle" style="padding:18px 0;">
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1;color:#de6a09;font-weight:bold;">✈</div>
-              <div class="city" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#004b62;padding-top:8px;">УФА</div>
-            </td>
-            <td width="5%" valign="middle" style="padding:0 6px;"><div style="border-top:1px dashed #a7c1ca;font-size:0;line-height:0;">&nbsp;</div></td>
-            <td width="30%" align="center" valign="middle" style="padding:18px 0;">
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1;color:#de6a09;font-weight:bold;">✈</div>
-              <div class="city" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;color:#004b62;padding-top:8px;">БЕЛЕБЕЙ</div>
-            </td>
-          </tr>
-        </mj-table>
-      </mj-column>
-    </mj-section>
-
-    <!-- ВВОДНЫЙ ТЕКСТ / МАНИФЕСТ -->
-    <mj-section background-color="#ffffff" padding="32px 32px 24px 32px" css-class="px">
-      <mj-column>
-        <mj-text font-size="20px" font-weight="900" color="#00303f" padding="0 0 14px 0">Дорогие коллеги!</mj-text>
-        <mj-text font-size="15px" color="#2b4751" padding="0 0 14px 0">Внимание, объявляется посадка на особый новогодний рейс!</mj-text>
-        <mj-text font-size="15px" color="#47636d" padding="0 0 14px 0">10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников Savencia из трёх городов — Москвы, Уфы и Белебея.</mj-text>
-        <mj-text font-size="15px" color="#47636d" padding="0 0 14px 0">В этот день наши праздничные площадки превратятся в настоящие аэропорты, а каждый из вас станет пассажиром рейса с конечным пунктом назначения — Новый год!</mj-text>
-        <mj-text font-size="15px" color="#47636d" padding="0">В программе полёта: тёплые встречи с коллегами, яркие эмоции, заслуженные награды, приятные сюрпризы, музыка и праздничное настроение.</mj-text>
-      </mj-column>
-    </mj-section>
-
-    <!-- СЕКЦИЯ 1: РАСПИСАНИЕ МОСКВА И УФА -->
-    <mj-section background-color="#00232f" padding="24px 32px 14px 32px" css-class="px">
-      <mj-column>
-        <mj-text font-family="'Courier New',Courier,monospace" font-size="11px" font-weight="bold" letter-spacing="2.5px" color="#de6a09" padding="0 0 4px 0">РАСПИСАНИЕ РЕЙСА</mj-text>
-        <mj-text font-family="Arial,Helvetica,sans-serif" font-size="22px" font-weight="900" color="#ffffff" padding="0">МОСКВА И УФА</mj-text>
-        <mj-text font-family="'Courier New',Courier,monospace" font-size="11px" color="#5f97a8" padding="4px 0 0 0">ПО МЕСТНОМУ ВРЕМЕНИ</mj-text>
-      </mj-column>
-    </mj-section>
-
-    <!-- ЭТАПЫ МОСКВА И УФА -->
-    <mj-section background-color="#002a37" padding="0 32px" css-class="px">
-      <mj-column>
-        <mj-table padding="0">
-          <tr>
-            <td class="row-td row-time" width="128" valign="top" style="width:128px;padding:16px 12px 0 0;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td style="background-color:#001b24;border:1px solid #10404f;border-radius:4px;padding:6px 10px;font-family:'Courier New',Courier,monospace;font-size:13px;font-weight:bold;color:#ffffff;white-space:nowrap;">17:00–18:00</td>
-              </tr></table>
-            </td>
-            <td class="row-td row-body" valign="top" style="padding:15px 0 16px 0;">
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#8fd8ee;line-height:1.35;">Регистрация на рейс (Welcome)</div>
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#a9c4ce;padding-top:4px;">Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.</div>
-            </td>
-          </tr>
-        </mj-table>
-      </mj-column>
-    </mj-section>
-
-    <mj-section background-color="#00303f" padding="0 32px" css-class="px">
-      <mj-column>
-        <mj-table padding="0">
-          <tr>
-            <td class="row-td row-time" width="128" valign="top" style="width:128px;padding:16px 12px 0 0;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td style="background-color:#001b24;border:1px solid #10404f;border-radius:4px;padding:6px 10px;font-family:'Courier New',Courier,monospace;font-size:13px;font-weight:bold;color:#ffffff;white-space:nowrap;">18:00–20:00</td>
-              </tr></table>
-            </td>
-            <td class="row-td row-body" valign="top" style="padding:15px 0 16px 0;">
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#8fd8ee;line-height:1.35;">Взлёт. Торжественная часть</div>
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#a9c4ce;padding-top:4px;">Церемония награждения сотрудников и праздничная программа.</div>
-            </td>
-          </tr>
-        </mj-table>
-      </mj-column>
-    </mj-section>
-
-    <mj-section background-color="#002a37" padding="0 32px" css-class="px">
-      <mj-column>
-        <mj-table padding="0">
-          <tr>
-            <td class="row-td row-time" width="128" valign="top" style="width:128px;padding:16px 12px 0 0;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td style="background-color:#001b24;border:1px solid #10404f;border-radius:4px;padding:6px 10px;font-family:'Courier New',Courier,monospace;font-size:13px;font-weight:bold;color:#ffffff;white-space:nowrap;">20:00–23:00</td>
-              </tr></table>
-            </td>
-            <td class="row-td row-body" valign="top" style="padding:15px 0 16px 0;">
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#8fd8ee;line-height:1.35;">Полёт в Новый год</div>
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#a9c4ce;padding-top:4px;">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</div>
-            </td>
-          </tr>
-        </mj-table>
-      </mj-column>
-    </mj-section>
-
-    <!-- АЭРОПОРТЫ МОСКВА И УФА -->
-    <mj-section background-color="#00232f" padding="18px 32px 24px 32px" css-class="px">
-      <mj-column>
-        <mj-text font-family="'Courier New',Courier,monospace" font-size="10px" font-weight="bold" letter-spacing="2px" color="#5f97a8" padding="0 0 12px 0">АЭРОПОРТЫ ОТПРАВЛЕНИЯ</mj-text>
-        <mj-table padding="0">
-          <tr>
-            <td class="gate-td" width="48%" valign="top" style="padding:0 8px 0 0;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px dashed #1f5c6e;border-radius:6px;background-color:#002a37;">
-                <tr><td style="padding:10px 12px 0 12px;font-family:Arial,sans-serif;font-size:11px;font-weight:bold;color:#8fd8ee;"><span style="color:#de6a09;">✈</span> МОСКВА:</td></tr>
-                <tr><td style="padding:4px 12px 12px 12px;font-family:Arial,sans-serif;font-size:12px;color:#d5e9ef;line-height:1.4;">проспект Андропова, 11, корпус 2, Южный Event-Port.</td></tr>
+            <!-- Этапы вылета -->
+            <div style="padding: 20px 22px;">
+              <!-- Этап 1 -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
+                <tr>
+                  <td width="120" valign="top">
+                    <span class="time-badge" style="display:inline-block; background-color: #004b62; color: #ffffff; font-weight: bold; font-size: 11px; padding: 5px 10px; border-radius: 6px;">17:00 – 18:00</span>
+                  </td>
+                  <td valign="top" style="padding-left: 8px;">
+                    <div style="color: #ffffff; font-weight: bold; font-size: 14px;">Регистрация на рейс (Welcome)</div>
+                    <div style="color: #94a3b8; font-size: 12px; margin-top: 3px; line-height: 1.45;">Встреча пассажиров, посадочные билеты, фотозона, угощения и старт праздника.</div>
+                  </td>
+                </tr>
               </table>
-            </td>
-            <td class="gate-td" width="4%" style="font-size:0;">&nbsp;</td>
-            <td class="gate-td" width="48%" valign="top" style="padding:0 0 0 8px;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px dashed #1f5c6e;border-radius:6px;background-color:#002a37;">
-                <tr><td style="padding:10px 12px 0 12px;font-family:Arial,sans-serif;font-size:11px;font-weight:bold;color:#8fd8ee;"><span style="color:#de6a09;">✈</span> УФА:</td></tr>
-                <tr><td style="padding:4px 12px 12px 12px;font-family:Arial,sans-serif;font-size:12px;color:#d5e9ef;line-height:1.4;">улица Менделеева, 205А, ресторан «Пастернак».</td></tr>
+
+              <!-- Этап 2 -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
+                <tr>
+                  <td width="120" valign="top">
+                    <span class="time-badge" style="display:inline-block; background-color: #de6a09; color: #ffffff; font-weight: bold; font-size: 11px; padding: 5px 10px; border-radius: 6px;">18:00 – 20:00</span>
+                  </td>
+                  <td valign="top" style="padding-left: 8px;">
+                    <div style="color: #ffffff; font-weight: bold; font-size: 14px;">Взлёт. Торжественная часть</div>
+                    <div style="color: #94a3b8; font-size: 12px; margin-top: 3px; line-height: 1.45;">Церемония награждения сотрудников и официальная новогодняя программа.</div>
+                  </td>
+                </tr>
               </table>
-            </td>
-          </tr>
-        </mj-table>
-      </mj-column>
-    </mj-section>
 
-    <!-- СЕКЦИЯ 2: РАСПИСАНИЕ БЕЛЕБЕЙ -->
-    <mj-section background-color="#00232f" padding="24px 32px 14px 32px" border-top="2px solid #de6a09" css-class="px">
-      <mj-column>
-        <mj-text font-family="'Courier New',Courier,monospace" font-size="11px" font-weight="bold" letter-spacing="2.5px" color="#de6a09" padding="0 0 4px 0">РАСПИСАНИЕ РЕЙСА</mj-text>
-        <mj-text font-family="Arial,Helvetica,sans-serif" font-size="22px" font-weight="900" color="#ffffff" padding="0">БЕЛЕБЕЙ</mj-text>
-        <mj-text font-family="'Courier New',Courier,monospace" font-size="11px" color="#5f97a8" padding="4px 0 0 0">ПО МЕСТНОМУ ВРЕМЕНИ</mj-text>
-      </mj-column>
-    </mj-section>
-
-    <!-- ЭТАПЫ БЕЛЕБЕЙ -->
-    <mj-section background-color="#002a37" padding="0 32px" css-class="px">
-      <mj-column>
-        <mj-table padding="0">
-          <tr>
-            <td class="row-td row-time" width="128" valign="top" style="width:128px;padding:16px 12px 0 0;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td style="background-color:#001b24;border:1px solid #10404f;border-radius:4px;padding:6px 10px;font-family:'Courier New',Courier,monospace;font-size:13px;font-weight:bold;color:#ffffff;white-space:nowrap;">15:00–15:30</td>
-              </tr></table>
-            </td>
-            <td class="row-td row-body" valign="top" style="padding:15px 0 16px 0;">
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#8fd8ee;line-height:1.35;">Регистрация на рейс (Welcome)</div>
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#a9c4ce;padding-top:4px;">Встреча пассажиров, посадочные билеты, фотозона, угощения.</div>
-            </td>
-          </tr>
-        </mj-table>
-      </mj-column>
-    </mj-section>
-
-    <mj-section background-color="#00303f" padding="0 32px" css-class="px">
-      <mj-column>
-        <mj-table padding="0">
-          <tr>
-            <td class="row-td row-time" width="128" valign="top" style="width:128px;padding:16px 12px 0 0;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td style="background-color:#001b24;border:1px solid #10404f;border-radius:4px;padding:6px 10px;font-family:'Courier New',Courier,monospace;font-size:13px;font-weight:bold;color:#ffffff;white-space:nowrap;">15:30–18:00</td>
-              </tr></table>
-            </td>
-            <td class="row-td row-body" valign="top" style="padding:15px 0 16px 0;">
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#8fd8ee;line-height:1.35;">Взлёт. Торжественная часть</div>
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#a9c4ce;padding-top:4px;">Церемония награждения сотрудников и праздничная программа.</div>
-            </td>
-          </tr>
-        </mj-table>
-      </mj-column>
-    </mj-section>
-
-    <mj-section background-color="#002a37" padding="0 32px" css-class="px">
-      <mj-column>
-        <mj-table padding="0">
-          <tr>
-            <td class="row-td row-time" width="128" valign="top" style="width:128px;padding:16px 12px 0 0;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-                <td style="background-color:#001b24;border:1px solid #10404f;border-radius:4px;padding:6px 10px;font-family:'Courier New',Courier,monospace;font-size:13px;font-weight:bold;color:#ffffff;white-space:nowrap;">18:00–20:00</td>
-              </tr></table>
-            </td>
-            <td class="row-td row-body" valign="top" style="padding:15px 0 16px 0;">
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#8fd8ee;line-height:1.35;">Полёт в Новый год</div>
-              <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#a9c4ce;padding-top:4px;">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</div>
-            </td>
-          </tr>
-        </mj-table>
-      </mj-column>
-    </mj-section>
-
-    <!-- АЭРОПОРТ БЕЛЕБЕЙ -->
-    <mj-section background-color="#00232f" padding="18px 32px 24px 32px" css-class="px">
-      <mj-column>
-        <mj-text font-family="'Courier New',Courier,monospace" font-size="10px" font-weight="bold" letter-spacing="2px" color="#5f97a8" padding="0 0 10px 0">АЭРОПОРТ ОТПРАВЛЕНИЯ</mj-text>
-        <mj-table padding="0">
-          <tr>
-            <td>
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px dashed #1f5c6e;border-radius:6px;background-color:#002a37;">
-                <tr><td style="padding:10px 12px 0 12px;font-family:Arial,sans-serif;font-size:11px;font-weight:bold;color:#8fd8ee;"><span style="color:#de6a09;">✈</span> БЕЛЕБЕЙ:</td></tr>
-                <tr><td style="padding:4px 12px 12px 12px;font-family:Arial,sans-serif;font-size:12px;color:#d5e9ef;line-height:1.4;">улица Амирова, 10А, Центральный дворец культуры Белебеевского района.</td></tr>
+              <!-- Этап 3 -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
+                <tr>
+                  <td width="120" valign="top">
+                    <span class="time-badge" style="display:inline-block; background-color: #008fd0; color: #ffffff; font-weight: bold; font-size: 11px; padding: 5px 10px; border-radius: 6px;">20:00 – 23:00</span>
+                  </td>
+                  <td valign="top" style="padding-left: 8px;">
+                    <div style="color: #ffffff; font-weight: bold; font-size: 14px;">Полёт в Новый год</div>
+                    <div style="color: #94a3b8; font-size: 12px; margin-top: 3px; line-height: 1.45;">Праздничный фуршет, музыка, общение и новогодние сюрпризы.</div>
+                  </td>
+                </tr>
               </table>
-            </td>
-          </tr>
-        </mj-table>
+
+              <!-- Локации -->
+              <div style="padding-top: 14px; border-top: 1px dashed #1b4962; font-size: 12px; color: #cbd5e1; line-height: 1.55;">
+                <div>✈ <strong style="color:#ffffff;">Москва:</strong> проспект Андропова, 11, корпус 2, Южный Event-Port.</div>
+                <div style="margin-top: 6px;">✈ <strong style="color:#ffffff;">Уфа:</strong> улица Менделеева, 205А, ресторан «Пастернак».</div>
+              </div>
+            </div>
+          </div>
+        </mj-text>
       </mj-column>
     </mj-section>
 
-    <!-- ФИНАЛ: ЧИСТОЕ ПРИГЛАШЕНИЕ -->
-    <mj-section background-color="#ffffff" padding="32px 32px 28px 32px" border-radius="0 0 16px 16px" css-class="px">
-      <mj-column>
-        <mj-text font-size="19px" font-weight="bold" color="#00303f" padding="0 0 12px 0">Уважаемые пассажиры!</mj-text>
-        <mj-text padding="0 0 10px 0">Просим заранее подготовить хорошее настроение и быть готовыми к незабываемому путешествию.</mj-text>
-        <mj-text padding="0 0 20px 0">Наш новогодний рейс уже готовится к вылету. На борту ждём каждого!</mj-text>
-        <mj-text font-size="28px" font-weight="900" line-height="1.15" letter-spacing="-0.5px" color="#de6a09" padding="0 0 10px 0">До встречи 10 декабря!</mj-text>
-        <mj-text font-size="14px" font-weight="bold" letter-spacing="1px" color="#004b62" padding="0">Ваш экипаж Savencia ✈</mj-text>
+    <!-- RUNWAY GLIDESLOPE: РАСПИСАНИЕ БЕЛЕБЕЙ -->
+    <mj-section background-color="#061a24" padding="0 20px 24px 20px" css-class="px-m">
+      <mj-column width="100%">
+        <mj-text padding="0">
+          <div class="runway-card">
+            <!-- Заголовок хаба -->
+            <div style="background-color: #0d2e40; padding: 16px 22px; border-bottom: 2px solid #de6a09;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="left">
+                    <div style="font-size: 11px; font-weight: bold; color: #38bdf8; letter-spacing: 1.5px;">RUNWAY 02 // ТЕРМИНАЛ</div>
+                    <div style="font-size: 18px; font-weight: 900; color: #ffffff; margin-top: 3px;">✈ БЕЛЕБЕЙ</div>
+                  </td>
+                  <td align="right" valign="middle">
+                    <span style="background-color: #061a24; color: #cbd5e1; font-size: 10px; font-weight: bold; padding: 4px 8px; border-radius: 4px; border: 1px solid #1a4258;">МЕСТНОЕ ВРЕМЯ</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- Этапы вылета -->
+            <div style="padding: 20px 22px;">
+              <!-- Этап 1 -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
+                <tr>
+                  <td width="120" valign="top">
+                    <span class="time-badge" style="display:inline-block; background-color: #004b62; color: #ffffff; font-weight: bold; font-size: 11px; padding: 5px 10px; border-radius: 6px;">15:00 – 15:30</span>
+                  </td>
+                  <td valign="top" style="padding-left: 8px;">
+                    <div style="color: #ffffff; font-weight: bold; font-size: 14px;">Регистрация на рейс (Welcome)</div>
+                    <div style="color: #94a3b8; font-size: 12px; margin-top: 3px; line-height: 1.45;">Встреча пассажиров, билеты для розыгрыша, фотозона и угощения.</div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Этап 2 -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
+                <tr>
+                  <td width="120" valign="top">
+                    <span class="time-badge" style="display:inline-block; background-color: #de6a09; color: #ffffff; font-weight: bold; font-size: 11px; padding: 5px 10px; border-radius: 6px;">15:30 – 18:00</span>
+                  </td>
+                  <td valign="top" style="padding-left: 8px;">
+                    <div style="color: #ffffff; font-weight: bold; font-size: 14px;">Взлёт. Торжественная часть</div>
+                    <div style="color: #94a3b8; font-size: 12px; margin-top: 3px; line-height: 1.45;">Награждение сотрудников и яркая праздничная программа.</div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Этап 3 -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
+                <tr>
+                  <td width="120" valign="top">
+                    <span class="time-badge" style="display:inline-block; background-color: #008fd0; color: #ffffff; font-weight: bold; font-size: 11px; padding: 5px 10px; border-radius: 6px;">18:00 – 20:00</span>
+                  </td>
+                  <td valign="top" style="padding-left: 8px;">
+                    <div style="color: #ffffff; font-weight: bold; font-size: 14px;">Полёт в Новый год</div>
+                    <div style="color: #94a3b8; font-size: 12px; margin-top: 3px; line-height: 1.45;">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Локация -->
+              <div style="padding-top: 14px; border-top: 1px dashed #1b4962; font-size: 12px; color: #cbd5e1; line-height: 1.55;">
+                ✈ <strong style="color:#ffffff;">Белебей:</strong> улица Амирова, 10А, Центральный дворец культуры.
+              </div>
+            </div>
+          </div>
+        </mj-text>
       </mj-column>
     </mj-section>
 
-    <!-- ДЕЛИКАТНЫЙ ПОДВАЛ -->
-    <mj-section background-color="#e6eef0" padding="16px 0">
-      <mj-column><mj-spacer height="8px" /></mj-column>
+    <!-- ФИНАЛЬНЫЙ БЛОК: ДО ВСТРЕЧИ 10 ДЕКАБРЯ -->
+    <mj-section background-color="#0d2e40" padding="32px 28px" border-radius="0 0 16px 16px" css-class="px-m">
+      <mj-column width="100%">
+        <mj-text font-size="26px" font-weight="900" color="#ffffff" align="center" line-height="1.2">
+          До встречи 10 декабря!
+        </mj-text>
+        <mj-text font-size="15px" color="#38bdf8" font-weight="bold" align="center" padding-top="8px">
+          Ваш экипаж Savencia ✈
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- БРЕНДОВЫЙ ТРИКОЛОР -->
+    <mj-section background-color="#04121a" padding="16px 0 24px 0">
+      <mj-group width="240px">
+        <mj-column width="33.33%">
+          <mj-divider border-color="#008fd0" border-width="4px" padding="0" />
+        </mj-column>
+        <mj-column width="33.33%">
+          <mj-divider border-color="#b1ca40" border-width="4px" padding="0" />
+        </mj-column>
+        <mj-column width="33.33%">
+          <mj-divider border-color="#de6a09" border-width="4px" padding="0" />
+        </mj-column>
+      </mj-group>
     </mj-section>
 
   </mj-body>
