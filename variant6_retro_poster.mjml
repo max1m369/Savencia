@@ -39,7 +39,7 @@
   <mj-body width="640px" background-color="#e3e8e3">
 
     <!-- 1. ГЛУБОКИЙ ВЕКТОРНЫЙ ХИРО С БЕЛЫМ ЛОГОТИПОМ И РАДИАЛЬНЫМ ГРАДИЕНТОМ -->
-    <mj-section padding="0" background-color="#f7f5ef">
+    <mj-section padding="0" background-color="#001822">
       <mj-column width="100%">
         <mj-image
           src="g-poster.png"
@@ -52,18 +52,25 @@
 
     
     <mj-section
-      padding="0 30px"
-      background-color="#f7f5ef"
+      padding="10px 30px 24px"
+      background-color="#001822"
       >
       <mj-column>
         
-      <mj-text font-size="23px"
+      <mj-text font-size="26px"
          font-weight="700"
-         padding="29px 0 17px">Дорогие коллеги!</mj-text>
+         color="#ffffff"
+         padding="16px 0 16px">Дорогие коллеги!</mj-text>
 
-      <mj-text padding="0 0 18px">Внимание, объявляется посадка на особый новогодний рейс!</mj-text>
+      <mj-text font-size="17px"
+         line-height="1.6"
+         color="#f1f5f9"
+         padding="0 0 16px">Внимание, объявляется посадка на особый новогодний рейс!</mj-text>
 
-      <mj-text padding="0 0 18px">10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников Savencia из трёх городов — Москвы, Уфы и Белебея.</mj-text>
+      <mj-text font-size="17px"
+         line-height="1.6"
+         color="#e2e8f0"
+         padding="0 0 16px">10 декабря мы отправляемся в праздничное путешествие, которое объединит сотрудников Savencia из трёх городов — Москвы, Уфы и Белебея.</mj-text>
 
       <mj-spacer height="8px"/>
     
