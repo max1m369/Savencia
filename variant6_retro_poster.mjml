@@ -39,7 +39,7 @@
   <mj-body width="640px" background-color="#e3e8e3">
 
     <!-- 1. ГЛУБОКИЙ ВЕКТОРНЫЙ ХИРО С БЕЛЫМ ЛОГОТИПОМ И РАДИАЛЬНЫМ ГРАДИЕНТОМ -->
-    <mj-section padding="0" background-color="#001822">
+    <mj-section padding="0" background-color="#f7f5ef">
       <mj-column width="100%">
         <mj-image
           src="g-poster.png"
