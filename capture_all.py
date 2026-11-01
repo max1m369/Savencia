@@ -18,7 +18,7 @@ with tempfile.TemporaryDirectory() as tmp:
         out_path = os.path.join(workspace, vname)
         cmd = [
             chrome, "--headless=new", f"--user-data-dir={tmp}",
-            f"--screenshot={out_path}", "--window-size=650,2900" if vname == "v4_full.png" else "--window-size=650,2300",
+            f"--screenshot={out_path}", "--window-size=650,2900" if vname in ["v4_full.png", "v6_full.png"] else "--window-size=650,2300",
             f"{ws_url}/{vfile}"
         ]
         subprocess.run(cmd, capture_output=True)

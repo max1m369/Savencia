@@ -121,339 +121,271 @@
   
 
     
+    <!-- ХАБ 1: МОСКВА И УФА -->
     <mj-section
-      padding="19px 30px"
+      padding="18px 30px"
       background-color="#004b62"
       border-top="5px solid #de6a09">
       <mj-column>
         <mj-text font-size="22px"
-           line-height="1.35"
+           line-height="1.3"
            font-weight="700"
            color="#ffffff"
-           padding="0">✈️ МОСКВА и УФА(по местному времени)</mj-text>
+           padding="0">✈️ МОСКВА и УФА (по местному времени)</mj-text>
       </mj-column>
     </mj-section>
 
-    
-      <mj-section
-        padding="22px 30px 18px"
-        background-color="#f7f5ef">
-
-        <mj-column width="42%" vertical-align="top">
-          <mj-text font-size="27px"
-             line-height="1.2"
-             font-weight="700"
-             color="#004b62"
-             padding="0 15px 12px 0">17:00–18:00 —</mj-text>
-        </mj-column>
-
-        <mj-column width="58%" vertical-align="top">
-          <mj-text font-size="19px"
-             line-height="1.35"
-             font-weight="700"
-             padding="0 0 10px">Регистрация на рейс (Welcome)</mj-text>
-          <mj-text font-size="16px"
-             line-height="1.65"
-             padding="0">Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.</mj-text>
-        </mj-column>
-
-      </mj-section>
-
-      
+    <!-- ЭТАП 1: 17:00–18:00 (СИНИЙ SAVENCIA #008fd0) -->
     <mj-section
-      padding="0 30px"
-      background-color="#f7f5ef"
-      >
-      <mj-column>
-        
-        <mj-divider
-          border-color="#c3d7de"
-          border-width="1px"
-          padding="0"/>
-      
+      padding="20px 30px"
+      background-color="#008fd0">
+      <mj-column width="38%" vertical-align="middle">
+        <mj-text font-size="26px"
+           line-height="1.2"
+           font-weight="700"
+           color="#ffffff"
+           padding="0 15px 8px 0">17:00–18:00</mj-text>
+      </mj-column>
+      <mj-column width="62%" vertical-align="middle">
+        <mj-text font-size="18px"
+           line-height="1.3"
+           font-weight="700"
+           color="#ffffff"
+           padding="0 0 6px">Регистрация на рейс (Welcome)</mj-text>
+        <mj-text font-size="15px"
+           line-height="1.55"
+           color="#e0f2fe"
+           padding="0">Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.</mj-text>
       </mj-column>
     </mj-section>
-  
-    
-      <mj-section
-        padding="22px 30px 18px"
-        background-color="#f7f5ef">
 
-        <mj-column width="42%" vertical-align="top">
-          <mj-text font-size="27px"
-             line-height="1.2"
-             font-weight="700"
-             color="#de6a09"
-             padding="0 15px 12px 0">18:00–20:00 —</mj-text>
-        </mj-column>
-
-        <mj-column width="58%" vertical-align="top">
-          <mj-text font-size="19px"
-             line-height="1.35"
-             font-weight="700"
-             padding="0 0 10px">Взлёт. Торжественная часть</mj-text>
-          <mj-text font-size="16px"
-             line-height="1.65"
-             padding="0">Церемония награждения сотрудников и праздничная программа.</mj-text>
-        </mj-column>
-
-      </mj-section>
-
-      
-    <mj-section
-      padding="0 30px"
-      background-color="#f7f5ef"
-      >
-      <mj-column>
-        
-        <mj-divider
-          border-color="#c3d7de"
-          border-width="1px"
-          padding="0"/>
-      
-      </mj-column>
+    <!-- РАЗДЕЛИТЕЛЬ -->
+    <mj-section padding="0" background-color="#f7f5ef">
+      <mj-column><mj-divider border-width="3px" border-color="#f7f5ef" padding="0"/></mj-column>
     </mj-section>
-  
-    
-      <mj-section
-        padding="22px 30px 18px"
-        background-color="#f7f5ef">
 
-        <mj-column width="42%" vertical-align="top">
-          <mj-text font-size="27px"
-             line-height="1.2"
-             font-weight="700"
-             color="#004b62"
-             padding="0 15px 12px 0">20:00–23:00 —</mj-text>
-        </mj-column>
-
-        <mj-column width="58%" vertical-align="top">
-          <mj-text font-size="19px"
-             line-height="1.35"
-             font-weight="700"
-             padding="0 0 10px">Полёт в Новый год</mj-text>
-          <mj-text font-size="16px"
-             line-height="1.65"
-             padding="0">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</mj-text>
-        </mj-column>
-
-      </mj-section>
-
-      
+    <!-- ЭТАП 2: 18:00–20:00 (ЛАЙМОВЫЙ ЗЕЛЕНЫЙ SAVENCIA #b1ca40) -->
     <mj-section
-      padding="0 30px"
-      background-color="#f7f5ef"
-      >
-      <mj-column>
-        
-        <mj-divider
-          border-color="#c3d7de"
-          border-width="1px"
-          padding="0"/>
-      
-      </mj-column>
-    </mj-section>
-  
-    
-
-    
-    <mj-section
-      padding="0 30px"
-      background-color="#f7f5ef"
-      >
-      <mj-column>
-        
-      <mj-text font-size="14px"
-         font-weight="700"
-         color="#004b62"
-         padding="14px 0 5px">Аэропорты отправления:</mj-text>
-
-      
-        <mj-text font-size="14px"
+      padding="20px 30px"
+      background-color="#b1ca40">
+      <mj-column width="38%" vertical-align="middle">
+        <mj-text font-size="26px"
+           line-height="1.2"
            font-weight="700"
            color="#004b62"
-           padding="14px 0 5px">МОСКВА:</mj-text>
-
-        <mj-text font-size="16px"
-           padding="0 0 8px">проспект Андропова, 11, корпус 2, Южный Event-Port.</mj-text>
-      
-        <mj-text font-size="14px"
+           padding="0 15px 8px 0">18:00–20:00</mj-text>
+      </mj-column>
+      <mj-column width="62%" vertical-align="middle">
+        <mj-text font-size="18px"
+           line-height="1.3"
            font-weight="700"
            color="#004b62"
-           padding="14px 0 5px">УФА:</mj-text>
-
-        <mj-text font-size="16px"
-           padding="0 0 8px">улица Менделеева, 205А, ресторан «Пастернак».</mj-text>
-      
-
-      <mj-spacer height="27px"/>
-    
+           padding="0 0 6px">Взлёт. Торжественная часть</mj-text>
+        <mj-text font-size="15px"
+           line-height="1.55"
+           color="#0d3826"
+           padding="0">Церемония награждения сотрудников и праздничная программа.</mj-text>
       </mj-column>
     </mj-section>
-  
-  
+
+    <!-- РАЗДЕЛИТЕЛЬ -->
+    <mj-section padding="0" background-color="#f7f5ef">
+      <mj-column><mj-divider border-width="3px" border-color="#f7f5ef" padding="0"/></mj-column>
+    </mj-section>
+
+    <!-- ЭТАП 3: 20:00–23:00 (МАНДАРИНОВЫЙ SAVENCIA #de6a09) -->
     <mj-section
-      padding="19px 30px"
+      padding="20px 30px"
+      background-color="#de6a09">
+      <mj-column width="38%" vertical-align="middle">
+        <mj-text font-size="26px"
+           line-height="1.2"
+           font-weight="700"
+           color="#ffffff"
+           padding="0 15px 8px 0">20:00–23:00</mj-text>
+      </mj-column>
+      <mj-column width="62%" vertical-align="middle">
+        <mj-text font-size="18px"
+           line-height="1.3"
+           font-weight="700"
+           color="#ffffff"
+           padding="0 0 6px">Полёт в Новый год</mj-text>
+        <mj-text font-size="15px"
+           line-height="1.55"
+           color="#fff7ed"
+           padding="0">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- АЭРОПОРТЫ ОТПРАВЛЕНИЯ (МОСКВА И УФА - 2 КОЛОНКИ) -->
+    <mj-section
+      padding="24px 30px 10px"
+      background-color="#f7f5ef">
+      <mj-column width="100%">
+        <mj-text font-size="13px"
+           font-weight="700"
+           color="#52666d"
+           letter-spacing="0.5px"
+           text-transform="uppercase"
+           padding="0">Аэропорты отправления</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section
+      padding="0 30px 24px"
+      background-color="#f7f5ef">
+      <mj-group>
+        <mj-column width="50%" padding="0 6px 0 0">
+          <mj-text padding="0">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border: 1px solid #d5e4e9; border-left: 4px solid #004b62; border-radius: 8px;">
+              <tr>
+                <td style="padding: 14px 16px; vertical-align: top; height: 88px;">
+                  <div style="color: #004b62; font-size: 13px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 6px;">МОСКВА:</div>
+                  <div style="color: #173f4c; font-size: 14px; line-height: 1.5;">проспект Андропова, 11, корпус 2, Южный Event-Port.</div>
+                </td>
+              </tr>
+            </table>
+          </mj-text>
+        </mj-column>
+        <mj-column width="50%" padding="0 0 0 6px">
+          <mj-text padding="0">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border: 1px solid #d5e4e9; border-left: 4px solid #008fd0; border-radius: 8px;">
+              <tr>
+                <td style="padding: 14px 16px; vertical-align: top; height: 88px;">
+                  <div style="color: #004b62; font-size: 13px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 6px;">УФА:</div>
+                  <div style="color: #173f4c; font-size: 14px; line-height: 1.5;">улица Менделеева, 205А, ресторан «Пастернак».</div>
+                </td>
+              </tr>
+            </table>
+          </mj-text>
+        </mj-column>
+      </mj-group>
+    </mj-section>
+  
+    <!-- ХАБ 2: БЕЛЕБЕЙ -->
+    <mj-section
+      padding="18px 30px"
       background-color="#004b62"
       border-top="5px solid #008fd0">
       <mj-column>
         <mj-text font-size="22px"
-           line-height="1.35"
+           line-height="1.3"
            font-weight="700"
            color="#ffffff"
-           padding="0">✈️  БЕЛЕБЕЙ</mj-text>
+           padding="0">✈️ БЕЛЕБЕЙ</mj-text>
       </mj-column>
     </mj-section>
 
-    
-      <mj-section
-        padding="22px 30px 18px"
-        background-color="#f7f5ef">
-
-        <mj-column width="42%" vertical-align="top">
-          <mj-text font-size="27px"
-             line-height="1.2"
-             font-weight="700"
-             color="#004b62"
-             padding="0 15px 12px 0">15:00–15:30 —</mj-text>
-        </mj-column>
-
-        <mj-column width="58%" vertical-align="top">
-          <mj-text font-size="19px"
-             line-height="1.35"
-             font-weight="700"
-             padding="0 0 10px">Регистрация на рейс (Welcome)</mj-text>
-          <mj-text font-size="16px"
-             line-height="1.65"
-             padding="0">Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.</mj-text>
-        </mj-column>
-
-      </mj-section>
-
-      
+    <!-- ЭТАП 1: 15:00–15:30 (СИНИЙ SAVENCIA #008fd0) -->
     <mj-section
-      padding="0 30px"
-      background-color="#f7f5ef"
-      >
-      <mj-column>
-        
-        <mj-divider
-          border-color="#c3d7de"
-          border-width="1px"
-          padding="0"/>
-      
+      padding="20px 30px"
+      background-color="#008fd0">
+      <mj-column width="38%" vertical-align="middle">
+        <mj-text font-size="26px"
+           line-height="1.2"
+           font-weight="700"
+           color="#ffffff"
+           padding="0 15px 8px 0">15:00–15:30</mj-text>
+      </mj-column>
+      <mj-column width="62%" vertical-align="middle">
+        <mj-text font-size="18px"
+           line-height="1.3"
+           font-weight="700"
+           color="#ffffff"
+           padding="0 0 6px">Регистрация на рейс (Welcome)</mj-text>
+        <mj-text font-size="15px"
+           line-height="1.55"
+           color="#e0f2fe"
+           padding="0">Встреча пассажиров, посадочные билеты, фотографии, угощения и первые праздничные активности.</mj-text>
       </mj-column>
     </mj-section>
-  
-    
-      <mj-section
-        padding="22px 30px 18px"
-        background-color="#f7f5ef">
 
-        <mj-column width="42%" vertical-align="top">
-          <mj-text font-size="27px"
-             line-height="1.2"
-             font-weight="700"
-             color="#de6a09"
-             padding="0 15px 12px 0">15:30–18:00 —</mj-text>
-        </mj-column>
+    <!-- РАЗДЕЛИТЕЛЬ -->
+    <mj-section padding="0" background-color="#f7f5ef">
+      <mj-column><mj-divider border-width="3px" border-color="#f7f5ef" padding="0"/></mj-column>
+    </mj-section>
 
-        <mj-column width="58%" vertical-align="top">
-          <mj-text font-size="19px"
-             line-height="1.35"
-             font-weight="700"
-             padding="0 0 10px">Взлёт. Торжественная часть</mj-text>
-          <mj-text font-size="16px"
-             line-height="1.65"
-             padding="0">Церемония награждения сотрудников и праздничная программа.</mj-text>
-        </mj-column>
-
-      </mj-section>
-
-      
+    <!-- ЭТАП 2: 15:30–18:00 (ЛАЙМОВЫЙ ЗЕЛЕНЫЙ SAVENCIA #b1ca40) -->
     <mj-section
-      padding="0 30px"
-      background-color="#f7f5ef"
-      >
-      <mj-column>
-        
-        <mj-divider
-          border-color="#c3d7de"
-          border-width="1px"
-          padding="0"/>
-      
+      padding="20px 30px"
+      background-color="#b1ca40">
+      <mj-column width="38%" vertical-align="middle">
+        <mj-text font-size="26px"
+           line-height="1.2"
+           font-weight="700"
+           color="#004b62"
+           padding="0 15px 8px 0">15:30–18:00</mj-text>
+      </mj-column>
+      <mj-column width="62%" vertical-align="middle">
+        <mj-text font-size="18px"
+           line-height="1.3"
+           font-weight="700"
+           color="#004b62"
+           padding="0 0 6px">Взлёт. Торжественная часть</mj-text>
+        <mj-text font-size="15px"
+           line-height="1.55"
+           color="#0d3826"
+           padding="0">Церемония награждения сотрудников и праздничная программа.</mj-text>
       </mj-column>
     </mj-section>
-  
-    
-      <mj-section
-        padding="22px 30px 18px"
-        background-color="#f7f5ef">
 
-        <mj-column width="42%" vertical-align="top">
-          <mj-text font-size="27px"
-             line-height="1.2"
-             font-weight="700"
-             color="#004b62"
-             padding="0 15px 12px 0">18:00–20:00 —</mj-text>
-        </mj-column>
+    <!-- РАЗДЕЛИТЕЛЬ -->
+    <mj-section padding="0" background-color="#f7f5ef">
+      <mj-column><mj-divider border-width="3px" border-color="#f7f5ef" padding="0"/></mj-column>
+    </mj-section>
 
-        <mj-column width="58%" vertical-align="top">
-          <mj-text font-size="19px"
-             line-height="1.35"
-             font-weight="700"
-             padding="0 0 10px">Полёт в Новый год</mj-text>
-          <mj-text font-size="16px"
-             line-height="1.65"
-             padding="0">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</mj-text>
-        </mj-column>
-
-      </mj-section>
-
-      
+    <!-- ЭТАП 3: 18:00–20:00 (МАНДАРИНОВЫЙ SAVENCIA #de6a09) -->
     <mj-section
-      padding="0 30px"
-      background-color="#f7f5ef"
-      >
-      <mj-column>
-        
-        <mj-divider
-          border-color="#c3d7de"
-          border-width="1px"
-          padding="0"/>
-      
+      padding="20px 30px"
+      background-color="#de6a09">
+      <mj-column width="38%" vertical-align="middle">
+        <mj-text font-size="26px"
+           line-height="1.2"
+           font-weight="700"
+           color="#ffffff"
+           padding="0 15px 8px 0">18:00–20:00</mj-text>
+      </mj-column>
+      <mj-column width="62%" vertical-align="middle">
+        <mj-text font-size="18px"
+           line-height="1.3"
+           font-weight="700"
+           color="#ffffff"
+           padding="0 0 6px">Полёт в Новый год</mj-text>
+        <mj-text font-size="15px"
+           line-height="1.55"
+           color="#fff7ed"
+           padding="0">Музыка, фуршет, развлечения, общение и новогодние сюрпризы.</mj-text>
       </mj-column>
     </mj-section>
-  
-    
 
-    
+    <!-- АЭРОПОРТ ОТПРАВЛЕНИЯ (БЕЛЕБЕЙ - 1 КОЛОНКА) -->
     <mj-section
-      padding="0 30px"
-      background-color="#f7f5ef"
-      >
-      <mj-column>
-        
-      <mj-text font-size="14px"
-         font-weight="700"
-         color="#004b62"
-         padding="14px 0 5px">Аэропорт отправления:</mj-text>
-
-      
-        
-
-        <mj-text font-size="16px"
-           padding="0 0 8px">улица Амирова, 10А, Центральный дворец культуры Белебеевского района.</mj-text>
-      
-
-      <mj-spacer height="27px"/>
-    
+      padding="24px 30px 10px"
+      background-color="#f7f5ef">
+      <mj-column width="100%">
+        <mj-text font-size="13px"
+           font-weight="700"
+           color="#52666d"
+           letter-spacing="0.5px"
+           text-transform="uppercase"
+           padding="0">Аэропорт отправления</mj-text>
       </mj-column>
     </mj-section>
-  
-  
-
-    
+    <mj-section
+      padding="0 30px 24px"
+      background-color="#f7f5ef">
+      <mj-column width="100%">
+        <mj-text padding="0">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border: 1px solid #d5e4e9; border-left: 4px solid #de6a09; border-radius: 8px;">
+            <tr>
+              <td style="padding: 14px 18px; vertical-align: top;">
+                <div style="color: #004b62; font-size: 13px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 6px;">БЕЛЕБЕЙ:</div>
+                <div style="color: #173f4c; font-size: 14px; line-height: 1.5;">улица Амирова, 10А, Центральный дворец культуры Белебеевского района.</div>
+              </td>
+            </tr>
+          </table>
+        </mj-text>
+      </mj-column>
+    </mj-section>
     <mj-section
       padding="0 30px"
       background-color="#f7f5ef"
@@ -491,6 +423,21 @@
            padding="0">Ваш экипаж Savencia ✈️</mj-text>
 
       </mj-column>
+    </mj-section>
+
+    <!-- БРЕНДОВЫЙ ТРИКОЛОР В ПОДВАЛЕ -->
+    <mj-section background-color="#004b62" padding="0 0 28px 0">
+      <mj-group width="240px">
+        <mj-column width="33.33%">
+          <mj-divider border-color="#008fd0" border-width="4px" padding="0" />
+        </mj-column>
+        <mj-column width="33.33%">
+          <mj-divider border-color="#b1ca40" border-width="4px" padding="0" />
+        </mj-column>
+        <mj-column width="33.33%">
+          <mj-divider border-color="#de6a09" border-width="4px" padding="0" />
+        </mj-column>
+      </mj-group>
     </mj-section>
 
   </mj-body>
